@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "Eudemonia::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Eudemonia-Debug-bc2ea5fdbf631c9761b4.json",
-					"name" : "Eudemonia",
+					"id" : "compiler::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-compiler-Debug-6e17fb704598fb6438ab.json",
+					"name" : "compiler",
 					"projectIndex" : 0
 				}
 			]

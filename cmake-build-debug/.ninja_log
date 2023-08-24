@@ -1,3 +1,4 @@
 # ninja log v5
-1	434	7143943226114234	CMakeFiles/Eudemonia.dir/src/main.cpp.obj	9730e5f1e2a131e7
-446	683	7143943228566095	Eudemonia.exe	bdf6d96719b087c5
+0	294	7145898050961069	CMakeFiles/compiler.dir/src/driver/config.cpp.obj	1e6061709eab5171
+4	455	7145898052577434	CMakeFiles/compiler.dir/src/main.cpp.obj	5a829a737c1394f0
+456	611	7145898054109479	D:/Clion Projects/Eudemonia/src/compiler.exe	c2cc9bd44cbfdedc

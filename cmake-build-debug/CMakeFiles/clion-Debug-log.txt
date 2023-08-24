@@ -11,6 +11,6 @@
 -- Check for working CXX compiler: D:/Program Files (x86)/CLion 2023.2/bin/mingw/bin/g++.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done (2.8s)
+-- Configuring done (1.3s)
 -- Generating done (0.0s)
 -- Build files have been written to: D:/Clion Projects/Eudemonia/cmake-build-debug

@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.26)
 project(Eudemonia)
 
-set(CMAKE_CXX_STANDARD 14)
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/src)
 
-add_executable(Eudemonia
-        src/main.cpp)
+file(GLOB_RECURSE DIR_SRC "src/*.cpp")
+file(GLOB_RECURSE DIR_LIB_SRC "third_party/*.cpp")
+add_compile_options(-g -std=c++17 -O2)
+add_executable(compiler ${DIR_SRC} ${DIR_LIB_SRC})

@@ -41,40 +41,48 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = D$:/Clion$ Projects/Eudemonia/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target Eudemonia
+# Object build statements for EXECUTABLE target compiler
 
 
 #############################################
-# Order-only phony target for Eudemonia
+# Order-only phony target for compiler
 
-build cmake_object_order_depends_target_Eudemonia: phony || CMakeFiles/Eudemonia.dir
+build cmake_object_order_depends_target_compiler: phony || CMakeFiles/compiler.dir
 
-build CMakeFiles/Eudemonia.dir/src/main.cpp.obj: CXX_COMPILER__Eudemonia_unscanned_Debug D$:/Clion$ Projects/Eudemonia/src/main.cpp || cmake_object_order_depends_target_Eudemonia
-  DEP_FILE = CMakeFiles\Eudemonia.dir\src\main.cpp.obj.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\Eudemonia.dir
-  OBJECT_FILE_DIR = CMakeFiles\Eudemonia.dir\src
-  TARGET_COMPILE_PDB = CMakeFiles\Eudemonia.dir\
-  TARGET_PDB = Eudemonia.pdb
+build CMakeFiles/compiler.dir/src/driver/config.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/src/driver/config.cpp || cmake_object_order_depends_target_compiler
+  DEP_FILE = CMakeFiles\compiler.dir\src\driver\config.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -g -std=c++17 -O2
+  OBJECT_DIR = CMakeFiles\compiler.dir
+  OBJECT_FILE_DIR = CMakeFiles\compiler.dir\src\driver
+  TARGET_COMPILE_PDB = CMakeFiles\compiler.dir\
+  TARGET_PDB = "D:\Clion Projects\Eudemonia\src\compiler.pdb"
+
+build CMakeFiles/compiler.dir/src/main.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/src/main.cpp || cmake_object_order_depends_target_compiler
+  DEP_FILE = CMakeFiles\compiler.dir\src\main.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -g -std=c++17 -O2
+  OBJECT_DIR = CMakeFiles\compiler.dir
+  OBJECT_FILE_DIR = CMakeFiles\compiler.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\compiler.dir\
+  TARGET_PDB = "D:\Clion Projects\Eudemonia\src\compiler.pdb"
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target Eudemonia
+# Link build statements for EXECUTABLE target compiler
 
 
 #############################################
-# Link the executable Eudemonia.exe
+# Link the executable D:\Clion Projects\Eudemonia\src\compiler.exe
 
-build Eudemonia.exe: CXX_EXECUTABLE_LINKER__Eudemonia_Debug CMakeFiles/Eudemonia.dir/src/main.cpp.obj
+build D$:/Clion$ Projects/Eudemonia/src/compiler.exe: CXX_EXECUTABLE_LINKER__compiler_Debug CMakeFiles/compiler.dir/src/driver/config.cpp.obj CMakeFiles/compiler.dir/src/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\Eudemonia.dir
+  OBJECT_DIR = CMakeFiles\compiler.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\Eudemonia.dir\
-  TARGET_FILE = Eudemonia.exe
-  TARGET_IMPLIB = libEudemonia.dll.a
-  TARGET_PDB = Eudemonia.pdb
+  TARGET_COMPILE_PDB = CMakeFiles\compiler.dir\
+  TARGET_FILE = "D:\Clion Projects\Eudemonia\src\compiler.exe"
+  TARGET_IMPLIB = "D:\Clion Projects\Eudemonia\src\libcompiler.dll.a"
+  TARGET_PDB = "D:\Clion Projects\Eudemonia\src\compiler.pdb"
 
 
 #############################################
@@ -102,7 +110,9 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build Eudemonia: phony Eudemonia.exe
+build compiler: phony D$:/Clion$ Projects/Eudemonia/src/compiler.exe
+
+build compiler.exe: phony D$:/Clion$ Projects/Eudemonia/src/compiler.exe
 
 # =============================================================================
 # Folder targets.
@@ -112,7 +122,7 @@ build Eudemonia: phony Eudemonia.exe
 #############################################
 # Folder: D:/Clion Projects/Eudemonia/cmake-build-debug
 
-build all: phony Eudemonia.exe
+build all: phony D$:/Clion$ Projects/Eudemonia/src/compiler.exe
 
 # =============================================================================
 # Built-in targets
