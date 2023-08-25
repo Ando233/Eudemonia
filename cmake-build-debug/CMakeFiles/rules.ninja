@@ -25,8 +25,10 @@ rule CXX_COMPILER__compiler_unscanned_Debug
 # Rule for linking CXX executable.
 
 rule CXX_EXECUTABLE_LINKER__compiler_Debug
-  command = cmd.exe /C "$PRE_LINK && D:\PROGRA~2\MSY2\clang64\bin\CLANG_~1.EXE $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = cmd.exe /C "$PRE_LINK && D:\PROGRA~2\MSY2\clang64\bin\CLANG_~1.EXE $FLAGS $LINK_FLAGS @$RSP_FILE -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0  && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
+  rspfile = $RSP_FILE
+  rspfile_content = $in $LINK_PATH $LINK_LIBRARIES
   restat = $RESTAT
 
 
@@ -51,7 +53,7 @@ rule RERUN_CMAKE
 # Rule for cleaning all built files.
 
 rule CLEAN
-  command = D:\PROGRA~2\CLION2~1.2\bin\ninja\win\x64\ninja.exe $FILE_ARG -t clean $TARGETS
+  command = "D:\Program Files (x86)\CLion 2023.2\bin\ninja\win\x64\ninja.exe" $FILE_ARG -t clean $TARGETS
   description = Cleaning all built files...
 
 
@@ -59,6 +61,6 @@ rule CLEAN
 # Rule for printing all primary targets available.
 
 rule HELP
-  command = D:\PROGRA~2\CLION2~1.2\bin\ninja\win\x64\ninja.exe -t targets
+  command = "D:\Program Files (x86)\CLion 2023.2\bin\ninja\win\x64\ninja.exe" -t targets
   description = All primary targets available:
 
