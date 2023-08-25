@@ -56,11 +56,11 @@
   #ifdef ANTLR4CPP_EXPORTS
     #define ANTLR4CPP_PUBLIC __declspec(dllexport)
   #else
-    #ifdef ANTLR4CPP_STATIC
+//    #ifdef ANTLR4CPP_STATIC
       #define ANTLR4CPP_PUBLIC
-    #else
-      #define ANTLR4CPP_PUBLIC __declspec(dllimport)
-    #endif
+//    #else
+//      #define ANTLR4CPP_PUBLIC __declspec(dllimport)
+//    #endif
   #endif
 
 #elif defined(__APPLE__)

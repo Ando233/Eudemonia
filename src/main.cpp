@@ -3,18 +3,22 @@
 //
 #include <iostream>
 #include <fstream>
-#include "driver/config.h"
+#include "antlr4-runtime.h"
+#include "frontend/SysYLexer.h"
+#include "frontend/SysYParser.h"
+
 
 int main(int argc, char **argv){
 
     std::ifstream source("./testcase.sy");
     std::ofstream output_ir("./llvm.ll");
 
+    antlr4::ANTLRInputStream input(source);
+    SysYLexer lexer(&input);
+    antlr4::CommonTokenStream tokens(&lexer);
+    SysYParser parser(&tokens);
 
-    char c;
-    while (source.get(c)){
-        output_ir << c;
-    }
+    std::cout << "Finished compile!" << '\n';
 
     return 0;
 }
