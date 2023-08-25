@@ -1,4 +1,8 @@
 # ninja log v5
-0	294	7145898050961069	CMakeFiles/compiler.dir/src/driver/config.cpp.obj	1e6061709eab5171
-4	455	7145898052577434	CMakeFiles/compiler.dir/src/main.cpp.obj	5a829a737c1394f0
-456	611	7145898054109479	D:/Clion Projects/Eudemonia/src/compiler.exe	c2cc9bd44cbfdedc
+1	369	7146545879930813	build.ninja	84643a332f3d258
+6	975	7146541111245842	CMakeFiles/compiler.dir/src/main.cpp.obj	95e08e53e62eb372
+976	1183	7146541113322297	compiler.exe	35f69de31e44a4d7
+0	370	7146545879930813	build.ninja	84643a332f3d258
+7	258	7146545883020171	compiler.exe	e70ed558452c8a49
+7	1188	7146549829872417	CMakeFiles/compiler.dir/src/main.cpp.obj	95e08e53e62eb372
+1190	1411	7146549832034644	compiler.exe	e70ed558452c8a49

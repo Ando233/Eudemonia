@@ -1,0 +1,8 @@
+[
+{
+  "directory": "D:/Clion Projects/Eudemonia/cmake-build-debug",
+  "command": "D:\\PROGRA~2\\MSY2\\clang64\\bin\\CLANG_~1.EXE -I\"D:/Clion Projects/Eudemonia/src\" -g -fcolor-diagnostics --std=c++17 -O2 -o CMakeFiles\\compiler.dir\\src\\main.cpp.obj -c \"D:\\Clion Projects\\Eudemonia\\src\\main.cpp\"",
+  "file": "D:\\Clion Projects\\Eudemonia\\src\\main.cpp",
+  "output": "CMakeFiles\\compiler.dir\\src\\main.cpp.obj"
+}
+]

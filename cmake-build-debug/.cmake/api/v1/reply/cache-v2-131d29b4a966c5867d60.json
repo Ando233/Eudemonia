@@ -15,7 +15,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/Program Files (x86)/CLion 2023.2/bin/mingw/bin/addr2line.exe"
+			"value" : "D:/Program Files (x86)/MSY2/clang64/bin/llvm-addr2line.exe"
 		},
 		{
 			"name" : "CMAKE_AR",
@@ -31,7 +31,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/Program Files (x86)/CLion 2023.2/bin/mingw/bin/ar.exe"
+			"value" : "D:/Program Files (x86)/MSY2/clang64/bin/llvm-ar.exe"
 		},
 		{
 			"name" : "CMAKE_BUILD_TYPE",
@@ -154,8 +154,8 @@
 					"value" : "CXX compiler"
 				}
 			],
-			"type" : "FILEPATH",
-			"value" : "D:/Program Files (x86)/CLion 2023.2/bin/mingw/bin/g++.exe"
+			"type" : "STRING",
+			"value" : "D:/Program Files (x86)/MSY2/clang64/bin/clang++.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_AR",
@@ -167,11 +167,27 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+					"value" : "LLVM archiver"
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/Program Files (x86)/CLion 2023.2/bin/mingw/bin/gcc-ar.exe"
+			"value" : "D:/Program Files (x86)/MSY2/clang64/bin/llvm-ar.exe"
+		},
+		{
+			"name" : "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "`clang-scan-deps` dependency scanner"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "D:/Program Files (x86)/MSY2/clang64/bin/clang-scan-deps.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_RANLIB",
@@ -183,11 +199,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+					"value" : "Generate index for LLVM archive"
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/Program Files (x86)/CLion 2023.2/bin/mingw/bin/gcc-ranlib.exe"
+			"value" : "D:/Program Files (x86)/MSY2/clang64/bin/llvm-ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS",
@@ -298,8 +314,8 @@
 					"value" : "C compiler"
 				}
 			],
-			"type" : "FILEPATH",
-			"value" : "D:/Program Files (x86)/CLion 2023.2/bin/mingw/bin/gcc.exe"
+			"type" : "STRING",
+			"value" : "D:/Program Files (x86)/MSY2/clang64/bin/clang.exe"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_AR",
@@ -311,11 +327,27 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+					"value" : "LLVM archiver"
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/Program Files (x86)/CLion 2023.2/bin/mingw/bin/gcc-ar.exe"
+			"value" : "D:/Program Files (x86)/MSY2/clang64/bin/llvm-ar.exe"
+		},
+		{
+			"name" : "CMAKE_C_COMPILER_CLANG_SCAN_DEPS",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "`clang-scan-deps` dependency scanner"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "D:/Program Files (x86)/MSY2/clang64/bin/clang-scan-deps.exe"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_RANLIB",
@@ -327,11 +359,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+					"value" : "Generate index for LLVM archive"
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/Program Files (x86)/CLion 2023.2/bin/mingw/bin/gcc-ranlib.exe"
+			"value" : "D:/Program Files (x86)/MSY2/clang64/bin/llvm-ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS",
@@ -443,7 +475,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/Program Files (x86)/CLion 2023.2/bin/mingw/bin/dlltool.exe"
+			"value" : "D:/Program Files (x86)/MSY2/clang64/bin/llvm-dlltool.exe"
 		},
 		{
 			"name" : "CMAKE_EXECUTABLE_FORMAT",
@@ -542,16 +574,12 @@
 			"properties" : 
 			[
 				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
 					"name" : "HELPSTRING",
-					"value" : "Enable/Disable output of compile commands during generation."
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "BOOL",
-			"value" : ""
+			"type" : "UNINITIALIZED",
+			"value" : "1"
 		},
 		{
 			"name" : "CMAKE_EXTRA_GENERATOR",
@@ -671,11 +699,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "Path to a program."
+					"value" : "Default Linker"
 				}
 			],
-			"type" : "FILEPATH",
-			"value" : "D:/Program Files (x86)/CLion 2023.2/bin/mingw/bin/ld.exe"
+			"type" : "STRING",
+			"value" : "D:/Program Files (x86)/MSY2/clang64/bin/lld.exe"
 		},
 		{
 			"name" : "CMAKE_MAKE_PROGRAM",
@@ -687,7 +715,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/Program Files (x86)/CLion 2023.2/bin/ninja/win/x64/ninja.exe"
+			"value" : "D:/PROGRA~2/CLION2~1.2/bin/ninja/win/x64/ninja.exe"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -783,7 +811,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/Program Files (x86)/CLion 2023.2/bin/mingw/bin/nm.exe"
+			"value" : "D:/Program Files (x86)/MSY2/clang64/bin/llvm-nm.exe"
 		},
 		{
 			"name" : "CMAKE_NUMBER_OF_MAKEFILES",
@@ -811,7 +839,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/Program Files (x86)/CLion 2023.2/bin/mingw/bin/objcopy.exe"
+			"value" : "D:/Program Files (x86)/MSY2/clang64/bin/llvm-objcopy.exe"
 		},
 		{
 			"name" : "CMAKE_OBJDUMP",
@@ -827,7 +855,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/Program Files (x86)/CLion 2023.2/bin/mingw/bin/objdump.exe"
+			"value" : "D:/Program Files (x86)/MSY2/clang64/bin/llvm-objdump.exe"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -891,7 +919,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/Program Files (x86)/CLion 2023.2/bin/mingw/bin/ranlib.exe"
+			"value" : "D:/Program Files (x86)/MSY2/clang64/bin/llvm-ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_RC_COMPILER",
@@ -1015,7 +1043,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/Program Files (x86)/CLion 2023.2/bin/mingw/bin/readelf.exe"
+			"value" : "D:/Program Files (x86)/MSY2/clang64/bin/llvm-readelf.exe"
 		},
 		{
 			"name" : "CMAKE_ROOT",
@@ -1235,7 +1263,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/Program Files (x86)/CLion 2023.2/bin/mingw/bin/strip.exe"
+			"value" : "D:/Program Files (x86)/MSY2/clang64/bin/llvm-strip.exe"
 		},
 		{
 			"name" : "CMAKE_VERBOSE_MAKEFILE",
@@ -1247,11 +1275,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "If this value is on, makefiles will be generated without the .SILENT directive, and all commands will be echoed to the console during the make.  This is useful for debugging only. With Visual Studio IDE projects all commands are done without /nologo."
+					"value" : "No help, variable specified on the command line."
 				}
 			],
 			"type" : "BOOL",
-			"value" : "FALSE"
+			"value" : "ON"
 		},
 		{
 			"name" : "Eudemonia_BINARY_DIR",
@@ -1290,6 +1318,54 @@
 			"value" : "D:/Clion Projects/Eudemonia"
 		},
 		{
+			"name" : "HAVE_CXX_ATOMICS64_WITHOUT_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "No help, variable specified on the command line."
+				}
+			],
+			"type" : "UNINITIALIZED",
+			"value" : "1"
+		},
+		{
+			"name" : "HAVE_CXX_ATOMICS_WITHOUT_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "No help, variable specified on the command line."
+				}
+			],
+			"type" : "UNINITIALIZED",
+			"value" : "1"
+		},
+		{
+			"name" : "LLVM_ENABLE_PROJECTS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "No help, variable specified on the command line."
+				}
+			],
+			"type" : "UNINITIALIZED",
+			"value" : "clang;clang-tools-extra;compiler-rt;lld"
+		},
+		{
+			"name" : "LLVM_USE_LINKER",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "No help, variable specified on the command line."
+				}
+			],
+			"type" : "UNINITIALIZED",
+			"value" : "lld"
+		},
+		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
 			"properties" : 
 			[
@@ -1299,7 +1375,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "TRUE"
+			"value" : "FALSE"
 		}
 	],
 	"kind" : "cache",
