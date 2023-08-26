@@ -7,6 +7,7 @@
 using namespace IR;
 
 antlrcpp::Any Visitor::visitCompUnit(SysYParser::CompUnitContext *ctx){
-    std::cout << "Begin Visitor!";
+
+
     return 0;
 }
