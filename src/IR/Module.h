@@ -5,6 +5,8 @@
 #ifndef EUDEMONIA_MODULE_H
 #define EUDEMONIA_MODULE_H
 
+#include "Function.h"
+#include <list>
 
 namespace IR {
 class Module final {
@@ -12,7 +14,6 @@ private:
     std::list<Function*> functions;
 public:
     Module() {};
-
 
 };
 }

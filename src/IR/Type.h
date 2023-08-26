@@ -65,7 +65,7 @@ private:
 
 public:
     explicit IntegerType(int bit): Type(IntegerTyID), bit(bit){}
-    std::string to_string(){
+    std::string to_string() const{
         return "i" + std::to_string(bit);
     }
 
@@ -75,12 +75,11 @@ public:
 class LabelType : public Type{
 public:
     static LabelType* getInstance() {
+        static LabelType instance;
         return &instance;
     }
 private:
     LabelType() : Type(LabelTyID) {}
-
-    static LabelType instance;
 };
 
 }

@@ -10,13 +10,16 @@
 
 namespace IR{
 
-    class Visitor : public SysYBaseVisitor{
-    private:
-        IR::Module ir_module;
-    public:
-        Visitor(IR::Module &ir_module) : ir_module(ir_module) {}
+class Visitor : public SysYBaseVisitor{
+private:
+    IR::Module ir_module;
+public:
+    explicit Visitor(IR::Module &ir_module) : ir_module(ir_module) {}
 
-    };
+    //  extend SysYBaseVisitor
+    antlrcpp::Any visitCompUnit(SysYParser::CompUnitContext *ctx) override;
+
+};
 }
 
 
