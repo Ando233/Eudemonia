@@ -20,8 +20,8 @@ private:
     std::list<Instruction*> instructions;
 
 public:
-    BasicBlock(const std::string name) : Value(Type::getLabelTy(), name) {}
-    BasicBlock(const std::string name, Function* func) : Value(Type::getLabelTy(), name), parent_func(func) {}
+    BasicBlock(const std::string name) : Value(name, LabelType::getInstance()) {}
+    BasicBlock(const std::string name, Function* func) : Value(name, LabelType::getInstance()), parent_func(func) {}
     std::list<Instruction*>& getInstructions() { return instructions; }
     using iterator = std::list<Instruction*>::iterator;
     using reverse_iterator = std::list<Instruction*>::reverse_iterator;

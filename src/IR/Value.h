@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <list>
+#include <utility>
 #include "Type.h"
 #include "Use.h"
 
@@ -18,7 +19,7 @@ protected:
     Type* type;
     std::list<std::shared_ptr<Use>> uses;
 public:
-    Value(Type* _type, std::string _name = "") : name(_name), type(_type) {}
+    Value(std::string _name, Type* _type) : name(std::move(_name)), type(_type) {}
     std::string getName() { return name; }
     Type* getType() { return type; }
     void setType(Type* _type) { type = _type; }

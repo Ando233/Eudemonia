@@ -37,25 +37,10 @@ public:
     bool isVoidTy() { return getTypeId() == VoidTyID; }
     bool isLabelTy() { return getTypeId() == LabelTyID; }
     bool isIntegerTy() { return getTypeId() == IntegerTyID; }
-    bool isIntegerTy(unsigned width);
     bool isFunctionTy() { return getTypeId() == FunctionTyID; }
     bool isPointerTy() { return getTypeId() == PointerTyID; }
     bool isVectorTy() { return getTypeId() == FixedVectorTyID || getTypeId() == ScalableVectorTyID; }
     bool isArrayTy() { return getTypeId() == ArrayTyID; }
-
-    static Type* getFloatTy();
-    static Type* getVoidTy();
-    static Type* getFunctionTy(Type* _retType, std::vector<Type*> _argType, bool isVarArg);
-    static Type* getLabelTy();
-    static Type* getIntegerTy(int bit);
-    static Type* getInt1Ty();
-    static Type* getInt32Ty();
-    static Type* getPointerTy(Type* eleType);
-    static Type* getArrayTy(Type* eleType);
-
-    static Type* getInt8PtrTy();
-    static Type* getInt32PtrTy();
-    static Type* getFloatPtrTy();
 };
 
 //  IntegerType
@@ -65,10 +50,41 @@ private:
 
 public:
     explicit IntegerType(int bit): Type(IntegerTyID), bit(bit){}
+    static IntegerType* getI1Instance(){
+        static IntegerType i1Instance(1);
+        return &i1Instance;
+    }
+
+    static IntegerType* getI32Instance(){
+        static IntegerType i32Instance(32);
+        return &i32Instance;
+    }
+
     std::string to_string() const{
         return "i" + std::to_string(bit);
     }
+};
 
+//  FloatType
+class FloatType : public Type{
+public:
+    static FloatType* getInstance(){
+        static FloatType instance;
+        return &instance;
+    }
+private:
+    FloatType() : Type(FloatTyID) {}
+};
+
+//  VoidType
+class VoidType : public Type{
+public:
+    static VoidType* getInstance(){
+        static VoidType instance;
+        return &instance;
+    }
+private:
+    VoidType() : Type(VoidTyID) {}
 };
 
 //  LabelType
@@ -81,6 +97,8 @@ public:
 private:
     LabelType() : Type(LabelTyID) {}
 };
+
+
 
 }
 

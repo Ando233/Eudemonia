@@ -19,6 +19,9 @@ public:
     explicit Visitor(IR::Module ir_module) : ir_module(std::move(ir_module)) {};
 
     //  extend SysYBaseVisitor
+
+    antlrcpp::Any visitFuncDef(SysYParser::FuncDefContext *ctx) override;
+
     antlrcpp::Any visitCompUnit(SysYParser::CompUnitContext *ctx) override;
 
 };

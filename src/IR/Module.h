@@ -20,7 +20,7 @@ private:
 public:
     Module() = default;
     Module(FuncList funcs, GlobalVarList gvs) : functions(std::move(funcs)), global_vars(std::move(gvs)) {};
-
+    void add_function(Function* function){ functions.push_back(function); }
 };
 }
 

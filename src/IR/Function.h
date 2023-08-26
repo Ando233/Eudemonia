@@ -14,11 +14,11 @@ namespace IR {
 
 class Argument : public Value{
 public:
-    Argument(Type* _type, std::string _name) : Value(_type, _name) {}
+    Argument(std::string _name, Type* _type) : Value(_name, _type) {}
 
 };
 
-class Function {
+class Function : public Value {
 private:
     using ArgList = std::vector<std::unique_ptr<Argument>>;
     using BbList = std::list<BasicBlock*>;
@@ -27,7 +27,7 @@ private:
     Type* retType;
 
 public:
-    Function(Type* _type, std::string _name);
+    Function(std::string _name, Type* _type) : Value(_name, _type) {};
     ArgList& getArgs() { return args; }
     BbList& getBbs(){ return bbs; }
     Type* getRetType() { return retType; }

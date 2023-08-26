@@ -19,7 +19,7 @@ protected:
 
 public:
     Instruction(Type* _type, std::vector<Value*> _operands, std::string _name = "");
-    Instruction(Type* _type, std::string _name = "") : Value(_type, _name) {}
+    Instruction(std::string _name, Type* _type) : Value(_name, _type) {}
     void addOperand(Value* _value);
     OperandList& getOperands() { return operands; }
     void replaceOperand(unsigned index, Value* _value);
