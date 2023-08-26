@@ -42,9 +42,24 @@ public:
     bool isPointerTy() { return getTypeId() == PointerTyID; }
     bool isVectorTy() { return getTypeId() == FixedVectorTyID || getTypeId() == ScalableVectorTyID; }
     bool isArrayTy() { return getTypeId() == ArrayTyID; }
+
+    static Type* getFloatTy();
+    static Type* getVoidTy();
+    static Type* getFunctionTy(Type* _retType, std::vector<Type*> _argType, bool isVarArg);
+    static Type* getLabelTy();
+    static Type* getIntegerTy(int bit);
+    static Type* getInt1Ty();
+    static Type* getInt32Ty();
+    static Type* getPointerTy(Type* eleType);
+    static Type* getArrayTy(Type* eleType);
+
+    static Type* getInt8PtrTy();
+    static Type* getInt32PtrTy();
+    static Type* getFloatPtrTy();
 };
 
-class IntegerType : Type{
+//  IntegerType
+class IntegerType : public Type{
 private:
     int bit;
 
@@ -53,6 +68,19 @@ public:
     std::string to_string(){
         return "i" + std::to_string(bit);
     }
+
+};
+
+//  LabelType
+class LabelType : public Type{
+public:
+    static LabelType* getInstance() {
+        return &instance;
+    }
+private:
+    LabelType() : Type(LabelTyID) {}
+
+    static LabelType instance;
 };
 
 }

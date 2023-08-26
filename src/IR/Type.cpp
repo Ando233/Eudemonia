@@ -3,3 +3,9 @@
 //
 
 #include "Type.h"
+using namespace IR;
+
+
+Type* Type::getLabelTy() {
+    return LabelType::getInstance();
+}

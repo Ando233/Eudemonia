@@ -5,10 +5,9 @@
 #ifndef EUDEMONIA_USE_H
 #define EUDEMONIA_USE_H
 
-#include "Value.h"
-#include "Instruction.h"
-
 namespace IR{
+class Value;
+class Instruction;
 
 class Use{
 private:

@@ -6,13 +6,17 @@
 #define EUDEMONIA_INSTRUCTION_H
 
 #include "Value.h"
+#include "Use.h"
 
 namespace IR {
+class BasicBlock;
 
-class Instruction : Value {
+class Instruction : public Value {
 protected:
     using OperandList = std::vector<std::shared_ptr<Use>>;
     OperandList operands;
+    BasicBlock* parent_bb;
+
 public:
     Instruction(Type* _type, std::vector<Value*> _operands, std::string _name = "");
     Instruction(Type* _type, std::string _name = "") : Value(_type, _name) {}
@@ -23,8 +27,5 @@ public:
 };
 
 };
-
-}
-
 
 #endif //EUDEMONIA_INSTRUCTION_H

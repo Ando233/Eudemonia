@@ -4,9 +4,10 @@
 #include <iostream>
 #include <fstream>
 #include "antlr4-runtime.h"
-#include "frontend/SysYLexer.h"
-#include "frontend/SysYParser.h"
-
+#include "Frontend/SysYLexer.h"
+#include "Frontend/SysYParser.h"
+#include "IR/Function.h"
+#include "IR/Type.h"
 
 int main(int argc, char **argv){
 
@@ -21,7 +22,8 @@ int main(int argc, char **argv){
 
     auto root = parser.compUnit();
 
-    std::cout << "Finished compile!" << '\n';
+
+    std::cout << "Finished  compile!" << '\n';
 
     return 0;
 }
