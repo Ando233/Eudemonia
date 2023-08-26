@@ -3,6 +3,7 @@
 //
 
 #include "Visitor.h"
+#include "Module.h"
 
 using namespace IR;
 

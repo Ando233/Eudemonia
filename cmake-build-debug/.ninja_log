@@ -166,3 +166,12 @@
 26	212	7147539312180223	CMakeFiles/compiler.dir/src/Support/Diagnostics.cpp.obj	c3b88d7b6a5526c2
 19	2540	7147562268929111	CMakeFiles/compiler.dir/src/Driver/Driver.cpp.obj	132db7975edadd68
 2541	2915	7147562272485304	D:/Clion Projects/Eudemonia/src/compiler.exe	169a758193e69b89
+15	1936	7147567241217268	CMakeFiles/compiler.dir/src/IR/Visitor.cpp.obj	bd62778f9d4cd586
+18	2887	7147567567194226	CMakeFiles/compiler.dir/src/Driver/Driver.cpp.obj	132db7975edadd68
+2889	3320	7147567571254209	D:/Clion Projects/Eudemonia/src/compiler.exe	169a758193e69b89
+20	3448	7147567790195911	CMakeFiles/compiler.dir/src/Driver/Driver.cpp.obj	132db7975edadd68
+3449	3933	7147567794812174	D:/Clion Projects/Eudemonia/src/compiler.exe	169a758193e69b89
+16	1449	7147577977426514	CMakeFiles/compiler.dir/src/IR/Module.cpp.obj	d25c69d670304ece
+21	2240	7147577985302149	CMakeFiles/compiler.dir/src/IR/Visitor.cpp.obj	bd62778f9d4cd586
+27	2517	7147577988082135	CMakeFiles/compiler.dir/src/Driver/Driver.cpp.obj	132db7975edadd68
+2518	2866	7147577991352524	D:/Clion Projects/Eudemonia/src/compiler.exe	169a758193e69b89
