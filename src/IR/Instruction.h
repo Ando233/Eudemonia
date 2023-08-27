@@ -89,6 +89,7 @@ public:
     explicit RetInst(Value* value) : Instruction("", VoidType::getInstance(), OP::Ret){
         add_operand(value);
     }
+    RetInst() : Instruction("", VoidType::getInstance(), OP::Ret) {}
 };
 
 

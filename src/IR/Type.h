@@ -30,17 +30,17 @@ protected:
     explicit Type(TypeID id) :
             ID(id) {}
 
-    TypeID getTypeId() { return ID; }
+    TypeID get_type_id() { return ID; }
 
 public:
-    bool isFloatTy() { return getTypeId() == FloatTyID; }
-    bool isVoidTy() { return getTypeId() == VoidTyID; }
-    bool isLabelTy() { return getTypeId() == LabelTyID; }
-    bool isIntegerTy() { return getTypeId() == IntegerTyID; }
-    bool isFunctionTy() { return getTypeId() == FunctionTyID; }
-    bool isPointerTy() { return getTypeId() == PointerTyID; }
-    bool isVectorTy() { return getTypeId() == FixedVectorTyID || getTypeId() == ScalableVectorTyID; }
-    bool isArrayTy() { return getTypeId() == ArrayTyID; }
+    bool is_float_type() { return get_type_id() == FloatTyID; }
+    bool is_void_type() { return get_type_id() == VoidTyID; }
+    bool is_label_type() { return get_type_id() == LabelTyID; }
+    bool is_integer_type() { return get_type_id() == IntegerTyID; }
+    bool is_function_type() { return get_type_id() == FunctionTyID; }
+    bool is_pointer_type() { return get_type_id() == PointerTyID; }
+    bool is_vector_type() { return get_type_id() == FixedVectorTyID || get_type_id() == ScalableVectorTyID; }
+    bool is_array_type() { return get_type_id() == ArrayTyID; }
 };
 
 //  IntegerType

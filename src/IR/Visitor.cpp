@@ -49,14 +49,17 @@ antlrcpp::Any Visitor::visitReturn(SysYParser::ReturnContext *ctx) {
 
         Type* CurType = CurValue->getType();
         Type* CurFuncType = CurFunction->getType();
-        if(CurType->isIntegerTy() && CurFuncType->isFloatTy()){
+        if(CurType->is_integer_type() && CurFuncType->is_float_type()){
             CurValue = f.build_conversion_inst(CurValue, OP::Itof, CurBasicBlock);
         }
-        else if(CurFuncType->isIntegerTy() && CurType->isFloatTy()){
+        else if(CurFuncType->is_integer_type() && CurType->is_float_type()){
             CurValue = f.build_conversion_inst(CurValue, OP::Ftoi, CurBasicBlock);
         }
 
         CurValue = f.build_ret_inst(CurValue, CurBasicBlock);
+    }
+    else{
+        f.build_ret_inst(CurBasicBlock);
     }
     return nullptr;
 }

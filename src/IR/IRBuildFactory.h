@@ -23,6 +23,7 @@ public:
         return f;
     }
 
+    RetInst* build_ret_inst(BasicBlock* bb);
     RetInst* build_ret_inst(Value* value, BasicBlock* bb);
     ConstFloat* build_number(float val);
     ConstInt* build_number(int val);
