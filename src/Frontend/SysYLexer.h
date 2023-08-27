@@ -1,5 +1,5 @@
 
-// Generated from SysY.g4 by ANTLR 4.10.1
+// Generated from SysY.g4 by ANTLR 4.13.0
 
 #pragma once
 
@@ -15,12 +15,11 @@ public:
     T__0 = 1, Int = 2, Float = 3, Void = 4, Const = 5, Return = 6, If = 7, 
     Else = 8, For = 9, While = 10, Do = 11, Break = 12, Continue = 13, Lparen = 14, 
     Rparen = 15, Lbrkt = 16, Rbrkt = 17, Lbrace = 18, Rbrace = 19, Comma = 20, 
-    Semicolon = 21, Question = 22, Colon = 23, Minus = 24, Exclamation = 25, 
-    Tilde = 26, Addition = 27, Multiplication = 28, Division = 29, Modulo = 30, 
-    LAND = 31, LOR = 32, EQ = 33, NEQ = 34, LT = 35, LE = 36, GT = 37, GE = 38, 
-    IntLiteral = 39, HexadecimalDigits = 40, ExponentPart = 41, FractionPart = 42, 
-    FloatLiteral = 43, Identifier = 44, STRING = 45, WS = 46, LINE_COMMENT = 47, 
-    COMMENT = 48
+    Semicolon = 21, Question = 22, Colon = 23, Sub = 24, Not = 25, Add = 26, 
+    Mul = 27, Div = 28, Mod = 29, LAnd = 30, LOr = 31, Eq = 32, Ne = 33, 
+    Lt = 34, Le = 35, Gt = 36, Ge = 37, IntConst = 38, HexadecimalDigits = 39, 
+    ExponentPart = 40, FractionPart = 41, FloatConst = 42, Ident = 43, STRING = 44, 
+    WS = 45, LINE_COMMENT = 46, COMMENT = 47
   };
 
   explicit SysYLexer(antlr4::CharStream *input);

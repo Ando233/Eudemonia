@@ -26,25 +26,24 @@ Semicolon : ';';
 Question : '?';
 Colon : ':';
 
-Minus : '-';
-Exclamation : '!';
-Tilde : '~';
-Addition : '+';
-Multiplication : '*';
-Division : '/';
-Modulo : '%';
-LAND : '&&';
-LOR : '||';
-EQ : '==';
-NEQ : '!=';
-LT : '<';
-LE : '<=';
-GT : '>';
-GE : '>=';
+Sub : '-';
+Not : '!';
+Add : '+';
+Mul : '*';
+Div : '/';
+Mod : '%';
+LAnd : '&&';
+LOr : '||';
+Eq : '==';
+Ne : '!=';
+Lt : '<';
+Le : '<=';
+Gt : '>';
+Ge : '>=';
 
 
 // integer
-IntLiteral
+IntConst
     : [0-9]+ 
     | '0x' [0-9a-fA-F]+ 
     | '0X' [0-9a-fA-F]+ 
@@ -65,7 +64,7 @@ FractionPart
     | [0-9]+ '.'
     ;
 
-FloatLiteral
+FloatConst
     : FractionPart (ExponentPart)?
     | [0-9]+ ExponentPart 
     | (HexadecimalDigits)? '.' HexadecimalDigits 
@@ -73,7 +72,7 @@ FloatLiteral
     ;
 
 //identifier
-Identifier
+Ident
     : [a-zA-Z_][a-zA-Z_0-9]*
     ;
 

@@ -21,9 +21,7 @@
 #include <limits>
 #include <map>
 #include <memory>
-#include <mutex>
 #include <set>
-#include <shared_mutex>
 #include <sstream>
 #include <stack>
 #include <string>
@@ -56,11 +54,7 @@
   #ifdef ANTLR4CPP_EXPORTS
     #define ANTLR4CPP_PUBLIC __declspec(dllexport)
   #else
-//    #ifdef ANTLR4CPP_STATIC
-      #define ANTLR4CPP_PUBLIC
-//    #else
-//      #define ANTLR4CPP_PUBLIC __declspec(dllimport)
-//    #endif
+    #define ANTLR4CPP_PUBLIC
   #endif
 
 #elif defined(__APPLE__)
@@ -85,6 +79,11 @@
 
 #define ANTLR4CPP_INTERNAL_STRINGIFY(x) #x
 #define ANTLR4CPP_STRINGIFY(x) ANTLR4CPP_INTERNAL_STRINGIFY(x)
+
+// We use everything from the C++ standard library by default.
+#ifndef ANTLR4CPP_USING_ABSEIL
+#define ANTLR4CPP_USING_ABSEIL 0
+#endif
 
 #include "support/Declarations.h"
 

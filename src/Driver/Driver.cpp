@@ -39,7 +39,7 @@ void Driver::run(){
     log << "Begin Visit!\n";
     auto root = parser.compUnit();
     IR::Module ir_module;
-    IR::Visitor visitor(ir_module);
+    IR::Visitor visitor(&ir_module);
     visitor.visitCompUnit(root);
     log << "End Visit!\n";
 

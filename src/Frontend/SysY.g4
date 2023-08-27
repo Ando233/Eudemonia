@@ -4,113 +4,54 @@ import CommonLex;
 
 compUnit : (decl | funcDef)* EOF;
 
-decl : constDecl | varDecl;
+decl : 'const'? bType def (',' def)* ';';
 
-constDecl : 'const' bType constDef (',' constDef)* ';' ;
+def: Ident ('[' exp ']')* ('=' (initVal | initArray))? ;
 
-bType: 'int' | 'float';
+initVal: exp;
 
-constDef : Identifier ('[' constExp ']')* '=' constInitVal;
+initArray: '{' (initVal (',' initVal)* )? '}' ;
 
-constInitVal
-    : constExp # scalarConstInitVal
-    | '{' (constInitVal (',' constInitVal)* )? '}' # listConstInitVal
-    ;
+exp: binaryExp;
 
-varDecl : bType varDef (',' varDef)* ';';
+binaryExp: unaryExp (op unaryExp)* ;
 
-varDef
-    : Identifier ('[' constExp ']')* # uninitVarDef
-    | Identifier ('[' constExp ']')* '=' initVal # initVarDef
-    ;
+unaryExp: unaryOP* primaryExp ;
 
-initVal
-    : exp # scalarInitVal
-    | '{' (initVal (',' initVal)* )? '}' # listInitval
-    ;
+primaryExp: '(' exp ')' | lVal | number | call;
 
-funcDef : funcType Identifier '(' (funcFParams)? ')' block;
+call: Ident '(' (exp (',' exp)* )? ')' ;
 
-funcType : 'void' | 'int' | 'float';
+number: IntConst | FloatConst;
 
-funcFParams : funcFParam (',' funcFParam)*;
+lVal: Ident ('[' exp ']')* ;
 
-funcFParam : bType Identifier ('[' ']' ('[' constExp ']')* )?;
+funcDef: funcType Ident '(' (funcFParam (',' funcFParam)* )? ')' block;
 
-block : '{' (blockItem)* '}';
+funcFParam: bType Ident ('[' ']' ('[' exp ']')*) ;
 
-blockItem : decl | stmt;
+block: '{' (decl | stmt)* '}';
 
-stmt
-    : lVal '=' exp ';' # assignment
-    | (exp)? ';' # expStmt
-    | block # blockStmt
-    | 'if' '(' cond ')' stmt # ifStmt1
-    | 'if' '(' cond ')' stmt 'else' stmt # ifStmt2
-    | 'while' '(' cond ')' stmt # whileStmt
-    | 'break' ';' # breakStmt
-    | 'continue' ';' # continueStmt
-    | 'return' (exp)? ';' # returnStmt
-    ;
+stmt: assign | expStmt | block | ifStmt | whileStmt | break | continue | return;
 
-exp : addExp;
+assign: lVal '=' exp ';' ;
 
-cond : lOrExp;
+expStmt: exp? ';' ;
 
-lVal : Identifier ('[' exp ']')*;
+ifStmt: If '(' exp ')' stmt (Else stmt)? ;
 
-primaryExp
-    : '(' exp ')' # primaryExp1
-    | lVal # primaryExp2
-    | number # primaryExp3
-    ;
+whileStmt: While '(' exp ')' stmt ;
 
-number : IntLiteral | FloatLiteral;
+break: Break ';' ;
 
-unaryExp
-    : primaryExp # unary1
-    | Identifier '(' (funcRParams)? ')' # unary2
-    | unaryOp unaryExp # unary3
-    ;
+continue: Continue ';' ;
 
-unaryOp : '+' | '-' | '!';
+return: Return exp? ';' ;
 
-funcRParams : funcRParam (',' funcRParam)*;
+unaryOP: Add | Sub | Not ;
 
-funcRParam
-    : exp # expAsRParam
-    | STRING # stringAsRParam
-    ;
+op: Add | Sub | Not | Mul | Div | Mod | LAnd | LOr | Eq | Ne | Lt | Le | Gt | Ge ;
 
-mulExp
-    : unaryExp # mul1
-    | mulExp ('*' | '/' | '%') unaryExp # mul2
-    ;
+bType: Int | Float;
 
-addExp
-    : mulExp # add1
-    | addExp ('+' | '-') mulExp # add2
-    ;
-
-relExp
-    : addExp # rel1
-    | relExp ('<' | '>' | '<=' | '>=') addExp # rel2
-    ;
-eqExp
-    : relExp # eq1
-    | eqExp ('==' | '!=') relExp # eq2
-    ;
-
-lAndExp
-    : eqExp # lAnd1
-    | lAndExp '&&' eqExp # lAnd2
-    ;
-
-lOrExp
-    : lAndExp # lOr1
-    | lOrExp '||' lAndExp # lOr2
-    ;
-
-constExp
-    : addExp
-    ;
+funcType: Int | Float | Void;

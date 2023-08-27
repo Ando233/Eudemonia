@@ -23,7 +23,7 @@ public:
     }
 
     BasicBlock* build_basic_block(Function* parent_func);
-    Function* build_function(std::string name, std::string type, Module module);
+    Function* build_function(std::string name, std::string type, Module* module);
     ConversionInst* build_conversion_inst(Value* value, OP op, BasicBlock* bb);
 
 };

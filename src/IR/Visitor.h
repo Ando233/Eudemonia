@@ -14,14 +14,14 @@ namespace IR{
 
 class Visitor : public SysYBaseVisitor{
 private:
-    IR::Module ir_module;
+    IR::Module* ir_module;
 public:
-    explicit Visitor(IR::Module ir_module) : ir_module(std::move(ir_module)) {};
+    explicit Visitor(IR::Module* ir_module) : ir_module(ir_module) {};
 
     //  extend SysYBaseVisitor
-    antlrcpp::Any visitExp(SysYParser::ExpContext *ctx) override;
-    antlrcpp::Any visitReturnStmt(SysYParser::ReturnStmtContext *ctx) override;
-    antlrcpp::Any visitBlockItem(SysYParser::BlockItemContext *ctx) override;
+    antlrcpp::Any visitExp(SysYParser::ExpContext *ctx, bool is_const);
+    antlrcpp::Any visitReturn(SysYParser::ReturnContext *ctx) override;
+    antlrcpp::Any visitStmt(SysYParser::StmtContext *ctx) override;
     antlrcpp::Any visitBlock(SysYParser::BlockContext *ctx) override;
     antlrcpp::Any visitFuncDef(SysYParser::FuncDefContext *ctx) override;
     antlrcpp::Any visitCompUnit(SysYParser::CompUnitContext *ctx) override;

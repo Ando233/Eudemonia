@@ -250,8 +250,7 @@
 				149,
 				150,
 				151,
-				152,
-				153
+				152
 			]
 		}
 	],
@@ -445,8 +444,7 @@
 				149,
 				150,
 				151,
-				152,
-				153
+				152
 			]
 		}
 	],
@@ -461,12 +459,6 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/Frontend/SysYBaseListener.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
 			"path" : "src/Frontend/SysYBaseVisitor.cpp",
 			"sourceGroupIndex" : 0
 		},
@@ -474,12 +466,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/Frontend/SysYLexer.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/Frontend/SysYListener.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -1158,6 +1144,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "third_party/antlr4-runtime/dfa/LexerDFASerializer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "third_party/antlr4-runtime/internal/Synchronization.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

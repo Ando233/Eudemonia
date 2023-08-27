@@ -7,12 +7,6 @@
 },
 {
   "directory": "D:/Clion Projects/Eudemonia/cmake-build-debug",
-  "command": "D:\\PROGRA~2\\MSY2\\clang64\\bin\\CLANG_~1.EXE -I\"D:/Clion Projects/Eudemonia/src\" -I\"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime\" -g -fcolor-diagnostics --std=c++17 -O2 -o CMakeFiles\\compiler.dir\\src\\Frontend\\SysYBaseListener.cpp.obj -c \"D:\\Clion Projects\\Eudemonia\\src\\Frontend\\SysYBaseListener.cpp\"",
-  "file": "D:\\Clion Projects\\Eudemonia\\src\\Frontend\\SysYBaseListener.cpp",
-  "output": "CMakeFiles\\compiler.dir\\src\\Frontend\\SysYBaseListener.cpp.obj"
-},
-{
-  "directory": "D:/Clion Projects/Eudemonia/cmake-build-debug",
   "command": "D:\\PROGRA~2\\MSY2\\clang64\\bin\\CLANG_~1.EXE -I\"D:/Clion Projects/Eudemonia/src\" -I\"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime\" -g -fcolor-diagnostics --std=c++17 -O2 -o CMakeFiles\\compiler.dir\\src\\Frontend\\SysYBaseVisitor.cpp.obj -c \"D:\\Clion Projects\\Eudemonia\\src\\Frontend\\SysYBaseVisitor.cpp\"",
   "file": "D:\\Clion Projects\\Eudemonia\\src\\Frontend\\SysYBaseVisitor.cpp",
   "output": "CMakeFiles\\compiler.dir\\src\\Frontend\\SysYBaseVisitor.cpp.obj"
@@ -22,12 +16,6 @@
   "command": "D:\\PROGRA~2\\MSY2\\clang64\\bin\\CLANG_~1.EXE -I\"D:/Clion Projects/Eudemonia/src\" -I\"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime\" -g -fcolor-diagnostics --std=c++17 -O2 -o CMakeFiles\\compiler.dir\\src\\Frontend\\SysYLexer.cpp.obj -c \"D:\\Clion Projects\\Eudemonia\\src\\Frontend\\SysYLexer.cpp\"",
   "file": "D:\\Clion Projects\\Eudemonia\\src\\Frontend\\SysYLexer.cpp",
   "output": "CMakeFiles\\compiler.dir\\src\\Frontend\\SysYLexer.cpp.obj"
-},
-{
-  "directory": "D:/Clion Projects/Eudemonia/cmake-build-debug",
-  "command": "D:\\PROGRA~2\\MSY2\\clang64\\bin\\CLANG_~1.EXE -I\"D:/Clion Projects/Eudemonia/src\" -I\"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime\" -g -fcolor-diagnostics --std=c++17 -O2 -o CMakeFiles\\compiler.dir\\src\\Frontend\\SysYListener.cpp.obj -c \"D:\\Clion Projects\\Eudemonia\\src\\Frontend\\SysYListener.cpp\"",
-  "file": "D:\\Clion Projects\\Eudemonia\\src\\Frontend\\SysYListener.cpp",
-  "output": "CMakeFiles\\compiler.dir\\src\\Frontend\\SysYListener.cpp.obj"
 },
 {
   "directory": "D:/Clion Projects/Eudemonia/cmake-build-debug",
@@ -706,6 +694,12 @@
   "command": "D:\\PROGRA~2\\MSY2\\clang64\\bin\\CLANG_~1.EXE -I\"D:/Clion Projects/Eudemonia/src\" -I\"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime\" -g -fcolor-diagnostics --std=c++17 -O2 -o CMakeFiles\\compiler.dir\\third_party\\antlr4-runtime\\dfa\\LexerDFASerializer.cpp.obj -c \"D:\\Clion Projects\\Eudemonia\\third_party\\antlr4-runtime\\dfa\\LexerDFASerializer.cpp\"",
   "file": "D:\\Clion Projects\\Eudemonia\\third_party\\antlr4-runtime\\dfa\\LexerDFASerializer.cpp",
   "output": "CMakeFiles\\compiler.dir\\third_party\\antlr4-runtime\\dfa\\LexerDFASerializer.cpp.obj"
+},
+{
+  "directory": "D:/Clion Projects/Eudemonia/cmake-build-debug",
+  "command": "D:\\PROGRA~2\\MSY2\\clang64\\bin\\CLANG_~1.EXE -I\"D:/Clion Projects/Eudemonia/src\" -I\"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime\" -g -fcolor-diagnostics --std=c++17 -O2 -o CMakeFiles\\compiler.dir\\third_party\\antlr4-runtime\\internal\\Synchronization.cpp.obj -c \"D:\\Clion Projects\\Eudemonia\\third_party\\antlr4-runtime\\internal\\Synchronization.cpp\"",
+  "file": "D:\\Clion Projects\\Eudemonia\\third_party\\antlr4-runtime\\internal\\Synchronization.cpp",
+  "output": "CMakeFiles\\compiler.dir\\third_party\\antlr4-runtime\\internal\\Synchronization.cpp.obj"
 },
 {
   "directory": "D:/Clion Projects/Eudemonia/cmake-build-debug",

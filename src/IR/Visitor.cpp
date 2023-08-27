@@ -19,13 +19,14 @@ void register_lib_funcs(){
 
 }
 
-antlrcpp::Any Visitor::visitExp(SysYParser::ExpContext *ctx) {
+antlrcpp::Any Visitor::visitExp(SysYParser::ExpContext *ctx, bool is_const) {
+
     return nullptr;
 }
 
-antlrcpp::Any Visitor::visitReturnStmt(SysYParser::ReturnStmtContext *ctx) {
+antlrcpp::Any Visitor::visitReturn(SysYParser::ReturnContext *ctx) {
     if(ctx->exp()){
-        visitExp(ctx->exp());
+        visitExp(ctx->exp(), false);
 
 //        Type* CurType = CurValue->getType();
 //        Type* CurFuncType = CurFunction->getType();
@@ -35,13 +36,14 @@ antlrcpp::Any Visitor::visitReturnStmt(SysYParser::ReturnStmtContext *ctx) {
 //        else if(CurFuncType->isIntegerTy() && CurType->isFloatTy()){
 //            CurValue = f.build_conversion_inst(CurValue, OP::Ftoi, CurBasicBlock);
 //        }
-
     }
     return nullptr;
 }
 
-antlrcpp::Any Visitor::visitBlockItem(SysYParser::BlockItemContext *ctx) {
-    visitChildren(ctx);
+antlrcpp::Any Visitor::visitStmt(SysYParser::StmtContext *ctx) {
+    if(ctx->return_()){
+        visitReturn(ctx->return_());
+    }
     return nullptr;
 }
 
@@ -51,7 +53,7 @@ antlrcpp::Any Visitor::visitBlock(SysYParser::BlockContext *ctx) {
 }
 
 antlrcpp::Any Visitor::visitFuncDef(SysYParser::FuncDefContext *ctx) {
-    std::string ident = ctx->Identifier()->getText();
+    std::string ident = ctx->Ident()->getText();
     std::string type = ctx->funcType()->getText();
 
     CurFunction = f.build_function("@" + ident, type, ir_module);
@@ -66,7 +68,7 @@ antlrcpp::Any Visitor::visitCompUnit(SysYParser::CompUnitContext *ctx){
     std::list<Function*> functions;
     std::list<GlobalVar*> global_vars;
 
-    ir_module = *new Module(functions, global_vars);
+    ir_module = new Module(functions, global_vars);
 
     register_lib_funcs();
 

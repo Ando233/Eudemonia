@@ -4,7 +4,7 @@
 
 #include "IRBuildFactory.h"
 using OP = Instruction::OP;
-Function* IRBuildFactory::build_function(std::string name, std::string type, Module module){
+Function* IRBuildFactory::build_function(std::string name, std::string type, Module* module){
     Function* function;
     if(type == "int"){
         function = new Function(name, IntegerType::getI32Instance());
@@ -15,7 +15,7 @@ Function* IRBuildFactory::build_function(std::string name, std::string type, Mod
     else{
         function = new Function(name, VoidType::getInstance());
     }
-    module.add_function(function);
+    module->add_function(function);
     return function;
 }
 
