@@ -12,9 +12,7 @@ initVal: exp;
 
 initArray: '{' (initVal (',' initVal)* )? '}' ;
 
-exp: binaryExp;
-
-binaryExp: unaryExp (op unaryExp)* ;
+exp:  unaryExp (op unaryExp)* ;
 
 unaryExp: unaryOP* primaryExp ;
 

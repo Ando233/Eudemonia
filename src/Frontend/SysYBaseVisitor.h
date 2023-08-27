@@ -39,10 +39,6 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual std::any visitBinaryExp(SysYParser::BinaryExpContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
   virtual std::any visitUnaryExp(SysYParser::UnaryExpContext *ctx) override {
     return visitChildren(ctx);
   }

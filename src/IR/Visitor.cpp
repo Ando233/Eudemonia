@@ -19,7 +19,26 @@ void register_lib_funcs(){
 
 }
 
+antlrcpp::Any Visitor::visitPrimaryExp(SysYParser::PrimaryExpContext *ctx, bool is_const) {
+    if(ctx->number()){
+        SysYParser::NumberContext* num = ctx->number();
+        std::string num_string = ctx->number()->getText();
+        if(num->IntConst()){
+            int val = stoi(num_string);
+
+        }
+    }
+    return nullptr;
+}
+
+antlrcpp::Any Visitor::visitUnaryExp(SysYParser::UnaryExpContext *ctx, bool is_const) {
+    visitPrimaryExp(ctx->primaryExp(), is_const);
+    return nullptr;
+}
+
 antlrcpp::Any Visitor::visitExp(SysYParser::ExpContext *ctx, bool is_const) {
+    std::vector<SysYParser::UnaryExpContext *> unaryExps = ctx->unaryExp();
+    visitUnaryExp(unaryExps[0], is_const);
 
     return nullptr;
 }

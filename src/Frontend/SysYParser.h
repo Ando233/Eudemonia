@@ -24,11 +24,11 @@ public:
 
   enum {
     RuleCompUnit = 0, RuleDecl = 1, RuleDef = 2, RuleInitVal = 3, RuleInitArray = 4, 
-    RuleExp = 5, RuleBinaryExp = 6, RuleUnaryExp = 7, RulePrimaryExp = 8, 
-    RuleCall = 9, RuleNumber = 10, RuleLVal = 11, RuleFuncDef = 12, RuleFuncFParam = 13, 
-    RuleBlock = 14, RuleStmt = 15, RuleAssign = 16, RuleExpStmt = 17, RuleIfStmt = 18, 
-    RuleWhileStmt = 19, RuleBreak = 20, RuleContinue = 21, RuleReturn = 22, 
-    RuleUnaryOP = 23, RuleOp = 24, RuleBType = 25, RuleFuncType = 26
+    RuleExp = 5, RuleUnaryExp = 6, RulePrimaryExp = 7, RuleCall = 8, RuleNumber = 9, 
+    RuleLVal = 10, RuleFuncDef = 11, RuleFuncFParam = 12, RuleBlock = 13, 
+    RuleStmt = 14, RuleAssign = 15, RuleExpStmt = 16, RuleIfStmt = 17, RuleWhileStmt = 18, 
+    RuleBreak = 19, RuleContinue = 20, RuleReturn = 21, RuleUnaryOP = 22, 
+    RuleOp = 23, RuleBType = 24, RuleFuncType = 25
   };
 
   explicit SysYParser(antlr4::TokenStream *input);
@@ -54,7 +54,6 @@ public:
   class InitValContext;
   class InitArrayContext;
   class ExpContext;
-  class BinaryExpContext;
   class UnaryExpContext;
   class PrimaryExpContext;
   class CallContext;
@@ -168,19 +167,6 @@ public:
   public:
     ExpContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    BinaryExpContext *binaryExp();
-
-
-    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-   
-  };
-
-  ExpContext* exp();
-
-  class  BinaryExpContext : public antlr4::ParserRuleContext {
-  public:
-    BinaryExpContext(antlr4::ParserRuleContext *parent, size_t invokingState);
-    virtual size_t getRuleIndex() const override;
     std::vector<UnaryExpContext *> unaryExp();
     UnaryExpContext* unaryExp(size_t i);
     std::vector<OpContext *> op();
@@ -191,7 +177,7 @@ public:
    
   };
 
-  BinaryExpContext* binaryExp();
+  ExpContext* exp();
 
   class  UnaryExpContext : public antlr4::ParserRuleContext {
   public:

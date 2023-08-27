@@ -31,8 +31,6 @@ public:
 
     virtual std::any visitExp(SysYParser::ExpContext *context) = 0;
 
-    virtual std::any visitBinaryExp(SysYParser::BinaryExpContext *context) = 0;
-
     virtual std::any visitUnaryExp(SysYParser::UnaryExpContext *context) = 0;
 
     virtual std::any visitPrimaryExp(SysYParser::PrimaryExpContext *context) = 0;

@@ -19,6 +19,8 @@ public:
     explicit Visitor(IR::Module* ir_module) : ir_module(ir_module) {};
 
     //  extend SysYBaseVisitor
+    antlrcpp::Any visitPrimaryExp(SysYParser::PrimaryExpContext *ctx, bool is_const);
+    antlrcpp::Any visitUnaryExp(SysYParser::UnaryExpContext *ctx, bool is_const);
     antlrcpp::Any visitExp(SysYParser::ExpContext *ctx, bool is_const);
     antlrcpp::Any visitReturn(SysYParser::ReturnContext *ctx) override;
     antlrcpp::Any visitStmt(SysYParser::StmtContext *ctx) override;
