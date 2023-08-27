@@ -34,6 +34,7 @@ public:
     void add_bb(BasicBlock* bb) {
         bbs->add(bb->get_node());
     }
+    void dump(std::ofstream& out);
 };
 }
 

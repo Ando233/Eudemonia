@@ -5,9 +5,12 @@
 #ifndef EUDEMONIA_INSTRUCTION_H
 #define EUDEMONIA_INSTRUCTION_H
 
+#include <fstream>
+#include <utility>
 #include "Value.h"
 #include "Use.h"
 #include "Support/IList.h"
+
 
 namespace IR {
 class BasicBlock;
@@ -73,7 +76,7 @@ protected:
     OperandList operands;
 
 public:
-    Instruction(std::string _name, Type* _type, OP op) : Value(_name, _type), op(op){
+    Instruction(std::string _name, Type* _type, OP op) : Value(std::move(_name), _type), op(op){
         node = new InstNode(this);
     }
     InstNode* get_node(){
@@ -81,6 +84,7 @@ public:
     }
     void add_operand(Value* _value);
     OperandList& get_operands() { return operands; }
+    virtual void dump(std::ofstream& out) {}
 };
 
 //  Return Inst
@@ -90,6 +94,18 @@ public:
         add_operand(value);
     }
     RetInst() : Instruction("", VoidType::getInstance(), OP::Ret) {}
+    Value* get_value(){
+        if(operands.empty()) return nullptr;
+        return operands[0]->get_value();
+    }
+
+    void dump(std::ofstream& out) override {
+        out << "return";
+        if(!operands.empty()){
+            out << " " + get_value()->getName() << "\n";
+        }
+    }
+
 };
 
 
@@ -99,7 +115,9 @@ public:
     ConversionInst(Value* value, Type* type, OP op) : Instruction("%" + std::to_string(++Value::val_num), type, op){
         add_operand(value);
     }
-
+    void dump(std::ofstream& out) override{
+        out << "conversion" << "\n";
+    }
 };
 
 };

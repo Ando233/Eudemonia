@@ -42,6 +42,7 @@ public:
     void add_inst_to_head(Instruction* inst) {
         insts->add_to_head(inst->get_node());
     }
+    void dump(std::ofstream& out);
 
 };
 

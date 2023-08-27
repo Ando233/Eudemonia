@@ -22,14 +22,12 @@ public:
     static int val_num;
     Value(std::string _name, Type* _type) : name(std::move(_name)), type(_type) {}
     std::string getName() { return name; }
-    Type* getType() { return type; }
-    void setType(Type* _type) { type = _type; }
-    void setName(std::string _name) { name = _name; }
-    void addUse(std::shared_ptr<Use> use) { uses.push_back(use); }
-    void removeUse(const std::shared_ptr<Use>& use) { uses.remove(use); }
+    Type* get_type() { return type; }
+    void set_type(Type* _type) { type = _type; }
+    void set_name(std::string _name) { name = std::move(_name); }
+    void add_use(std::shared_ptr<Use> use) { uses.push_back(use); }
+    void remove_use(const std::shared_ptr<Use>& use) { uses.remove(use); }
     std::list<std::shared_ptr<Use>>& getUses() { return uses; };
-    void replaceAllUseWith(Value* value);
-    void removeAllUseWith();
 };
 }
 

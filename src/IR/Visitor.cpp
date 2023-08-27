@@ -47,8 +47,8 @@ antlrcpp::Any Visitor::visitReturn(SysYParser::ReturnContext *ctx) {
     if(ctx->exp()){
         visitExp(ctx->exp(), false);
 
-        Type* CurType = CurValue->getType();
-        Type* CurFuncType = CurFunction->getType();
+        Type* CurType = CurValue->get_type();
+        Type* CurFuncType = CurFunction->get_type();
         if(CurType->is_integer_type() && CurFuncType->is_float_type()){
             CurValue = f.build_conversion_inst(CurValue, OP::Itof, CurBasicBlock);
         }
@@ -80,7 +80,7 @@ antlrcpp::Any Visitor::visitFuncDef(SysYParser::FuncDefContext *ctx) {
     std::string ident = ctx->Ident()->getText();
     std::string type = ctx->funcType()->getText();
 
-    CurFunction = f.build_function("@" + ident, type, ir_module);
+    CurFunction = f.build_function(ident, type, ir_module);
 
     CurBasicBlock = f.build_basic_block(CurFunction);
     visitBlock(ctx->block());
@@ -89,11 +89,6 @@ antlrcpp::Any Visitor::visitFuncDef(SysYParser::FuncDefContext *ctx) {
 }
 
 antlrcpp::Any Visitor::visitCompUnit(SysYParser::CompUnitContext *ctx){
-    std::list<Function*> functions;
-    std::list<GlobalVar*> global_vars;
-
-    ir_module = new Module(functions, global_vars);
-
     visitChildren(ctx);
 
     return nullptr;

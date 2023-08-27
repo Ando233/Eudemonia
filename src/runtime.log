@@ -1,8 +1,2 @@
-Begin Lex!
-End Lex!
-Begin Parse!
-End Parse!
-Begin Visit!
-End Visit!
 Finished compile!
-Total compile time: 0.00113 second
+Total compile time: 0.00096 second

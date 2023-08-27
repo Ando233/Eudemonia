@@ -18,9 +18,12 @@ private:
     FuncList functions;
     GlobalVarList global_vars;
 public:
-    Module() = default;
-    Module(FuncList funcs, GlobalVarList gvs) : functions(std::move(funcs)), global_vars(std::move(gvs)) {};
+    Module(){
+
+    }
     void add_function(Function* function){ functions.push_back(function); }
+    FuncList get_functions(){ return functions; }
+    void dump(std::ofstream& out);
 };
 }
 

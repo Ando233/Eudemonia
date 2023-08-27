@@ -143,6 +143,40 @@ public:
         return tail->get_value();
     }
     bool is_empty() { return (head == nullptr) && (tail == nullptr) && (size == 0); }
+
+    //  自定义iterator
+    class iterator{
+    private:
+        INode<N, L>* node;
+    public:
+        explicit iterator(INode<N, L>* _node) : node(_node) {}
+        N operator *(){
+            return node->get_value();
+        }
+
+        iterator operator ++(){
+            node = node->get_next();
+            return *this;
+        }
+
+        bool operator ==(iterator other){
+            return node == other.node;
+        }
+
+        bool operator !=(iterator other){
+            return node != other.node;
+        }
+    };
+
+    iterator begin(){
+        return iterator(head);
+    }
+
+    iterator end(){
+        return iterator(nullptr);
+    }
+
+
 };
 
 #endif //EUDEMONIA_ILIST_H

@@ -3,3 +3,13 @@
 //
 
 #include "Module.h"
+using namespace IR;
+
+#include <fstream>
+
+void Module::dump(std::ofstream& out) {
+    for(auto func : functions){
+        func->dump(out);
+        out << '\n';
+    }
+}

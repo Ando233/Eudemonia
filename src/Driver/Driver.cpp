@@ -19,29 +19,25 @@ void Driver::run(){
     parse_args(argc, argv);
 
     std::ifstream source(Config::input_file_name);
-    std::ofstream ir(Config::ir_file_name);
+    std::ofstream ir_out(Config::ir_file_name);
     std::ofstream obj(Config::obj_file_name);
     std::ofstream log(Config::log_file_name);
 
     auto begin = std::chrono::high_resolution_clock::now();
     //  Lexer & Parser
-    log << "Begin Lex!\n";
     antlr4::ANTLRInputStream input(source);
     SysYLexer lexer(&input);
-    log << "End Lex!\n";
-
-    log << "Begin Parse!\n";
     antlr4::CommonTokenStream tokens(&lexer);
     SysYParser parser(&tokens);
-    log << "End Parse!\n";
 
     //  Visitor
-    log << "Begin Visit!\n";
     auto root = parser.compUnit();
     IR::Module ir_module;
     IR::Visitor visitor(&ir_module);
     visitor.visitCompUnit(root);
-    log << "End Visit!\n";
+
+    //  IR Optimize & Dump
+    ir_module.dump(ir_out);
 
     auto end = std::chrono::high_resolution_clock::now();
     auto elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin);

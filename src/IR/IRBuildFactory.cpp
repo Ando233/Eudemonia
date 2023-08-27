@@ -5,6 +5,7 @@
 #include "IRBuildFactory.h"
 using OP = Instruction::OP;
 
+
 RetInst* IRBuildFactory::build_ret_inst(BasicBlock* bb){
     auto ret_inst = new RetInst();
     bb->add_inst(ret_inst);
