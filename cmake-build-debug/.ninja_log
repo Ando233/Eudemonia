@@ -482,3 +482,19 @@
 49	3439	7148290700473624	CMakeFiles/compiler.dir/src/IR/Visitor.cpp.obj	bd62778f9d4cd586
 57	3554	7148290701644052	CMakeFiles/compiler.dir/src/Driver/Driver.cpp.obj	132db7975edadd68
 3554	3915	7148290705014393	D:/Clion Projects/Eudemonia/src/compiler.exe	578edccb4b48e8c4
+40	4248	7148298190547456	CMakeFiles/compiler.dir/src/IR/Function.cpp.obj	ab8dfcc65b03dec2
+102	4507	7148298192557451	CMakeFiles/compiler.dir/src/IR/Module.cpp.obj	d25c69d670304ece
+30	4755	7148298196547460	CMakeFiles/compiler.dir/src/IR/BasicBlock.cpp.obj	d323f5d62a749b53
+88	4855	7148298197317455	CMakeFiles/compiler.dir/src/IR/Instruction.cpp.obj	6fac1bcc143dc
+60	4938	7148298198507463	CMakeFiles/compiler.dir/src/IR/IRBuildFactory.cpp.obj	e18e9f24f0cb7333
+119	6108	7148298210327428	CMakeFiles/compiler.dir/src/IR/Visitor.cpp.obj	bd62778f9d4cd586
+141	6270	7148298211907438	CMakeFiles/compiler.dir/src/Driver/Driver.cpp.obj	132db7975edadd68
+6271	6746	7148298216377448	D:/Clion Projects/Eudemonia/src/compiler.exe	578edccb4b48e8c4
+19	8329	7148298780533494	CMakeFiles/compiler.dir/src/IR/BasicBlock.cpp.obj	d323f5d62a749b53
+26	8484	7148298780583497	CMakeFiles/compiler.dir/src/IR/Function.cpp.obj	ab8dfcc65b03dec2
+47	8814	7148298785415555	CMakeFiles/compiler.dir/src/IR/Instruction.cpp.obj	6fac1bcc143dc
+32	8819	7148298785795546	CMakeFiles/compiler.dir/src/IR/Module.cpp.obj	d25c69d670304ece
+39	8840	7148298787335556	CMakeFiles/compiler.dir/src/IR/IRBuildFactory.cpp.obj	e18e9f24f0cb7333
+55	10317	7148298803842724	CMakeFiles/compiler.dir/src/IR/Visitor.cpp.obj	bd62778f9d4cd586
+64	10532	7148298805992776	CMakeFiles/compiler.dir/src/Driver/Driver.cpp.obj	132db7975edadd68
+10533	11054	7148298810912745	D:/Clion Projects/Eudemonia/src/compiler.exe	578edccb4b48e8c4

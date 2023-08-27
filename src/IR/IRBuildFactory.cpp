@@ -6,7 +6,7 @@
 using OP = Instruction::OP;
 
 RetInst* IRBuildFactory::build_ret_inst(Value* value, BasicBlock* bb){
-    RetInst* ret_inst = new RetInst(value);
+    auto ret_inst = new RetInst(value, bb);
     bb->add_inst(ret_inst);
     return ret_inst;
 }
@@ -52,7 +52,7 @@ ConversionInst* IRBuildFactory::build_conversion_inst(Value* value, OP op, Basic
         type = PointerType::getI32PtrInstance();
     }
 
-    auto conversion_inst = new ConversionInst(value, type, op);
+    auto conversion_inst = new ConversionInst(value, type, op, bb);
     bb->add_inst(conversion_inst);
     return conversion_inst;
 }

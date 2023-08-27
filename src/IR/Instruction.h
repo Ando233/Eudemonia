@@ -70,10 +70,14 @@ protected:
     OperandList operands;
 
 public:
-    Instruction(std::string _name, Type* _type, std::vector<Value*> _operands, OP op);
-    Instruction(std::string _name, Type* _type, OP op) : Value(_name, _type), op(op) {}
+    Instruction(std::string _name, Type* _type, OP op, BasicBlock* bb) : Value(_name, _type), op(op), parent_bb(bb) {}
     void add_operand(Value* _value);
     OperandList& get_operands() { return operands; }
+    BasicBlock* get_parent_bb(){
+        return parent_bb;
+    };
+
+public:
     void replace_operand(unsigned index, Value* _value);
     void remove_operand(const std::shared_ptr<Use>& use);
 };
@@ -81,7 +85,7 @@ public:
 //  Return Inst
 class RetInst : public Instruction{
 public:
-    RetInst(Value* value) : Instruction("", VoidType::getInstance(), OP::Ret){
+    RetInst(Value* value, BasicBlock* bb) : Instruction("", VoidType::getInstance(), OP::Ret, bb){
         add_operand(value);
     }
 };
@@ -90,7 +94,7 @@ public:
 //  Conversion Inst
 class ConversionInst : public Instruction{
 public:
-    ConversionInst(Value* value, Type* type, OP op) : Instruction("", type, op){
+    ConversionInst(Value* value, Type* type, OP op, BasicBlock* bb) : Instruction("", type, op, bb){
         add_operand(value);
     }
 
