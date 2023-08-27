@@ -3,3 +3,6 @@
 //
 
 #include "BasicBlock.h"
+using namespace IR;
+
+int BasicBlock::block_num = -1;

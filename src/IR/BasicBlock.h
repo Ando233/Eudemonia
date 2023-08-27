@@ -21,8 +21,8 @@ private:
 
 public:
     static int block_num;
-    BasicBlock() : Value("", LabelType::getInstance()) {}
-    BasicBlock(Function* func) : Value("", LabelType::getInstance()), parent_func(func) {}
+    BasicBlock() : Value("block" + std::to_string(++BasicBlock::block_num), LabelType::getInstance()) {}
+    BasicBlock(Function* func) : Value("block" + std::to_string(++BasicBlock::block_num), LabelType::getInstance()), parent_func(func) {}
     std::list<Instruction*>& getInsts() { return instructions; }
     using iterator = std::list<Instruction*>::iterator;
     using reverse_iterator = std::list<Instruction*>::reverse_iterator;

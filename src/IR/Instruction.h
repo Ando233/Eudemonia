@@ -94,7 +94,7 @@ public:
 //  Conversion Inst
 class ConversionInst : public Instruction{
 public:
-    ConversionInst(Value* value, Type* type, OP op, BasicBlock* bb) : Instruction("", type, op, bb){
+    ConversionInst(Value* value, Type* type, OP op, BasicBlock* bb) : Instruction("%" + std::to_string(++Value::val_num), type, op, bb){
         add_operand(value);
     }
 

@@ -3,3 +3,6 @@
 //
 
 #include "Value.h"
+using namespace IR;
+
+int Value::val_num = -1;

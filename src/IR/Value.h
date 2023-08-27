@@ -31,7 +31,6 @@ public:
     void replaceAllUseWith(Value* value);
     void removeAllUseWith();
 };
-
 }
 
 #endif //EUDEMONIA_VALUE_H
