@@ -4,6 +4,21 @@
 
 #include "IRBuildFactory.h"
 using OP = Instruction::OP;
+
+RetInst* IRBuildFactory::build_ret_inst(Value* value, BasicBlock* bb){
+    RetInst* ret_inst = new RetInst(value);
+    bb->add_inst(ret_inst);
+    return ret_inst;
+}
+
+ConstFloat* IRBuildFactory::build_number(float val){
+    return new ConstFloat(val);
+}
+
+ConstInt* IRBuildFactory::build_number(int val){
+    return new ConstInt(val, IntegerType::getI32Instance());
+}
+
 Function* IRBuildFactory::build_function(std::string name, std::string type, Module* module){
     Function* function;
     if(type == "int"){

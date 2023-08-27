@@ -78,6 +78,14 @@ public:
     void remove_operand(const std::shared_ptr<Use>& use);
 };
 
+//  Return Inst
+class RetInst : public Instruction{
+public:
+    RetInst(Value* value) : Instruction("", VoidType::getInstance(), OP::Ret){
+        add_operand(value);
+    }
+};
+
 
 //  Conversion Inst
 class ConversionInst : public Instruction{

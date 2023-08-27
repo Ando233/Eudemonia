@@ -25,7 +25,11 @@ antlrcpp::Any Visitor::visitPrimaryExp(SysYParser::PrimaryExpContext *ctx, bool 
         std::string num_string = ctx->number()->getText();
         if(num->IntConst()){
             int val = stoi(num_string);
-
+            CurValue = f.build_number(val);
+        }
+        else if(num->FloatConst()){
+            float val = stof(num_string);
+            CurValue = f.build_number(val);
         }
     }
     return nullptr;
@@ -47,14 +51,16 @@ antlrcpp::Any Visitor::visitReturn(SysYParser::ReturnContext *ctx) {
     if(ctx->exp()){
         visitExp(ctx->exp(), false);
 
-//        Type* CurType = CurValue->getType();
-//        Type* CurFuncType = CurFunction->getType();
-//        if(CurType->isIntegerTy() && CurFuncType->isFloatTy()){
-//            CurValue = f.build_conversion_inst(CurValue, OP::Itof, CurBasicBlock);
-//        }
-//        else if(CurFuncType->isIntegerTy() && CurType->isFloatTy()){
-//            CurValue = f.build_conversion_inst(CurValue, OP::Ftoi, CurBasicBlock);
-//        }
+        Type* CurType = CurValue->getType();
+        Type* CurFuncType = CurFunction->getType();
+        if(CurType->isIntegerTy() && CurFuncType->isFloatTy()){
+            CurValue = f.build_conversion_inst(CurValue, OP::Itof, CurBasicBlock);
+        }
+        else if(CurFuncType->isIntegerTy() && CurType->isFloatTy()){
+            CurValue = f.build_conversion_inst(CurValue, OP::Ftoi, CurBasicBlock);
+        }
+
+        CurValue = f.build_ret_inst(CurValue, CurBasicBlock);
     }
     return nullptr;
 }
