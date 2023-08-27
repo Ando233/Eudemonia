@@ -6,7 +6,7 @@
 using OP = Instruction::OP;
 
 RetInst* IRBuildFactory::build_ret_inst(Value* value, BasicBlock* bb){
-    auto ret_inst = new RetInst(value, bb);
+    auto ret_inst = new RetInst(value);
     bb->add_inst(ret_inst);
     return ret_inst;
 }
@@ -35,7 +35,7 @@ Function* IRBuildFactory::build_function(std::string name, std::string type, Mod
 }
 
 BasicBlock* IRBuildFactory::build_basic_block(IR::Function *parent_func) {
-    auto bb = new BasicBlock(parent_func);
+    auto bb = new BasicBlock();
     parent_func->add_bb(bb);
     return bb;
 }
@@ -52,7 +52,7 @@ ConversionInst* IRBuildFactory::build_conversion_inst(Value* value, OP op, Basic
         type = PointerType::getI32PtrInstance();
     }
 
-    auto conversion_inst = new ConversionInst(value, type, op, bb);
+    auto conversion_inst = new ConversionInst(value, type, op);
     bb->add_inst(conversion_inst);
     return conversion_inst;
 }

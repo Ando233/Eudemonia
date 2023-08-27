@@ -9,6 +9,7 @@
 #include "Value.h"
 #include "Instruction.h"
 #include "BasicBlock.h"
+#include "Support/IList.h"
 
 namespace IR {
 
@@ -21,15 +22,18 @@ public:
 class Function : public Value {
 private:
     using ArgList = std::vector<std::unique_ptr<Argument>>;
-    using BbList = std::list<BasicBlock*>;
+    using BbList = IList<BasicBlock*, Function*>;
     ArgList args;
-    BbList bbs;
+    BbList* bbs;
 
 public:
-    Function(std::string _name, Type* _type) : Value(std::move(_name), _type) {};
-    ArgList& get_args() { return args; }
-    BbList& get_bbs(){ return bbs; }
-    void add_bb(BasicBlock* bb) { bbs.push_back(bb); }
+    Function(std::string _name, Type* _type) : Value(std::move(_name), _type) {
+        bbs = new BbList(this);
+    };
+    BbList* get_bbs(){ return bbs; }
+    void add_bb(BasicBlock* bb) {
+        bbs->add(bb->get_node());
+    }
 };
 }
 

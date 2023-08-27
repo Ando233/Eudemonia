@@ -7,37 +7,44 @@
 
 #include <iostream>
 #include <list>
-
+#include "Support/IList.h"
 #include "Value.h"
 #include "Instruction.h"
 
 namespace IR {
 class Function;
 
+using BbNode = INode<BasicBlock*, Function*>;
+using InstList = IList<Instruction*, BasicBlock*>;
 class BasicBlock : public Value {
 private:
-    Function* parent_func;
-    std::list<Instruction*> instructions;
+    BbNode* node;
+    InstList* insts;
 
 public:
     static int block_num;
-    BasicBlock() : Value("block" + std::to_string(++BasicBlock::block_num), LabelType::getInstance()) {}
-    BasicBlock(Function* func) : Value("block" + std::to_string(++BasicBlock::block_num), LabelType::getInstance()), parent_func(func) {}
-    std::list<Instruction*>& getInsts() { return instructions; }
-    using iterator = std::list<Instruction*>::iterator;
-    using reverse_iterator = std::list<Instruction*>::reverse_iterator;
-    iterator begin() { return instructions.begin(); }
-    iterator end() { return instructions.end(); }
-    reverse_iterator rbegin() { return instructions.rbegin(); }
-    reverse_iterator rend() { return instructions.rend(); }
+    BasicBlock() : Value("block" + std::to_string(++BasicBlock::block_num), LabelType::getInstance()) {
+        node = new BbNode(this);
+        insts = new InstList(this);
+    }
+    BbNode* get_node(){
+        return node;
+    };
+    Function* get_parent_func(){
+        return node->get_parent()->get_value();
+    }
 
-    void add_inst(Instruction* instr) { instructions.push_back(instr); }
-    void add_inst_to_head(Instruction* instr) { instructions.push_front(instr); }
-    Function* get_parent(){return parent_func;}
+    InstList* get_insts() { return insts; }
 
-public:
-    void insert_before_terminal(Instruction* instr);
+    void add_inst(Instruction* inst) {
+        insts->add(inst->get_node());
+    }
+    void add_inst_to_head(Instruction* inst) {
+        insts->add_to_head(inst->get_node());
+    }
+
 };
+
 }
 
 

@@ -15,10 +15,6 @@ BasicBlock* CurBasicBlock;
 
 IRBuildFactory f = IRBuildFactory::getInstance();
 
-void register_lib_funcs(){
-
-}
-
 antlrcpp::Any Visitor::visitPrimaryExp(SysYParser::PrimaryExpContext *ctx, bool is_const) {
     if(ctx->number()){
         SysYParser::NumberContext* num = ctx->number();
@@ -94,8 +90,6 @@ antlrcpp::Any Visitor::visitCompUnit(SysYParser::CompUnitContext *ctx){
     std::list<GlobalVar*> global_vars;
 
     ir_module = new Module(functions, global_vars);
-
-    register_lib_funcs();
 
     visitChildren(ctx);
 

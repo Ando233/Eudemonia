@@ -7,11 +7,14 @@
 
 #include "Value.h"
 #include "Use.h"
+#include "Support/IList.h"
 
 namespace IR {
 class BasicBlock;
 
+using InstNode = INode<Instruction*, BasicBlock*>;
 class Instruction : public Value {
+
 public:
     enum OP{
         Add,
@@ -63,29 +66,27 @@ public:
 
 private:
     OP op;
-    BasicBlock* parent_bb;
+    InstNode* node;
 
 protected:
     using OperandList = std::vector<std::shared_ptr<Use>>;
     OperandList operands;
 
 public:
-    Instruction(std::string _name, Type* _type, OP op, BasicBlock* bb) : Value(_name, _type), op(op), parent_bb(bb) {}
+    Instruction(std::string _name, Type* _type, OP op) : Value(_name, _type), op(op){
+        node = new InstNode(this);
+    }
+    InstNode* get_node(){
+        return node;
+    }
     void add_operand(Value* _value);
     OperandList& get_operands() { return operands; }
-    BasicBlock* get_parent_bb(){
-        return parent_bb;
-    };
-
-public:
-    void replace_operand(unsigned index, Value* _value);
-    void remove_operand(const std::shared_ptr<Use>& use);
 };
 
 //  Return Inst
 class RetInst : public Instruction{
 public:
-    RetInst(Value* value, BasicBlock* bb) : Instruction("", VoidType::getInstance(), OP::Ret, bb){
+    explicit RetInst(Value* value) : Instruction("", VoidType::getInstance(), OP::Ret){
         add_operand(value);
     }
 };
@@ -94,7 +95,7 @@ public:
 //  Conversion Inst
 class ConversionInst : public Instruction{
 public:
-    ConversionInst(Value* value, Type* type, OP op, BasicBlock* bb) : Instruction("%" + std::to_string(++Value::val_num), type, op, bb){
+    ConversionInst(Value* value, Type* type, OP op) : Instruction("%" + std::to_string(++Value::val_num), type, op){
         add_operand(value);
     }
 
