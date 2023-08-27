@@ -19,6 +19,7 @@ protected:
     Type* type;
     std::list<std::shared_ptr<Use>> uses;
 public:
+    static int val_num;
     Value(std::string _name, Type* _type) : name(std::move(_name)), type(_type) {}
     std::string getName() { return name; }
     Type* getType() { return type; }
@@ -29,7 +30,6 @@ public:
     std::list<std::shared_ptr<Use>>& getUses() { return uses; };
     void replaceAllUseWith(Value* value);
     void removeAllUseWith();
-    virtual std::string to_string();
 };
 
 }

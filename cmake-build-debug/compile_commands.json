@@ -61,6 +61,12 @@
 },
 {
   "directory": "D:/Clion Projects/Eudemonia/cmake-build-debug",
+  "command": "D:\\PROGRA~2\\MSY2\\clang64\\bin\\CLANG_~1.EXE -I\"D:/Clion Projects/Eudemonia/src\" -I\"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime\" -g -fcolor-diagnostics --std=c++17 -O2 -o CMakeFiles\\compiler.dir\\src\\IR\\GlobalVar.cpp.obj -c \"D:\\Clion Projects\\Eudemonia\\src\\IR\\GlobalVar.cpp\"",
+  "file": "D:\\Clion Projects\\Eudemonia\\src\\IR\\GlobalVar.cpp",
+  "output": "CMakeFiles\\compiler.dir\\src\\IR\\GlobalVar.cpp.obj"
+},
+{
+  "directory": "D:/Clion Projects/Eudemonia/cmake-build-debug",
   "command": "D:\\PROGRA~2\\MSY2\\clang64\\bin\\CLANG_~1.EXE -I\"D:/Clion Projects/Eudemonia/src\" -I\"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime\" -g -fcolor-diagnostics --std=c++17 -O2 -o CMakeFiles\\compiler.dir\\src\\IR\\IRBuildFactory.cpp.obj -c \"D:\\Clion Projects\\Eudemonia\\src\\IR\\IRBuildFactory.cpp\"",
   "file": "D:\\Clion Projects\\Eudemonia\\src\\IR\\IRBuildFactory.cpp",
   "output": "CMakeFiles\\compiler.dir\\src\\IR\\IRBuildFactory.cpp.obj"
@@ -100,12 +106,6 @@
   "command": "D:\\PROGRA~2\\MSY2\\clang64\\bin\\CLANG_~1.EXE -I\"D:/Clion Projects/Eudemonia/src\" -I\"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime\" -g -fcolor-diagnostics --std=c++17 -O2 -o CMakeFiles\\compiler.dir\\src\\IR\\Visitor.cpp.obj -c \"D:\\Clion Projects\\Eudemonia\\src\\IR\\Visitor.cpp\"",
   "file": "D:\\Clion Projects\\Eudemonia\\src\\IR\\Visitor.cpp",
   "output": "CMakeFiles\\compiler.dir\\src\\IR\\Visitor.cpp.obj"
-},
-{
-  "directory": "D:/Clion Projects/Eudemonia/cmake-build-debug",
-  "command": "D:\\PROGRA~2\\MSY2\\clang64\\bin\\CLANG_~1.EXE -I\"D:/Clion Projects/Eudemonia/src\" -I\"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime\" -g -fcolor-diagnostics --std=c++17 -O2 -o CMakeFiles\\compiler.dir\\src\\Support\\Diagnostics.cpp.obj -c \"D:\\Clion Projects\\Eudemonia\\src\\Support\\Diagnostics.cpp\"",
-  "file": "D:\\Clion Projects\\Eudemonia\\src\\Support\\Diagnostics.cpp",
-  "output": "CMakeFiles\\compiler.dir\\src\\Support\\Diagnostics.cpp.obj"
 },
 {
   "directory": "D:/Clion Projects/Eudemonia/cmake-build-debug",

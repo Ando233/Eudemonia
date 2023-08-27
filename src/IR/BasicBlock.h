@@ -20,9 +20,10 @@ private:
     std::list<Instruction*> instructions;
 
 public:
-    BasicBlock(const std::string name) : Value(name, LabelType::getInstance()) {}
-    BasicBlock(const std::string name, Function* func) : Value(name, LabelType::getInstance()), parent_func(func) {}
-    std::list<Instruction*>& getInstructions() { return instructions; }
+    static int block_num;
+    BasicBlock() : Value("", LabelType::getInstance()) {}
+    BasicBlock(Function* func) : Value("", LabelType::getInstance()), parent_func(func) {}
+    std::list<Instruction*>& getInsts() { return instructions; }
     using iterator = std::list<Instruction*>::iterator;
     using reverse_iterator = std::list<Instruction*>::reverse_iterator;
     iterator begin() { return instructions.begin(); }
@@ -30,12 +31,11 @@ public:
     reverse_iterator rbegin() { return instructions.rbegin(); }
     reverse_iterator rend() { return instructions.rend(); }
 
-    void insert_back(Instruction* instr) { instructions.push_back(instr); }
-    void insert_front(Instruction* instr) { instructions.push_front(instr); }
+    void add_inst(Instruction* instr) { instructions.push_back(instr); }
+    void add_inst_to_head(Instruction* instr) { instructions.push_front(instr); }
     Function* get_parent(){return parent_func;}
 
 public:
-    std::string to_string() override;
     void insert_before_terminal(Instruction* instr);
 };
 }

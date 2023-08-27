@@ -76,6 +76,22 @@ private:
     FloatType() : Type(FloatTyID) {}
 };
 
+class PointerType : public Type{
+public:
+    static PointerType* getI32PtrInstance(){
+        static PointerType i32_ptr_instance(IntegerType::getI32Instance());
+        return &i32_ptr_instance;
+    }
+    static PointerType* getF32PtrInstance(){
+        static PointerType f32_ptr_instance(FloatType::getInstance());
+        return &f32_ptr_instance;
+    }
+private:
+    Type* eleType;
+    explicit PointerType(Type* eleType) : Type(PointerTyID), eleType(eleType) {}
+
+};
+
 //  VoidType
 class VoidType : public Type{
 public:

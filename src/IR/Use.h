@@ -15,14 +15,25 @@ private:
     Instruction* user;
     int operand_pos;
 public:
-    Use(Value* _value = nullptr, Instruction* _user = nullptr, unsigned _operandPos = 0);
-    Use(const Use& use);
-    Value* getValue();
-    Instruction* getUser();
-    void setValue(Value* _value );
-    void setUser(Instruction* _user);
-    unsigned getPos() { return operand_pos; }
-    void reSetPos(unsigned x) { operand_pos = x; }
+    Use(Value* _value, Instruction* _user, int _operandPos) : value(_value), user(_user), operand_pos(_operandPos) {}
+    Value* get_value(){
+        return value;
+    };
+    Instruction* get_user(){
+        return user;
+    };
+    void set_value(Value* _value){
+        value = _value;
+    };
+    void set_user(Instruction* _user){
+        user = _user;
+    };
+    int get_operand_pos() {
+        return operand_pos;
+    }
+    void set_operand_pos(int x) {
+        operand_pos = x;
+    }
 };
 
 }

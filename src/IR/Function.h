@@ -24,13 +24,12 @@ private:
     using BbList = std::list<BasicBlock*>;
     ArgList args;
     BbList bbs;
-    Type* retType;
 
 public:
-    Function(std::string _name, Type* _type) : Value(_name, _type) {};
-    ArgList& getArgs() { return args; }
-    BbList& getBbs(){ return bbs; }
-    Type* getRetType() { return retType; }
+    Function(std::string _name, Type* _type) : Value(std::move(_name), _type) {};
+    ArgList& get_args() { return args; }
+    BbList& get_bbs(){ return bbs; }
+    void add_bb(BasicBlock* bb) { bbs.push_back(bb); }
 };
 }
 
