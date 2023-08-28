@@ -1,5 +1,6 @@
 int main() {
 block0:
-	return 142
+	conversion
+	return %0
 }
 

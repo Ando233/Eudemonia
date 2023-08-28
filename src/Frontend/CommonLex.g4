@@ -42,34 +42,23 @@ Gt : '>';
 Ge : '>=';
 
 
-// integer
-IntConst
-    : [0-9]+ 
-    | '0x' [0-9a-fA-F]+ 
-    | '0X' [0-9a-fA-F]+ 
-    ;
-
 // float
-HexadecimalDigits
-    : '0x' [0-9a-fA-F]+ 
-    | '0X' [0-9a-fA-F]+
-    ;
+FloatConst: DecimalFloatConst | HexadecimalFloatConst;
 
-ExponentPart
-    : [eE] [+-] [0-9]+
-    ;
+DecimalFloatConst:
+	[0-9]* '.' [0-9]+
+	| ([0-9]* '.' [0-9]+ | [0-9]+ '.') ([eE] [+-]? [0-9]+)?
+	| [0-9]+ [eE] [+-]? [0-9]+;
 
-FractionPart
-    : [0-9]* '.' [0-9]+
-    | [0-9]+ '.'
-    ;
+HexadecimalFloatConst:
+	('0x' | '0X') (
+		[0-9a-fA-F]* '.' [0-9a-fA-F]+
+		| [0-9a-fA-F]+ '.'
+	) [pP] [+-]? [0-9]+
+	| ('0x' | '0X') [0-9a-fA-F]+ [pP] [+-]? [0-9]+;
 
-FloatConst
-    : FractionPart (ExponentPart)?
-    | [0-9]+ ExponentPart 
-    | (HexadecimalDigits)? '.' HexadecimalDigits 
-    | HexadecimalDigits '.'
-    ;
+// integer
+IntConst: [0-9]+ | '0x' [0-9a-fA-F]+ | '0X' [0-9a-fA-F]+;
 
 //identifier
 Ident

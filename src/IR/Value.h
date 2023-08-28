@@ -28,6 +28,15 @@ public:
     void add_use(std::shared_ptr<Use> use) { uses.push_back(use); }
     void remove_use(const std::shared_ptr<Use>& use) { uses.remove(use); }
     std::list<std::shared_ptr<Use>>& getUses() { return uses; };
+    virtual bool is_const(){
+        return false;
+    }
+    virtual bool is_const_int(){
+        return false;
+    }
+    virtual bool is_const_float(){
+        return false;
+    }
 };
 }
 

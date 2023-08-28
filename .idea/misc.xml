@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ANTLRGenerationPreferences">
+    <option name="perGrammarGenerationSettings">
+      <list>
+        <PerGrammarGenerationSettings>
+          <option name="fileName" value="$PROJECT_DIR$/src/Frontend/SysY.g4" />
+          <option name="autoGen" value="true" />
+          <option name="outputDir" value="D:\Clion Projects\Eudemonia\src\Frontend" />
+          <option name="libDir" value="D:\Clion Projects\Eudemonia\src\Frontend" />
+          <option name="encoding" value="" />
+          <option name="pkg" value="" />
+          <option name="language" value="Cpp" />
+          <option name="generateListener" value="false" />
+          <option name="generateVisitor" value="true" />
+        </PerGrammarGenerationSettings>
+      </list>
+    </option>
+  </component>
   <component name="CMakeWorkspace" PROJECT_DIR="$PROJECT_DIR$" />
 </project>

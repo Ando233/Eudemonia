@@ -12,7 +12,9 @@ namespace IR {
 class Const : public Value {
 public:
     Const(std::string name, Type *type) : Value(name, type) {}
-
+    bool is_const() override{
+        return true;
+    }
 };
 
 //  ConstInt
@@ -26,6 +28,9 @@ public:
     int getValue(){
         return val;
     }
+    bool is_const_int() override{
+        return true;
+    }
 };
 
 //  ConstFloat
@@ -38,6 +43,9 @@ public:
     }
     float getValue(){
         return val;
+    }
+    bool is_const_float() override{
+        return true;
     }
 };
 
