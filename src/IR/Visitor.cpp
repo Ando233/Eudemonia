@@ -20,7 +20,7 @@ antlrcpp::Any Visitor::visitPrimaryExp(SysYParser::PrimaryExpContext *ctx, bool 
         SysYParser::NumberContext* num = ctx->number();
         std::string num_string = ctx->number()->getText();
         if(num->IntConst()){
-            int val = stoi(num_string);
+            int val = stoi(num_string, 0, 0);
             CurValue = f.build_number(val);
         }
         else if(num->FloatConst()){
@@ -46,12 +46,10 @@ antlrcpp::Any Visitor::visitUnaryExp(SysYParser::UnaryExpContext *ctx, bool is_c
         }
     }
     if(count % 2 == 1){
-        if(CurValue->is_const_int()){
-            auto* const_int = dynamic_cast<ConstInt*>(CurValue);
+        if(auto* const_int = dynamic_cast<ConstInt*>(CurValue)){
             CurValue = f.build_number(-const_int->getValue());
         }
-        else if(CurValue->is_const_float()){
-            auto* const_float = dynamic_cast<ConstFloat*>(CurValue);
+        else if(auto* const_float = dynamic_cast<ConstFloat*>(CurValue)){
             CurValue = f.build_number(-const_float->getValue());
         }
         else{
@@ -91,6 +89,7 @@ antlrcpp::Any Visitor::visitReturn(SysYParser::ReturnContext *ctx) {
     else{
         f.build_ret_inst(CurBasicBlock);
     }
+
     return nullptr;
 }
 

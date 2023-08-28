@@ -30,22 +30,20 @@ public:
         fdiv,
         mod,
         fmod,
-        shl,
-        shr,
         lt,
-        fLt,
+        flt,
         le,
-        fLe,
+        fle,
         ge,
         fge,
         ft,
+        gt,
         fgt,
         eq,
         feq,
         ne,
-        fee,
+        fne,
         //conversion op
-        zext,
         ftoi,
         itof,
         //Mem
@@ -63,6 +61,47 @@ public:
         move,
         bitcast
     };
+    static std::string get_op_name(OP _op){
+        switch (_op) {
+            case OP::add: return "add";
+            case OP::fadd: return "fadd";
+            case OP::sub: return "sub";
+            case OP::fsub: return "fsub";
+            case OP::mul: return "mul";
+            case OP::fmul: return "fmul";
+            case OP::div: return "div";
+            case OP::fdiv: return "fdiv";
+            case OP::mod: return "mod";
+            case OP::fmod: return "fmod";
+            case OP::lt: return "lt";
+            case OP::flt: return "flt";
+            case OP::le: return "le";
+            case OP::fle: return "fle";
+            case OP::ge: return "ge";
+            case OP::fge: return "fge";
+            case OP::ft: return "ft";
+            case OP::gt: return "gt";
+            case OP::fgt: return "fgt";
+            case OP::eq: return "eq";
+            case OP::feq: return "feq";
+            case OP::ne: return "ne";
+            case OP::fne: return "fne";
+            case OP::ftoi: return "ftoi";
+            case OP::itof: return "itof";
+            case OP::alloca: return "alloca";
+            case OP::load: return "load";
+            case OP::store: return "store";
+            case OP::gep: return "gep";
+            case OP::phi: return "phi";
+            case OP::br: return "br";
+            case OP::call: return "call";
+            case OP::ret: return "ret";
+            case OP::no: return "no";
+            case OP::move: return "move";
+            case OP::bitcast: return "bitcast";
+            default: return "Unknown";
+        }
+    }
 
 private:
     InstNode* node;
@@ -119,7 +158,7 @@ public:
     }
     void dump(std::ofstream& out) override{
         out << name + " = ";
-        out << op;
+        out << get_op_name(op);
         out << " " + get_left()->get_name() + " " + get_right()->get_name() + "\n";
     }
 };
@@ -131,8 +170,16 @@ public:
     ConversionInst(Value* value, Type* type, OP op) : Instruction("%" + std::to_string(++Value::val_num), type, op){
         add_operand(value);
     }
+    Value* get_value(){
+        return operands[0]->get_value();
+    }
     void dump(std::ofstream& out) override{
-        out << "conversion" << "\n";
+        if(op == OP::itof) {
+            out << name + " = itof " + get_value()->get_name() << '\n';
+        }
+        else if(op == OP::ftoi){
+            out << name + " = ftoi " + get_value()->get_name() << '\n';
+        }
     }
 };
 

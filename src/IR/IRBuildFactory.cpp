@@ -5,13 +5,48 @@
 #include "IRBuildFactory.h"
 using OP = Instruction::OP;
 
+Value* turn_type(Value* value, Type* type, BasicBlock* bb){
+
+}
+
+OP turn_to_float(OP _op){
+    if(_op == OP::add) return OP::fadd;
+    else if(_op == OP::sub) return OP:: fsub;
+    else if(_op == OP::mul) return OP::fmul;
+    else if(_op == OP::div) return OP::fdiv;
+    else if(_op == OP::mod) return OP::fmod;
+    else if(_op == OP::lt) return OP::flt;
+    else if(_op == OP::le) return OP::fle;
+    else if(_op == OP::gt) return OP::fgt;
+    else if(_op == OP::ge) return OP::fge;
+}
 
 BinaryInst* IRBuildFactory::build_bin_inst(Value* left, Value* right, OP op, BasicBlock* bb){
     Type* type;
     Type* left_type = left->get_type();
     Type* right_type = right->get_type();
+    if(left_type != right_type) {
+        if (left_type == FloatType::get_instance() && right_type == IntegerType::get_instance()) {
+            right = turn_type(right, FloatType::get_instance(), bb);
+            type = FloatType::get_instance();
+        }
+        if (right_type == FloatType::get_instance() && left_type == IntegerType::get_instance()) {
+            left = turn_type(left, FloatType::get_instance(), bb);
+            type = FloatType::get_instance();
+        }
+    }
+    else{
+        type = left_type;
+    }
 
-    return nullptr;
+    if(type == FloatType::get_instance()){
+        op = turn_to_float(op);
+    }
+
+    auto bin_inst = new BinaryInst(left, right, type, op);
+    bb->add_inst(bin_inst);
+
+    return bin_inst;
 }
 
 RetInst* IRBuildFactory::build_ret_inst(BasicBlock* bb){
@@ -57,7 +92,7 @@ BasicBlock* IRBuildFactory::build_basic_block(IR::Function *parent_func) {
 
 ConversionInst* IRBuildFactory::build_conversion_inst(Value* value, OP op, BasicBlock* bb){
     Type *type = nullptr;
-    if(op == OP::ftoi || op == OP::zext){
+    if(op == OP::ftoi){
         type = IntegerType::get_instance();
     }
     else if(op == OP::itof){
