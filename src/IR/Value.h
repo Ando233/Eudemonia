@@ -21,7 +21,7 @@ protected:
 public:
     static int val_num;
     Value(std::string _name, Type* _type) : name(std::move(_name)), type(_type) {}
-    std::string getName() { return name; }
+    std::string get_name() { return name; }
     Type* get_type() { return type; }
     void set_type(Type* _type) { type = _type; }
     void set_name(std::string _name) { name = std::move(_name); }

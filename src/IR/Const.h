@@ -20,7 +20,7 @@ class ConstInt : public Const{
 private:
     int val;
 public:
-    ConstInt(int _val, Type* type) : Const(std::to_string(_val), type) {
+    ConstInt(int _val) : Const(std::to_string(_val), IntegerType::get_instance()) {
         val = _val;
     }
     int getValue(){
@@ -33,7 +33,7 @@ class ConstFloat : public Const{
 private:
     float val;
 public:
-    ConstFloat(float _val) : Const(std::to_string(_val), FloatType::getInstance()) {
+    ConstFloat(float _val) : Const(std::to_string(_val), FloatType::get_instance()) {
         val = _val;
     }
     float getValue(){

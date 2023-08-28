@@ -33,12 +33,30 @@ antlrcpp::Any Visitor::visitPrimaryExp(SysYParser::PrimaryExpContext *ctx, bool 
 
 antlrcpp::Any Visitor::visitUnaryExp(SysYParser::UnaryExpContext *ctx, bool is_const) {
     visitPrimaryExp(ctx->primaryExp(), is_const);
+
+    int count = 0;
+    for(int i = ctx->unaryOP().size() - 1; i >= 0; i--){
+        std::string unary_op_string = ctx->unaryOP(i)->getText();
+        if(unary_op_string == "-"){
+            count++;
+        }
+        else if(unary_op_string == "!"){
+            count = 0;
+//            CurValue =
+        }
+    }
+
     return nullptr;
 }
 
 antlrcpp::Any Visitor::visitExp(SysYParser::ExpContext *ctx, bool is_const) {
     std::vector<SysYParser::UnaryExpContext *> unaryExps = ctx->unaryExp();
     visitUnaryExp(unaryExps[0], is_const);
+
+//    for(int i = 0; i < ctx->op().size(); i++){
+//        std::string op_string = ctx->op(i)->getText();
+//
+//    }
 
     return nullptr;
 }
@@ -50,10 +68,10 @@ antlrcpp::Any Visitor::visitReturn(SysYParser::ReturnContext *ctx) {
         Type* CurType = CurValue->get_type();
         Type* CurFuncType = CurFunction->get_type();
         if(CurType->is_integer_type() && CurFuncType->is_float_type()){
-            CurValue = f.build_conversion_inst(CurValue, OP::Itof, CurBasicBlock);
+            CurValue = f.build_conversion_inst(CurValue, OP::itof, CurBasicBlock);
         }
         else if(CurFuncType->is_integer_type() && CurType->is_float_type()){
-            CurValue = f.build_conversion_inst(CurValue, OP::Ftoi, CurBasicBlock);
+            CurValue = f.build_conversion_inst(CurValue, OP::ftoi, CurBasicBlock);
         }
 
         CurValue = f.build_ret_inst(CurValue, CurBasicBlock);

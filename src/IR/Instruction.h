@@ -20,61 +20,58 @@ class Instruction : public Value {
 
 public:
     enum OP{
-        Add,
-        Fadd,
-        Sub,
-        Fsub,
-        Mul,
-        Fmul,
-        Div,
-        Fdiv,
-        Mod,
-        Fmod,
-        Shl,
-        Shr,
-        And,
-        Or,
-        Xor,
-        Lt,
-        FLt,
-        Le,
-        FLe,
-        Ge,
-        FGe,
-        Gt,
-        FGt,
-        Eq,
-        FEq,
-        Ne,
-        FNe,
+        add,
+        fadd,
+        sub,
+        fsub,
+        mul,
+        fmul,
+        div,
+        fdiv,
+        mod,
+        fmod,
+        shl,
+        shr,
+        lt,
+        fLt,
+        le,
+        fLe,
+        ge,
+        fge,
+        ft,
+        fgt,
+        eq,
+        feq,
+        ne,
+        fee,
         //conversion op
-        Zext,
-        Ftoi,
-        Itof,
+        zext,
+        ftoi,
+        itof,
         //Mem
-        Alloca,
-        Load,
-        Store,
-        GEP, //get element ptr
-        Phi,
+        alloca,
+        load,
+        store,
+        gep, //get element ptr
+        phi,
         //terminator op
-        Br,
-        Call,
-        Ret,
+        br,
+        call,
+        ret,
         //not op
-        Not,
-        Move,
-        BitCast
+        no,
+        move,
+        bitcast
     };
 
 private:
-    OP op;
     InstNode* node;
 
 protected:
     using OperandList = std::vector<std::shared_ptr<Use>>;
     OperandList operands;
 
+    OP op;
 public:
     Instruction(std::string _name, Type* _type, OP op) : Value(std::move(_name), _type), op(op){
         node = new InstNode(this);
@@ -90,10 +87,10 @@ public:
 //  Return Inst
 class RetInst : public Instruction{
 public:
-    explicit RetInst(Value* value) : Instruction("", VoidType::getInstance(), OP::Ret){
+    explicit RetInst(Value* value) : Instruction("", VoidType::get_instance(), OP::ret){
         add_operand(value);
     }
-    RetInst() : Instruction("", VoidType::getInstance(), OP::Ret) {}
+    RetInst() : Instruction("", VoidType::get_instance(), OP::ret) {}
     Value* get_value(){
         if(operands.empty()) return nullptr;
         return operands[0]->get_value();
@@ -102,10 +99,29 @@ public:
     void dump(std::ofstream& out) override {
         out << "return";
         if(!operands.empty()){
-            out << " " + get_value()->getName() << "\n";
+            out << " " + get_value()->get_name() << "\n";
         }
     }
+};
 
+//  BinaryInst
+class BinaryInst : public Instruction{
+public:
+    BinaryInst(Value* left, Value* right, Type* type, OP op) : Instruction("%" + std::to_string(++Value::val_num), type, op){
+        add_operand(left);
+        add_operand(right);
+    }
+    Value* get_left(){
+        return operands[0]->get_value();
+    }
+    Value* get_right(){
+        return operands[1]->get_value();
+    }
+    void dump(std::ofstream& out) override{
+        out << name + " = ";
+        out << op;
+        out << " " + get_left()->get_name() + " " + get_right()->get_name() + "\n";
+    }
 };
 
 

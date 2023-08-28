@@ -45,30 +45,23 @@ public:
 
 //  IntegerType
 class IntegerType : public Type{
-private:
-    int bit;
-
 public:
-    explicit IntegerType(int bit): Type(IntegerTyID), bit(bit){}
-    static IntegerType* getI1Instance(){
-        static IntegerType i1Instance(1);
-        return &i1Instance;
-    }
+    explicit IntegerType(): Type(IntegerTyID){}
 
-    static IntegerType* getI32Instance(){
-        static IntegerType i32Instance(32);
-        return &i32Instance;
+    static IntegerType* get_instance(){
+        static IntegerType instance;
+        return &instance;
     }
 
     std::string to_string() const{
-        return "i" + std::to_string(bit);
+        return "int";
     }
 };
 
 //  FloatType
 class FloatType : public Type{
 public:
-    static FloatType* getInstance(){
+    static FloatType* get_instance(){
         static FloatType instance;
         return &instance;
     }
@@ -78,13 +71,13 @@ private:
 
 class PointerType : public Type{
 public:
-    static PointerType* getI32PtrInstance(){
-        static PointerType i32_ptr_instance(IntegerType::getI32Instance());
-        return &i32_ptr_instance;
+    static PointerType* get_i32_ptr_instance(){
+        static PointerType int_ptr_instance(IntegerType::get_instance());
+        return &int_ptr_instance;
     }
-    static PointerType* getF32PtrInstance(){
-        static PointerType f32_ptr_instance(FloatType::getInstance());
-        return &f32_ptr_instance;
+    static PointerType* get_f32_ptr_instance(){
+        static PointerType float_ptr_instance(FloatType::get_instance());
+        return &float_ptr_instance;
     }
 private:
     Type* eleType;
@@ -95,7 +88,7 @@ private:
 //  VoidType
 class VoidType : public Type{
 public:
-    static VoidType* getInstance(){
+    static VoidType* get_instance(){
         static VoidType instance;
         return &instance;
     }
@@ -106,7 +99,7 @@ private:
 //  LabelType
 class LabelType : public Type{
 public:
-    static LabelType* getInstance() {
+    static LabelType* get_instance() {
         static LabelType instance;
         return &instance;
     }

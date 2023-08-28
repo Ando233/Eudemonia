@@ -23,6 +23,7 @@ public:
         return f;
     }
 
+    BinaryInst* build_bin_inst(Value* left, Value* right, OP op, BasicBlock* bb);
     RetInst* build_ret_inst(BasicBlock* bb);
     RetInst* build_ret_inst(Value* value, BasicBlock* bb);
     ConstFloat* build_number(float val);

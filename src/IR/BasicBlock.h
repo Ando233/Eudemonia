@@ -23,7 +23,7 @@ private:
 
 public:
     static int block_num;
-    BasicBlock() : Value("block" + std::to_string(++BasicBlock::block_num), LabelType::getInstance()) {
+    BasicBlock() : Value("block" + std::to_string(++BasicBlock::block_num), LabelType::get_instance()) {
         node = new BbNode(this);
         insts = new InstList(this);
     }

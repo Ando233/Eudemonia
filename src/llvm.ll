@@ -1,5 +1,5 @@
 int main() {
 block0:
-	return 12
+	return 142
 }
 
