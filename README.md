@@ -8,7 +8,7 @@ Eudemonia, compiler for SysY-Mips.
 
 ```sh
 git clone git@github.com:Ando233/Eudemonia.git
-cd helesta && mkdir build && cd build
+cd Eudemonia && mkdir build && cd build
 # Configure
 cmake ..
 # Build
