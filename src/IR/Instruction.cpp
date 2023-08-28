@@ -7,7 +7,7 @@ using namespace IR;
 
 //  默认加在末尾
 void Instruction::add_operand(Value* _value){
-    auto ptr = std::make_shared<Use>(_value, this, operands.size());
+    auto ptr = new Use(_value, this, operands.size());
     _value->add_use(ptr);
     operands.push_back(ptr);
 }

@@ -17,6 +17,9 @@ using OP = Instruction::OP;
 
 class IRBuildFactory {
 
+private:
+    Value *turn_type(Value *value, Type *type, BasicBlock *bb);
+
 public:
     static IRBuildFactory getInstance(){
         static IRBuildFactory f;

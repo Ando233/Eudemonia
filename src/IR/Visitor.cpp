@@ -42,7 +42,14 @@ antlrcpp::Any Visitor::visitUnaryExp(SysYParser::UnaryExpContext *ctx, bool is_c
         }
         else if(unary_op_string == "!"){
             count = 0;
-            CurValue = f.build_bin_inst(CurValue, f.build_number(0), OP::eq, CurBasicBlock);
+            Value* zero;
+            if(CurValue->get_type()->is_integer_type()){
+                zero = f.build_number(0);
+            }
+            else if(CurValue->get_type()->is_float_type()){
+                zero = f.build_number((float) 0);
+            }
+            CurValue = f.build_bin_inst(CurValue, zero, OP::eq, CurBasicBlock);
         }
     }
     if(count % 2 == 1){
@@ -53,7 +60,14 @@ antlrcpp::Any Visitor::visitUnaryExp(SysYParser::UnaryExpContext *ctx, bool is_c
             CurValue = f.build_number(-const_float->getValue());
         }
         else{
-            CurValue = f.build_bin_inst(f.build_number(0), CurValue, OP::sub, CurBasicBlock);
+            Value* zero;
+            if(CurValue->get_type()->is_integer_type()){
+                zero = f.build_number(0);
+            }
+            else if(CurValue->get_type()->is_float_type()){
+                zero = f.build_number((float) 0);
+            }
+            CurValue = f.build_bin_inst(zero, CurValue, OP::sub, CurBasicBlock);
         }
     }
     return nullptr;

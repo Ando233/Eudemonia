@@ -4,6 +4,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/src)
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -O0")
 
 file(GLOB_RECURSE DIR_SRC "src/*.cpp" "src/IR/*.cpp" "src/Driver/*.cpp" "src/Support/*.cpp")
 file(GLOB_RECURSE DIR_LIB_SRC "third_party/*.cpp")

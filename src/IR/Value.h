@@ -17,17 +17,14 @@ class Value{
 protected:
     std::string name;
     Type* type;
-    std::list<std::shared_ptr<Use>> uses;
+    std::list<Use*> uses;
 public:
     static int val_num;
     Value(std::string _name, Type* _type) : name(std::move(_name)), type(_type) {}
     std::string get_name() { return name; }
     Type* get_type() { return type; }
-    void set_type(Type* _type) { type = _type; }
-    void set_name(std::string _name) { name = std::move(_name); }
-    void add_use(std::shared_ptr<Use> use) { uses.push_back(use); }
-    void remove_use(const std::shared_ptr<Use>& use) { uses.remove(use); }
-    std::list<std::shared_ptr<Use>>& getUses() { return uses; };
+    void add_use(Use* use) { uses.push_back(use); }
+    std::list<Use*>& getUses() { return uses; };
     virtual bool is_const(){
         return false;
     }

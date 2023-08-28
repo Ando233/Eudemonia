@@ -51,1071 +51,1071 @@ build cmake_object_order_depends_target_compiler: phony || CMakeFiles/compiler.d
 
 build CMakeFiles/compiler.dir/src/Driver/Driver.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/src/Driver/Driver.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\src\Driver\Driver.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\src\Driver
 
 build CMakeFiles/compiler.dir/src/Frontend/SysYBaseVisitor.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/src/Frontend/SysYBaseVisitor.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\src\Frontend\SysYBaseVisitor.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\src\Frontend
 
 build CMakeFiles/compiler.dir/src/Frontend/SysYLexer.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/src/Frontend/SysYLexer.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\src\Frontend\SysYLexer.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\src\Frontend
 
 build CMakeFiles/compiler.dir/src/Frontend/SysYParser.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/src/Frontend/SysYParser.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\src\Frontend\SysYParser.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\src\Frontend
 
 build CMakeFiles/compiler.dir/src/Frontend/SysYVisitor.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/src/Frontend/SysYVisitor.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\src\Frontend\SysYVisitor.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\src\Frontend
 
 build CMakeFiles/compiler.dir/src/IR/BasicBlock.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/src/IR/BasicBlock.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\src\IR\BasicBlock.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\src\IR
 
 build CMakeFiles/compiler.dir/src/IR/Const.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/src/IR/Const.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\src\IR\Const.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\src\IR
 
 build CMakeFiles/compiler.dir/src/IR/Function.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/src/IR/Function.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\src\IR\Function.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\src\IR
 
 build CMakeFiles/compiler.dir/src/IR/GlobalVar.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/src/IR/GlobalVar.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\src\IR\GlobalVar.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\src\IR
 
 build CMakeFiles/compiler.dir/src/IR/IRBuildFactory.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/src/IR/IRBuildFactory.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\src\IR\IRBuildFactory.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\src\IR
 
 build CMakeFiles/compiler.dir/src/IR/Instruction.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/src/IR/Instruction.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\src\IR\Instruction.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\src\IR
 
 build CMakeFiles/compiler.dir/src/IR/Module.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/src/IR/Module.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\src\IR\Module.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\src\IR
 
 build CMakeFiles/compiler.dir/src/IR/Type.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/src/IR/Type.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\src\IR\Type.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\src\IR
 
 build CMakeFiles/compiler.dir/src/IR/Use.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/src/IR/Use.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\src\IR\Use.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\src\IR
 
 build CMakeFiles/compiler.dir/src/IR/Value.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/src/IR/Value.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\src\IR\Value.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\src\IR
 
 build CMakeFiles/compiler.dir/src/IR/Visitor.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/src/IR/Visitor.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\src\IR\Visitor.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\src\IR
 
 build CMakeFiles/compiler.dir/src/main.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/src/main.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\src\main.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\src
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/ANTLRErrorListener.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/ANTLRErrorListener.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\ANTLRErrorListener.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/ANTLRErrorStrategy.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/ANTLRErrorStrategy.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\ANTLRErrorStrategy.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/ANTLRFileStream.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/ANTLRFileStream.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\ANTLRFileStream.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/ANTLRInputStream.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/ANTLRInputStream.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\ANTLRInputStream.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/BailErrorStrategy.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/BailErrorStrategy.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\BailErrorStrategy.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/BaseErrorListener.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/BaseErrorListener.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\BaseErrorListener.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/BufferedTokenStream.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/BufferedTokenStream.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\BufferedTokenStream.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/CharStream.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/CharStream.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\CharStream.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/CommonToken.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/CommonToken.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\CommonToken.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/CommonTokenFactory.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/CommonTokenFactory.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\CommonTokenFactory.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/CommonTokenStream.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/CommonTokenStream.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\CommonTokenStream.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/ConsoleErrorListener.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/ConsoleErrorListener.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\ConsoleErrorListener.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/DefaultErrorStrategy.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/DefaultErrorStrategy.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\DefaultErrorStrategy.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/DiagnosticErrorListener.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/DiagnosticErrorListener.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\DiagnosticErrorListener.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/Exceptions.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/Exceptions.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\Exceptions.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/FailedPredicateException.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/FailedPredicateException.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\FailedPredicateException.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/InputMismatchException.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/InputMismatchException.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\InputMismatchException.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/IntStream.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/IntStream.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\IntStream.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/InterpreterRuleContext.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/InterpreterRuleContext.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\InterpreterRuleContext.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/Lexer.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/Lexer.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\Lexer.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/LexerInterpreter.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/LexerInterpreter.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\LexerInterpreter.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/LexerNoViableAltException.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/LexerNoViableAltException.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\LexerNoViableAltException.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/ListTokenSource.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/ListTokenSource.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\ListTokenSource.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/NoViableAltException.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/NoViableAltException.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\NoViableAltException.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/Parser.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/Parser.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\Parser.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/ParserInterpreter.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/ParserInterpreter.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\ParserInterpreter.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/ParserRuleContext.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/ParserRuleContext.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\ParserRuleContext.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/ProxyErrorListener.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/ProxyErrorListener.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\ProxyErrorListener.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/RecognitionException.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/RecognitionException.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\RecognitionException.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/Recognizer.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/Recognizer.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\Recognizer.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/RuleContext.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/RuleContext.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\RuleContext.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/RuleContextWithAltNum.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/RuleContextWithAltNum.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\RuleContextWithAltNum.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/RuntimeMetaData.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/RuntimeMetaData.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\RuntimeMetaData.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/Token.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/Token.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\Token.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/TokenSource.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/TokenSource.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\TokenSource.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/TokenStream.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/TokenStream.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\TokenStream.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/TokenStreamRewriter.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/TokenStreamRewriter.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\TokenStreamRewriter.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/UnbufferedCharStream.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/UnbufferedCharStream.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\UnbufferedCharStream.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/UnbufferedTokenStream.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/UnbufferedTokenStream.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\UnbufferedTokenStream.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/Vocabulary.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/Vocabulary.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\Vocabulary.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/WritableToken.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/WritableToken.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\WritableToken.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ATN.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/ATN.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\ATN.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ATNConfig.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/ATNConfig.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\ATNConfig.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ATNConfigSet.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/ATNConfigSet.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\ATNConfigSet.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ATNDeserializationOptions.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/ATNDeserializationOptions.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\ATNDeserializationOptions.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ATNDeserializer.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/ATNDeserializer.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\ATNDeserializer.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ATNSimulator.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/ATNSimulator.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\ATNSimulator.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ATNState.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/ATNState.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\ATNState.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ATNStateType.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/ATNStateType.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\ATNStateType.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ActionTransition.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/ActionTransition.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\ActionTransition.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/AmbiguityInfo.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/AmbiguityInfo.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\AmbiguityInfo.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ArrayPredictionContext.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/ArrayPredictionContext.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\ArrayPredictionContext.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/AtomTransition.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/AtomTransition.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\AtomTransition.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ContextSensitivityInfo.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/ContextSensitivityInfo.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\ContextSensitivityInfo.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/DecisionEventInfo.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/DecisionEventInfo.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\DecisionEventInfo.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/DecisionInfo.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/DecisionInfo.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\DecisionInfo.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/DecisionState.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/DecisionState.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\DecisionState.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/EpsilonTransition.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/EpsilonTransition.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\EpsilonTransition.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ErrorInfo.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/ErrorInfo.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\ErrorInfo.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LL1Analyzer.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/LL1Analyzer.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\LL1Analyzer.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerATNConfig.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/LexerATNConfig.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\LexerATNConfig.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerATNSimulator.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/LexerATNSimulator.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\LexerATNSimulator.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerAction.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/LexerAction.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\LexerAction.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerActionExecutor.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/LexerActionExecutor.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\LexerActionExecutor.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerChannelAction.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/LexerChannelAction.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\LexerChannelAction.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerCustomAction.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/LexerCustomAction.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\LexerCustomAction.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerIndexedCustomAction.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/LexerIndexedCustomAction.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\LexerIndexedCustomAction.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerModeAction.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/LexerModeAction.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\LexerModeAction.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerMoreAction.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/LexerMoreAction.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\LexerMoreAction.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerPopModeAction.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/LexerPopModeAction.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\LexerPopModeAction.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerPushModeAction.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/LexerPushModeAction.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\LexerPushModeAction.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerSkipAction.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/LexerSkipAction.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\LexerSkipAction.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerTypeAction.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/LexerTypeAction.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\LexerTypeAction.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LookaheadEventInfo.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/LookaheadEventInfo.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\LookaheadEventInfo.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/NotSetTransition.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/NotSetTransition.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\NotSetTransition.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/OrderedATNConfigSet.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/OrderedATNConfigSet.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\OrderedATNConfigSet.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ParseInfo.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/ParseInfo.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\ParseInfo.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ParserATNSimulator.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/ParserATNSimulator.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\ParserATNSimulator.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/PrecedencePredicateTransition.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/PrecedencePredicateTransition.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\PrecedencePredicateTransition.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/PredicateEvalInfo.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/PredicateEvalInfo.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\PredicateEvalInfo.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/PredicateTransition.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/PredicateTransition.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\PredicateTransition.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/PredictionContext.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/PredictionContext.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\PredictionContext.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/PredictionContextCache.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/PredictionContextCache.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\PredictionContextCache.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/PredictionContextMergeCache.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/PredictionContextMergeCache.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\PredictionContextMergeCache.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/PredictionMode.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/PredictionMode.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\PredictionMode.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ProfilingATNSimulator.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/ProfilingATNSimulator.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\ProfilingATNSimulator.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/RangeTransition.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/RangeTransition.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\RangeTransition.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/RuleTransition.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/RuleTransition.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\RuleTransition.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/SemanticContext.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/SemanticContext.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\SemanticContext.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/SetTransition.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/SetTransition.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\SetTransition.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/SingletonPredictionContext.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/SingletonPredictionContext.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\SingletonPredictionContext.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/StarLoopbackState.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/StarLoopbackState.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\StarLoopbackState.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/Transition.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/Transition.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\Transition.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/TransitionType.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/TransitionType.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\TransitionType.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/WildcardTransition.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/atn/WildcardTransition.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn\WildcardTransition.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\atn
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/dfa/DFA.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/dfa/DFA.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\dfa\DFA.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\dfa
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/dfa/DFASerializer.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/dfa/DFASerializer.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\dfa\DFASerializer.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\dfa
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/dfa/DFAState.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/dfa/DFAState.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\dfa\DFAState.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\dfa
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/dfa/LexerDFASerializer.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/dfa/LexerDFASerializer.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\dfa\LexerDFASerializer.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\dfa
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/internal/Synchronization.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/internal/Synchronization.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\internal\Synchronization.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\internal
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/misc/InterpreterDataReader.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/misc/InterpreterDataReader.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\misc\InterpreterDataReader.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\misc
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/misc/Interval.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/misc/Interval.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\misc\Interval.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\misc
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/misc/IntervalSet.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/misc/IntervalSet.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\misc\IntervalSet.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\misc
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/misc/MurmurHash.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/misc/MurmurHash.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\misc\MurmurHash.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\misc
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/misc/Predicate.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/misc/Predicate.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\misc\Predicate.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\misc
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/support/Any.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/support/Any.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\support\Any.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\support
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/support/Arrays.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/support/Arrays.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\support\Arrays.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\support
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/support/CPPUtils.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/support/CPPUtils.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\support\CPPUtils.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\support
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/support/StringUtils.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/support/StringUtils.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\support\StringUtils.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\support
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/support/Utf8.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/support/Utf8.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\support\Utf8.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\support
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/ErrorNodeImpl.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/ErrorNodeImpl.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\ErrorNodeImpl.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/IterativeParseTreeWalker.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/IterativeParseTreeWalker.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\IterativeParseTreeWalker.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/ParseTree.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/ParseTree.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\ParseTree.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/ParseTreeListener.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/ParseTreeListener.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\ParseTreeListener.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/ParseTreeVisitor.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/ParseTreeVisitor.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\ParseTreeVisitor.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/ParseTreeWalker.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/ParseTreeWalker.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\ParseTreeWalker.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/TerminalNodeImpl.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/TerminalNodeImpl.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\TerminalNodeImpl.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/Trees.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/Trees.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\Trees.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/pattern/Chunk.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/pattern/Chunk.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\pattern\Chunk.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\pattern
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/pattern/ParseTreeMatch.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/pattern/ParseTreeMatch.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\pattern\ParseTreeMatch.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\pattern
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/pattern/ParseTreePattern.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/pattern/ParseTreePattern.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\pattern\ParseTreePattern.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\pattern
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/pattern/ParseTreePatternMatcher.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/pattern/ParseTreePatternMatcher.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\pattern\ParseTreePatternMatcher.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\pattern
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/pattern/RuleTagToken.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/pattern/RuleTagToken.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\pattern\RuleTagToken.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\pattern
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/pattern/TagChunk.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/pattern/TagChunk.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\pattern\TagChunk.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\pattern
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/pattern/TextChunk.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/pattern/TextChunk.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\pattern\TextChunk.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\pattern
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/pattern/TokenTagToken.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/pattern/TokenTagToken.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\pattern\TokenTagToken.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\pattern
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPath.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/xpath/XPath.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\xpath\XPath.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\xpath
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPathElement.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/xpath/XPathElement.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\xpath\XPathElement.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\xpath
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPathLexer.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/xpath/XPathLexer.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\xpath\XPathLexer.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\xpath
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPathLexerErrorListener.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/xpath/XPathLexerErrorListener.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\xpath\XPathLexerErrorListener.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\xpath
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPathRuleAnywhereElement.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/xpath/XPathRuleAnywhereElement.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\xpath\XPathRuleAnywhereElement.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\xpath
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPathRuleElement.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/xpath/XPathRuleElement.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\xpath\XPathRuleElement.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\xpath
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPathTokenAnywhereElement.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/xpath/XPathTokenAnywhereElement.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\xpath\XPathTokenAnywhereElement.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\xpath
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPathTokenElement.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/xpath/XPathTokenElement.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\xpath\XPathTokenElement.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\xpath
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPathWildcardAnywhereElement.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/xpath/XPathWildcardAnywhereElement.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\xpath\XPathWildcardAnywhereElement.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\xpath
 
 build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPathWildcardElement.cpp.obj: CXX_COMPILER__compiler_unscanned_Debug D$:/Clion$ Projects/Eudemonia/third_party/antlr4-runtime/tree/xpath/XPathWildcardElement.cpp || cmake_object_order_depends_target_compiler
   DEP_FILE = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\xpath\XPathWildcardElement.cpp.obj.d
-  FLAGS = -g -fcolor-diagnostics --std=c++17 -O2
+  FLAGS = -g -O0 -fcolor-diagnostics --std=c++17 -O2
   INCLUDES = -I"D:/Clion Projects/Eudemonia/src" -I"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime"
   OBJECT_DIR = CMakeFiles\compiler.dir
   OBJECT_FILE_DIR = CMakeFiles\compiler.dir\third_party\antlr4-runtime\tree\xpath
@@ -1129,7 +1129,7 @@ build CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPathWildcar
 # Link the executable D:\Clion Projects\Eudemonia\src\compiler.exe
 
 build D$:/Clion$ Projects/Eudemonia/src/compiler.exe: CXX_EXECUTABLE_LINKER__compiler_Debug CMakeFiles/compiler.dir/src/Driver/Driver.cpp.obj CMakeFiles/compiler.dir/src/Frontend/SysYBaseVisitor.cpp.obj CMakeFiles/compiler.dir/src/Frontend/SysYLexer.cpp.obj CMakeFiles/compiler.dir/src/Frontend/SysYParser.cpp.obj CMakeFiles/compiler.dir/src/Frontend/SysYVisitor.cpp.obj CMakeFiles/compiler.dir/src/IR/BasicBlock.cpp.obj CMakeFiles/compiler.dir/src/IR/Const.cpp.obj CMakeFiles/compiler.dir/src/IR/Function.cpp.obj CMakeFiles/compiler.dir/src/IR/GlobalVar.cpp.obj CMakeFiles/compiler.dir/src/IR/IRBuildFactory.cpp.obj CMakeFiles/compiler.dir/src/IR/Instruction.cpp.obj CMakeFiles/compiler.dir/src/IR/Module.cpp.obj CMakeFiles/compiler.dir/src/IR/Type.cpp.obj CMakeFiles/compiler.dir/src/IR/Use.cpp.obj CMakeFiles/compiler.dir/src/IR/Value.cpp.obj CMakeFiles/compiler.dir/src/IR/Visitor.cpp.obj CMakeFiles/compiler.dir/src/main.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/ANTLRErrorListener.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/ANTLRErrorStrategy.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/ANTLRFileStream.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/ANTLRInputStream.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/BailErrorStrategy.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/BaseErrorListener.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/BufferedTokenStream.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/CharStream.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/CommonToken.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/CommonTokenFactory.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/CommonTokenStream.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/ConsoleErrorListener.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/DefaultErrorStrategy.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/DiagnosticErrorListener.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/Exceptions.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/FailedPredicateException.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/InputMismatchException.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/IntStream.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/InterpreterRuleContext.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/Lexer.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/LexerInterpreter.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/LexerNoViableAltException.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/ListTokenSource.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/NoViableAltException.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/Parser.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/ParserInterpreter.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/ParserRuleContext.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/ProxyErrorListener.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/RecognitionException.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/Recognizer.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/RuleContext.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/RuleContextWithAltNum.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/RuntimeMetaData.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/Token.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/TokenSource.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/TokenStream.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/TokenStreamRewriter.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/UnbufferedCharStream.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/UnbufferedTokenStream.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/Vocabulary.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/WritableToken.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ATN.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ATNConfig.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ATNConfigSet.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ATNDeserializationOptions.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ATNDeserializer.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ATNSimulator.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ATNState.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ATNStateType.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ActionTransition.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/AmbiguityInfo.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ArrayPredictionContext.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/AtomTransition.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ContextSensitivityInfo.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/DecisionEventInfo.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/DecisionInfo.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/DecisionState.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/EpsilonTransition.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ErrorInfo.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LL1Analyzer.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerATNConfig.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerATNSimulator.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerAction.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerActionExecutor.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerChannelAction.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerCustomAction.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerIndexedCustomAction.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerModeAction.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerMoreAction.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerPopModeAction.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerPushModeAction.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerSkipAction.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerTypeAction.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LookaheadEventInfo.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/NotSetTransition.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/OrderedATNConfigSet.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ParseInfo.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ParserATNSimulator.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/PrecedencePredicateTransition.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/PredicateEvalInfo.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/PredicateTransition.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/PredictionContext.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/PredictionContextCache.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/PredictionContextMergeCache.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/PredictionMode.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ProfilingATNSimulator.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/RangeTransition.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/RuleTransition.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/SemanticContext.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/SetTransition.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/SingletonPredictionContext.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/StarLoopbackState.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/Transition.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/TransitionType.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/WildcardTransition.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/dfa/DFA.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/dfa/DFASerializer.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/dfa/DFAState.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/dfa/LexerDFASerializer.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/internal/Synchronization.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/misc/InterpreterDataReader.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/misc/Interval.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/misc/IntervalSet.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/misc/MurmurHash.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/misc/Predicate.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/support/Any.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/support/Arrays.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/support/CPPUtils.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/support/StringUtils.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/support/Utf8.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/ErrorNodeImpl.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/IterativeParseTreeWalker.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/ParseTree.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/ParseTreeListener.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/ParseTreeVisitor.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/ParseTreeWalker.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/TerminalNodeImpl.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/Trees.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/pattern/Chunk.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/pattern/ParseTreeMatch.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/pattern/ParseTreePattern.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/pattern/ParseTreePatternMatcher.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/pattern/RuleTagToken.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/pattern/TagChunk.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/pattern/TextChunk.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/pattern/TokenTagToken.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPath.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPathElement.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPathLexer.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPathLexerErrorListener.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPathRuleAnywhereElement.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPathRuleElement.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPathTokenAnywhereElement.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPathTokenElement.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPathWildcardAnywhereElement.cpp.obj CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPathWildcardElement.cpp.obj
-  FLAGS = -g
+  FLAGS = -g -O0
   LINK_LIBRARIES = -static  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\compiler.dir
   POST_BUILD = cd .

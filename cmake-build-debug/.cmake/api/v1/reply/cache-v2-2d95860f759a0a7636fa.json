@@ -715,7 +715,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/Program Files (x86)/CLion 2023.2/bin/ninja/win/x64/ninja.exe"
+			"value" : "D:/PROGRA~2/CLION2~1.2/bin/ninja/win/x64/ninja.exe"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",

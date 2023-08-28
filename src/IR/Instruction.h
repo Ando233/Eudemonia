@@ -107,7 +107,7 @@ private:
     InstNode* node;
 
 protected:
-    using OperandList = std::vector<std::shared_ptr<Use>>;
+    using OperandList = std::vector<Use*>;
     OperandList operands;
 
     OP op;

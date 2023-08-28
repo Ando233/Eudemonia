@@ -5,8 +5,32 @@
 #include "IRBuildFactory.h"
 using OP = Instruction::OP;
 
-Value* turn_type(Value* value, Type* type, BasicBlock* bb){
+ConversionInst* IRBuildFactory::build_conversion_inst(Value* value, OP op, BasicBlock* bb){
+    Type *type = nullptr;
+    if(op == OP::ftoi){
+        type = IntegerType::get_instance();
+    }
+    else if(op == OP::itof){
+        type = FloatType::get_instance();
+    }
+    else if(op == OP::bitcast){
+        type = PointerType::get_i32_ptr_instance();
+    }
 
+    auto conversion_inst = new ConversionInst(value, type, op);
+    bb->add_inst(conversion_inst);
+    return conversion_inst;
+}
+
+Value* IRBuildFactory::turn_type(Value* value, Type* type, BasicBlock* bb){
+    Type* ori_type = value->get_type();
+    if(ori_type == IntegerType::get_instance() && type == FloatType::get_instance()){
+        return build_conversion_inst(value, OP::itof, bb);
+    }
+    else if(ori_type == FloatType::get_instance() && type == IntegerType::get_instance()){
+        return build_conversion_inst(value, OP::ftoi, bb);
+    }
+    return nullptr;
 }
 
 OP turn_to_float(OP _op){
@@ -19,6 +43,7 @@ OP turn_to_float(OP _op){
     else if(_op == OP::le) return OP::fle;
     else if(_op == OP::gt) return OP::fgt;
     else if(_op == OP::ge) return OP::fge;
+    else return _op;
 }
 
 BinaryInst* IRBuildFactory::build_bin_inst(Value* left, Value* right, OP op, BasicBlock* bb){
@@ -88,21 +113,4 @@ BasicBlock* IRBuildFactory::build_basic_block(IR::Function *parent_func) {
     auto bb = new BasicBlock();
     parent_func->add_bb(bb);
     return bb;
-}
-
-ConversionInst* IRBuildFactory::build_conversion_inst(Value* value, OP op, BasicBlock* bb){
-    Type *type = nullptr;
-    if(op == OP::ftoi){
-        type = IntegerType::get_instance();
-    }
-    else if(op == OP::itof){
-        type = FloatType::get_instance();
-    }
-    else if(op == OP::bitcast){
-        type = PointerType::get_i32_ptr_instance();
-    }
-
-    auto conversion_inst = new ConversionInst(value, type, op);
-    bb->add_inst(conversion_inst);
-    return conversion_inst;
 }
