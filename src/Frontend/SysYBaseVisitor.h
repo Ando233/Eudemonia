@@ -95,6 +95,10 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual std::any visitBlockItem(SysYParser::BlockItemContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual std::any visitStmt(SysYParser::StmtContext *ctx) override {
     return visitChildren(ctx);
   }

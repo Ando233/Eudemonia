@@ -180,6 +180,16 @@ antlrcpp::Any Visitor::visitStmt(SysYParser::StmtContext *ctx) {
     return nullptr;
 }
 
+antlrcpp::Any Visitor::visitBlockItem(SysYParser::BlockItemContext *ctx) {
+    if(ctx->stmt()){
+        visitStmt(ctx->stmt());
+    }
+    else if(ctx->decl()){
+        visitDecl(ctx->decl(), false);
+    }
+    return nullptr;
+}
+
 antlrcpp::Any Visitor::visitBlock(SysYParser::BlockContext *ctx) {
     visitChildren(ctx);
     return nullptr;

@@ -25,6 +25,7 @@ private:
     void push_symbol();
     Value* find(const std::string& ident);
 
+    antlrcpp::Any visitBlockItem(SysYParser::BlockItemContext *ctx);
     antlrcpp::Any visitLVal(SysYParser::LValContext *ctx, bool is_fetch);
     antlrcpp::Any visitConstDef(SysYParser::DefContext *ctx, Type* type, bool is_global);
     antlrcpp::Any visitDecl(SysYParser::DeclContext *ctx, bool is_global);

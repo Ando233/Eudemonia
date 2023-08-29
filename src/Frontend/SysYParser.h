@@ -27,10 +27,10 @@ public:
     RuleInitArray = 5, RuleMulExp = 6, RuleExp = 7, RuleLorExp = 8, RuleLandExp = 9, 
     RuleEqExp = 10, RuleRelExp = 11, RuleUnaryExp = 12, RulePrimaryExp = 13, 
     RuleCall = 14, RuleNumber = 15, RuleLVal = 16, RuleFuncDef = 17, RuleFuncFParam = 18, 
-    RuleBlock = 19, RuleStmt = 20, RuleAssign = 21, RuleExpStmt = 22, RuleIfStmt = 23, 
-    RuleWhileStmt = 24, RuleBreak = 25, RuleContinue = 26, RuleReturn = 27, 
-    RuleUnaryOP = 28, RuleAddOP = 29, RuleMulOP = 30, RuleRelOP = 31, RuleBType = 32, 
-    RuleFuncType = 33
+    RuleBlock = 19, RuleBlockItem = 20, RuleStmt = 21, RuleAssign = 22, 
+    RuleExpStmt = 23, RuleIfStmt = 24, RuleWhileStmt = 25, RuleBreak = 26, 
+    RuleContinue = 27, RuleReturn = 28, RuleUnaryOP = 29, RuleAddOP = 30, 
+    RuleMulOP = 31, RuleRelOP = 32, RuleBType = 33, RuleFuncType = 34
   };
 
   explicit SysYParser(antlr4::TokenStream *input);
@@ -70,6 +70,7 @@ public:
   class FuncDefContext;
   class FuncFParamContext;
   class BlockContext;
+  class BlockItemContext;
   class StmtContext;
   class AssignContext;
   class ExpStmtContext;
@@ -414,10 +415,8 @@ public:
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *Lbrace();
     antlr4::tree::TerminalNode *Rbrace();
-    std::vector<DeclContext *> decl();
-    DeclContext* decl(size_t i);
-    std::vector<StmtContext *> stmt();
-    StmtContext* stmt(size_t i);
+    std::vector<BlockItemContext *> blockItem();
+    BlockItemContext* blockItem(size_t i);
 
 
     virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
@@ -425,6 +424,20 @@ public:
   };
 
   BlockContext* block();
+
+  class  BlockItemContext : public antlr4::ParserRuleContext {
+  public:
+    BlockItemContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    DeclContext *decl();
+    StmtContext *stmt();
+
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  BlockItemContext* blockItem();
 
   class  StmtContext : public antlr4::ParserRuleContext {
   public:

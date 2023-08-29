@@ -59,6 +59,8 @@ public:
 
     virtual std::any visitBlock(SysYParser::BlockContext *context) = 0;
 
+    virtual std::any visitBlockItem(SysYParser::BlockItemContext *context) = 0;
+
     virtual std::any visitStmt(SysYParser::StmtContext *context) = 0;
 
     virtual std::any visitAssign(SysYParser::AssignContext *context) = 0;

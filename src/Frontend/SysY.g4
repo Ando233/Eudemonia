@@ -40,7 +40,9 @@ funcDef: funcType Ident '(' (funcFParam (',' funcFParam)* )? ')' block;
 
 funcFParam: bType Ident ('[' ']' ('[' exp ']')*) ;
 
-block: '{' (decl | stmt)* '}';
+block: '{' blockItem* '}';
+
+blockItem: decl | stmt;
 
 stmt: assign | expStmt | block | ifStmt | whileStmt | break | continue | return;
 
