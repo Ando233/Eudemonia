@@ -29,9 +29,17 @@ public:
 
     virtual std::any visitInitArray(SysYParser::InitArrayContext *context) = 0;
 
+    virtual std::any visitMulExp(SysYParser::MulExpContext *context) = 0;
+
     virtual std::any visitExp(SysYParser::ExpContext *context) = 0;
 
-    virtual std::any visitLexp(SysYParser::LexpContext *context) = 0;
+    virtual std::any visitLorExp(SysYParser::LorExpContext *context) = 0;
+
+    virtual std::any visitLandExp(SysYParser::LandExpContext *context) = 0;
+
+    virtual std::any visitEqExp(SysYParser::EqExpContext *context) = 0;
+
+    virtual std::any visitRelExp(SysYParser::RelExpContext *context) = 0;
 
     virtual std::any visitUnaryExp(SysYParser::UnaryExpContext *context) = 0;
 
@@ -67,7 +75,11 @@ public:
 
     virtual std::any visitUnaryOP(SysYParser::UnaryOPContext *context) = 0;
 
-    virtual std::any visitOp(SysYParser::OpContext *context) = 0;
+    virtual std::any visitAddOP(SysYParser::AddOPContext *context) = 0;
+
+    virtual std::any visitMulOP(SysYParser::MulOPContext *context) = 0;
+
+    virtual std::any visitRelOP(SysYParser::RelOPContext *context) = 0;
 
     virtual std::any visitBType(SysYParser::BTypeContext *context) = 0;
 

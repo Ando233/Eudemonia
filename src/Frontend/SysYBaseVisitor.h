@@ -35,11 +35,27 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual std::any visitMulExp(SysYParser::MulExpContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual std::any visitExp(SysYParser::ExpContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual std::any visitLexp(SysYParser::LexpContext *ctx) override {
+  virtual std::any visitLorExp(SysYParser::LorExpContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitLandExp(SysYParser::LandExpContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitEqExp(SysYParser::EqExpContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitRelExp(SysYParser::RelExpContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -111,7 +127,15 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual std::any visitOp(SysYParser::OpContext *ctx) override {
+  virtual std::any visitAddOP(SysYParser::AddOPContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitMulOP(SysYParser::MulOPContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitRelOP(SysYParser::RelOPContext *ctx) override {
     return visitChildren(ctx);
   }
 

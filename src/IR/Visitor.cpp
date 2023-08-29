@@ -78,28 +78,38 @@ antlrcpp::Any Visitor::visitUnaryExp(SysYParser::UnaryExpContext *ctx, bool is_c
     return nullptr;
 }
 
-antlrcpp::Any Visitor::visitExp(SysYParser::ExpContext *ctx, bool is_const) {
-    if(ctx->unaryExp()) {
-        visitUnaryExp(ctx->unaryExp(), is_const);
-    }
-    else{
-        std::string op_string;
-        if(ctx->Add()) op_string = "+";
-        else if(ctx->Sub()) op_string = "-";
-        else if(ctx->Mul()) op_string = "*";
-        else if(ctx->Div()) op_string = "/";
-        else if(ctx->Mod()) op_string = "%";
-
-        visitExp(ctx->exp(0), is_const);
-        Value* left_value = CurValue;
-        visitExp(ctx->exp(1), is_const);
-        Value* right_value = CurValue;
-        auto const_left = dynamic_cast<Const*>(left_value);
-        auto const_right = dynamic_cast<Const*>(right_value);
+antlrcpp::Any Visitor::visitMulExp(SysYParser::MulExpContext *ctx, bool is_const){
+    visitUnaryExp(ctx->unaryExp(0), is_const);
+    for(int i = 0; i < ctx->mulOP().size(); i++){
+        std::string op_string = ctx->mulOP(i)->getText();
+        Value* tmp_value = CurValue;
+        visitUnaryExp(ctx->unaryExp(i + 1), is_const);
+        auto const_left = dynamic_cast<Const*>(tmp_value);
+        auto const_right = dynamic_cast<Const*>(CurValue);
         if(const_left && const_right){
             CurValue = f.build_cal_number(const_left, const_right, op_string);
         }
-        else CurValue = f.build_bin_inst(left_value, right_value, Instruction::str_to_op(op_string), CurBasicBlock);
+        else{
+            CurValue = f.build_bin_inst(tmp_value, CurValue, Instruction::str_to_op(op_string), CurBasicBlock);
+        }
+    }
+    return nullptr;
+}
+
+antlrcpp::Any Visitor::visitExp(SysYParser::ExpContext *ctx, bool is_const) {
+    visitMulExp(ctx->mulExp(0), is_const);
+    for(int i = 0; i < ctx->addOP().size(); i++){
+        std::string op_string = ctx->addOP(i)->getText();
+        Value* tmp_value = CurValue;
+        visitMulExp(ctx->mulExp(i + 1), is_const);
+        auto const_left = dynamic_cast<Const*>(tmp_value);
+        auto const_right = dynamic_cast<Const*>(CurValue);
+        if(const_left && const_right){
+            CurValue = f.build_cal_number(const_left, const_right, op_string);
+        }
+        else{
+            CurValue = f.build_bin_inst(tmp_value, CurValue, Instruction::str_to_op(op_string), CurBasicBlock);
+        }
     }
 
     return nullptr;

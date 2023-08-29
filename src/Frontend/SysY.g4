@@ -12,16 +12,17 @@ initVal: exp;
 
 initArray: '{' (initVal (',' initVal)* )? '}' ;
 
-exp:  unaryExp
-        | exp (Mul | Div | Mod) exp
-        | exp (Add | Sub) exp
-        ;
+mulExp: unaryExp (mulOP unaryExp)*;
 
-lexp: exp | lexp (Lt | Gt | Le | Ge) lexp
-            | lexp (Eq | Ne) lexp
-         	| lexp LAnd lexp
-         	| lexp LOr lexp
-         	;
+exp:  mulExp (addOP mulExp)*;
+
+lorExp: landExp ('||' landExp)* ;
+
+landExp: eqExp ('&&' eqExp)* ;
+
+eqExp: relExp (relOP relExp)* ;
+
+relExp: mulExp(addOP mulExp)* ;
 
 unaryExp: unaryOP* primaryExp ;
 
@@ -45,9 +46,9 @@ assign: lVal '=' exp ';' ;
 
 expStmt: exp? ';' ;
 
-ifStmt: If '(' lexp ')' stmt (Else stmt)? ;
+ifStmt: If '(' lorExp ')' stmt (Else stmt)? ;
 
-whileStmt: While '(' lexp ')' stmt ;
+whileStmt: While '(' lorExp ')' stmt ;
 
 break: Break ';' ;
 
@@ -57,7 +58,11 @@ return: Return exp? ';' ;
 
 unaryOP: Add | Sub | Not ;
 
-op: Add | Sub | Not | Mul | Div | Mod | LAnd | LOr | Eq | Ne | Lt | Le | Gt | Ge ;
+addOP: Add | Sub;
+
+mulOP: Mul | Div | Mod;
+
+relOP: Lt | Gt | Le | Ge;
 
 bType: Int | Float;
 
