@@ -14,8 +14,41 @@ Value* CurValue;
 BasicBlock* CurBasicBlock;
 
 IRBuildFactory f = IRBuildFactory::getInstance();
+std::vector<std::unordered_map<std::string, Value*>> sym_tables;
 
 
+
+void Visitor::push_sym_table() {
+    sym_tables.push_back({});
+}
+
+void Visitor::pop_sym_table() {
+    sym_tables.pop_back();
+}
+
+void Visitor::push_symbol(const std::string& ident, Value* value) {
+    int len = sym_tables.size();
+    sym_tables[len - 1][ident] = value;
+}
+
+Value* Visitor::find(const std::string& ident){
+    int len = sym_tables.size();
+    for (int i = len - 1; i >= 0; i--) {
+        std::unordered_map<std::string, Value*>& sym_table = sym_tables[i];
+        auto it = sym_table.find(ident);
+        if (it != sym_table.end()) {
+            return it->second;
+        }
+    }
+    return nullptr;
+}
+
+antlrcpp::Any Visitor::visitLVal(SysYParser::LValContext *ctx, bool is_fetch) {
+    std::string ident = ctx->Ident()->getText();
+    CurValue = find(ident);
+
+    return nullptr;
+}
 
 antlrcpp::Any Visitor::visitPrimaryExp(SysYParser::PrimaryExpContext *ctx, bool is_const) {
     if(ctx->number()){
@@ -32,6 +65,9 @@ antlrcpp::Any Visitor::visitPrimaryExp(SysYParser::PrimaryExpContext *ctx, bool 
     }
     else if(ctx->exp()){
         visitExp(ctx->exp(), is_const);
+    }
+    else if(ctx->lVal()){
+        visitLVal(ctx->lVal(), true);
     }
     return nullptr;
 }
@@ -155,13 +191,55 @@ antlrcpp::Any Visitor::visitFuncDef(SysYParser::FuncDefContext *ctx) {
 
     CurFunction = f.build_function(ident, type, ir_module);
 
+    push_symbol(ident, CurFunction);
+    push_sym_table();
+
     CurBasicBlock = f.build_basic_block(CurFunction);
     visitBlock(ctx->block());
 
+    pop_sym_table();
+    return nullptr;
+}
+
+antlrcpp::Any Visitor::visitConstDef(SysYParser::DefContext *ctx, Type* type, bool is_global){
+    std::string ident = ctx->Ident()->getText();
+    if(ctx->initVal()){
+        visitExp(ctx->initVal()->exp(), true);
+        if(type == IntegerType::get_instance() && CurValue->get_type() == FloatType::get_instance()){
+            auto const_float = dynamic_cast<ConstFloat*>(CurValue);
+            CurValue = f.build_number((int) const_float->get_value());
+        }
+        else if(type == FloatType::get_instance() && CurValue->get_type() == IntegerType::get_instance()){
+            auto const_int = dynamic_cast<ConstInt*>(CurValue);
+            CurValue = f.build_number((float) const_int->get_value());
+        }
+        push_symbol(ident, CurValue);
+    }
+    return nullptr;
+}
+
+antlrcpp::Any Visitor::visitDecl(SysYParser::DeclContext *ctx, bool is_global) {
+    bool is_const = false;
+    if(ctx->Const()) is_const = true;
+    std::string type_string = ctx->bType()->getText();
+    Type* type;
+    if(type_string == "int") type = IntegerType::get_instance();
+    else if(type_string == "float") type = FloatType::get_instance();
+
+    for(auto def : ctx->def()){
+        if(is_const) visitConstDef(def, type, is_global);
+    }
+    return nullptr;
+}
+
+antlrcpp::Any Visitor::visitGlobalDecl(SysYParser::GlobalDeclContext *ctx) {
+    visitDecl(ctx->decl(), true);
     return nullptr;
 }
 
 antlrcpp::Any Visitor::visitCompUnit(SysYParser::CompUnitContext *ctx){
+
+    push_sym_table();
     visitChildren(ctx);
 
     return nullptr;

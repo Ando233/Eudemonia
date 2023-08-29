@@ -2,7 +2,9 @@ grammar SysY;
 
 import CommonLex;
 
-compUnit : (decl | funcDef)* EOF;
+compUnit : (globalDecl | funcDef)* EOF;
+
+globalDecl: decl;
 
 decl : 'const'? bType def (',' def)* ';';
 

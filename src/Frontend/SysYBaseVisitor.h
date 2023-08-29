@@ -19,6 +19,10 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual std::any visitGlobalDecl(SysYParser::GlobalDeclContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual std::any visitDecl(SysYParser::DeclContext *ctx) override {
     return visitChildren(ctx);
   }

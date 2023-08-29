@@ -23,14 +23,14 @@ public:
   };
 
   enum {
-    RuleCompUnit = 0, RuleDecl = 1, RuleDef = 2, RuleInitVal = 3, RuleInitArray = 4, 
-    RuleMulExp = 5, RuleExp = 6, RuleLorExp = 7, RuleLandExp = 8, RuleEqExp = 9, 
-    RuleRelExp = 10, RuleUnaryExp = 11, RulePrimaryExp = 12, RuleCall = 13, 
-    RuleNumber = 14, RuleLVal = 15, RuleFuncDef = 16, RuleFuncFParam = 17, 
-    RuleBlock = 18, RuleStmt = 19, RuleAssign = 20, RuleExpStmt = 21, RuleIfStmt = 22, 
-    RuleWhileStmt = 23, RuleBreak = 24, RuleContinue = 25, RuleReturn = 26, 
-    RuleUnaryOP = 27, RuleAddOP = 28, RuleMulOP = 29, RuleRelOP = 30, RuleBType = 31, 
-    RuleFuncType = 32
+    RuleCompUnit = 0, RuleGlobalDecl = 1, RuleDecl = 2, RuleDef = 3, RuleInitVal = 4, 
+    RuleInitArray = 5, RuleMulExp = 6, RuleExp = 7, RuleLorExp = 8, RuleLandExp = 9, 
+    RuleEqExp = 10, RuleRelExp = 11, RuleUnaryExp = 12, RulePrimaryExp = 13, 
+    RuleCall = 14, RuleNumber = 15, RuleLVal = 16, RuleFuncDef = 17, RuleFuncFParam = 18, 
+    RuleBlock = 19, RuleStmt = 20, RuleAssign = 21, RuleExpStmt = 22, RuleIfStmt = 23, 
+    RuleWhileStmt = 24, RuleBreak = 25, RuleContinue = 26, RuleReturn = 27, 
+    RuleUnaryOP = 28, RuleAddOP = 29, RuleMulOP = 30, RuleRelOP = 31, RuleBType = 32, 
+    RuleFuncType = 33
   };
 
   explicit SysYParser(antlr4::TokenStream *input);
@@ -51,6 +51,7 @@ public:
 
 
   class CompUnitContext;
+  class GlobalDeclContext;
   class DeclContext;
   class DefContext;
   class InitValContext;
@@ -89,8 +90,8 @@ public:
     CompUnitContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *EOF();
-    std::vector<DeclContext *> decl();
-    DeclContext* decl(size_t i);
+    std::vector<GlobalDeclContext *> globalDecl();
+    GlobalDeclContext* globalDecl(size_t i);
     std::vector<FuncDefContext *> funcDef();
     FuncDefContext* funcDef(size_t i);
 
@@ -100,6 +101,19 @@ public:
   };
 
   CompUnitContext* compUnit();
+
+  class  GlobalDeclContext : public antlr4::ParserRuleContext {
+  public:
+    GlobalDeclContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    DeclContext *decl();
+
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  GlobalDeclContext* globalDecl();
 
   class  DeclContext : public antlr4::ParserRuleContext {
   public:

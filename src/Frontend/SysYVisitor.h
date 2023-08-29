@@ -21,6 +21,8 @@ public:
    */
     virtual std::any visitCompUnit(SysYParser::CompUnitContext *context) = 0;
 
+    virtual std::any visitGlobalDecl(SysYParser::GlobalDeclContext *context) = 0;
+
     virtual std::any visitDecl(SysYParser::DeclContext *context) = 0;
 
     virtual std::any visitDef(SysYParser::DefContext *context) = 0;
