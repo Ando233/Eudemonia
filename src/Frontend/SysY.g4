@@ -12,7 +12,16 @@ initVal: exp;
 
 initArray: '{' (initVal (',' initVal)* )? '}' ;
 
-exp:  unaryExp (op unaryExp)* ;
+exp:  unaryExp
+        | exp (Mul | Div | Mod) exp
+        | exp (Add | Sub) exp
+        ;
+
+lexp: exp | lexp (Lt | Gt | Le | Ge) lexp
+            | lexp (Eq | Ne) lexp
+         	| lexp LAnd lexp
+         	| lexp LOr lexp
+         	;
 
 unaryExp: unaryOP* primaryExp ;
 
@@ -36,9 +45,9 @@ assign: lVal '=' exp ';' ;
 
 expStmt: exp? ';' ;
 
-ifStmt: If '(' exp ')' stmt (Else stmt)? ;
+ifStmt: If '(' lexp ')' stmt (Else stmt)? ;
 
-whileStmt: While '(' exp ')' stmt ;
+whileStmt: While '(' lexp ')' stmt ;
 
 break: Break ';' ;
 

@@ -46,6 +46,82 @@ OP turn_to_float(OP _op){
     else return _op;
 }
 
+int IRBuildFactory::calculate(int a, int b, const std::string& op) {
+    if (op == "+") {
+        return a + b;
+    } else if (op == "-") {
+        return a - b;
+    } else if (op == "*") {
+        return a * b;
+    } else if (op == "/") {
+        return a / b;
+    } else if (op == "%") {
+        return a % b;
+    } else if (op == "<") {
+        return a < b ? 1 : 0;
+    } else if (op == "<=") {
+        return a <= b ? 1 : 0;
+    } else if (op == ">") {
+        return a > b ? 1 : 0;
+    } else if (op == ">=") {
+        return a >= b ? 1 : 0;
+    } else if (op == "==") {
+        return a == b ? 1 : 0;
+    } else if (op == "!=") {
+        return a != b ? 1 : 0;
+    } else {
+        return 0;
+    }
+}
+
+float IRBuildFactory::calculate(float a, float b, const std::string& op) {
+    if (op == "+") {
+        return a + b;
+    } else if (op == "-") {
+        return a - b;
+    } else if (op == "*") {
+        return a * b;
+    } else if (op == "/") {
+        return a / b;
+    } else if (op == "%") {
+        return std::fmod(a, b);
+    } else if (op == "<") {
+        return a < b ? 1.0f : 0.0f;
+    } else if (op == "<=") {
+        return a <= b ? 1.0f : 0.0f;
+    } else if (op == ">") {
+        return a > b ? 1.0f : 0.0f;
+    } else if (op == ">=") {
+        return a >= b ? 1.0f : 0.0f;
+    } else if (op == "==") {
+        return a == b ? 1.0f : 0.0f;
+    } else if (op == "!=") {
+        return a != b ? 1.0f : 0.0f;
+    } else {
+        return 0.0f;
+    }
+}
+
+Const* IRBuildFactory::build_cal_number(Const* left, Const* right, std::string op){
+    auto left_int = dynamic_cast<ConstInt*>(left);
+    auto left_float = dynamic_cast<ConstFloat*>(left);
+    auto right_int = dynamic_cast<ConstInt*>(right);
+    auto right_float = dynamic_cast<ConstFloat*>(right);
+    if(left_int && right_int){
+        return build_number(calculate(left_int->get_value(), right_int->get_value(), op));
+    }
+    else if(left_float && right_float){
+        return build_number(calculate(left_float->get_value(), right_float->get_value(), op));
+    }
+    else if(left_int && right_float){
+        return build_number(calculate((float) left_int->get_value(), right_float->get_value(), op));
+    }
+    else if(left_float && right_int){
+        return build_number(calculate(left_float->get_value(), (float) right_int->get_value(), op));
+    }
+    return nullptr;
+}
+
 BinaryInst* IRBuildFactory::build_bin_inst(Value* left, Value* right, OP op, BasicBlock* bb){
     Type* type;
     Type* left_type = left->get_type();

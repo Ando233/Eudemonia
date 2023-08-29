@@ -19,6 +19,8 @@ class IRBuildFactory {
 
 private:
     Value *turn_type(Value *value, Type *type, BasicBlock *bb);
+    int calculate(int a, int b, const std::string& op);
+    float calculate(float a, float b, const std::string& op);
 
 public:
     static IRBuildFactory getInstance(){
@@ -26,6 +28,7 @@ public:
         return f;
     }
 
+    Const* build_cal_number(Const* left, Const* right, std::string op);
     BinaryInst* build_bin_inst(Value* left, Value* right, OP op, BasicBlock* bb);
     RetInst* build_ret_inst(BasicBlock* bb);
     RetInst* build_ret_inst(Value* value, BasicBlock* bb);

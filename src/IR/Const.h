@@ -25,7 +25,7 @@ public:
     ConstInt(int _val) : Const(std::to_string(_val), IntegerType::get_instance()) {
         val = _val;
     }
-    int getValue(){
+    int get_value(){
         return val;
     }
     bool is_const_int() override{
@@ -41,7 +41,7 @@ public:
     ConstFloat(float _val) : Const(std::to_string(_val), FloatType::get_instance()) {
         val = _val;
     }
-    float getValue(){
+    float get_value(){
         return val;
     }
     bool is_const_float() override{

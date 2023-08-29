@@ -1,5 +1,5 @@
 
-// Generated from SysY.g4 by ANTLR 4.13.0
+// Generated from D:/Clion Projects/Eudemonia/src/Frontend\SysY.g4 by ANTLR 4.12.0
 
 #pragma once
 
@@ -36,6 +36,10 @@ public:
   }
 
   virtual std::any visitExp(SysYParser::ExpContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitLexp(SysYParser::LexpContext *ctx) override {
     return visitChildren(ctx);
   }
 

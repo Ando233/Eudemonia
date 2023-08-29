@@ -14,5 +14,7 @@ include_directories(third_party/antlr4-runtime)
 
 add_executable(compiler ${DIR_SRC} ${DIR_LIB_SRC}
         src/Driver/Driver.cpp
-        src/Support/IList.h)
+        src/Support/IList.h
+        src/Backend/ObjFunction.h
+        src/Backend/ObjModule.cpp)
 target_link_libraries(compiler -static)

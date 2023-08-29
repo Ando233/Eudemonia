@@ -1,5 +1,5 @@
 
-// Generated from SysY.g4 by ANTLR 4.13.0
+// Generated from D:/Clion Projects/Eudemonia/src/Frontend\SysY.g4 by ANTLR 4.12.0
 
 
 #include "SysYLexer.h"
@@ -42,19 +42,10 @@ struct SysYLexerStaticData final {
 };
 
 ::antlr4::internal::OnceFlag sysylexerLexerOnceFlag;
-#if ANTLR4_USE_THREAD_LOCAL_CACHE
-static thread_local
-#endif
 SysYLexerStaticData *sysylexerLexerStaticData = nullptr;
 
 void sysylexerLexerInitialize() {
-#if ANTLR4_USE_THREAD_LOCAL_CACHE
-  if (sysylexerLexerStaticData != nullptr) {
-    return;
-  }
-#else
   assert(sysylexerLexerStaticData == nullptr);
-#endif
   auto staticData = std::make_unique<SysYLexerStaticData>(
     std::vector<std::string>{
       "T__0", "Int", "Float", "Void", "Const", "Return", "If", "Else", "For", 
@@ -288,9 +279,5 @@ const atn::ATN& SysYLexer::getATN() const {
 
 
 void SysYLexer::initialize() {
-#if ANTLR4_USE_THREAD_LOCAL_CACHE
-  sysylexerLexerInitialize();
-#else
   ::antlr4::internal::call_once(sysylexerLexerOnceFlag, sysylexerLexerInitialize);
-#endif
 }

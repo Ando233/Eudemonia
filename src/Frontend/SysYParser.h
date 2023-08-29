@@ -1,5 +1,5 @@
 
-// Generated from SysY.g4 by ANTLR 4.13.0
+// Generated from D:/Clion Projects/Eudemonia/src/Frontend\SysY.g4 by ANTLR 4.12.0
 
 #pragma once
 
@@ -24,11 +24,11 @@ public:
 
   enum {
     RuleCompUnit = 0, RuleDecl = 1, RuleDef = 2, RuleInitVal = 3, RuleInitArray = 4, 
-    RuleExp = 5, RuleUnaryExp = 6, RulePrimaryExp = 7, RuleCall = 8, RuleNumber = 9, 
-    RuleLVal = 10, RuleFuncDef = 11, RuleFuncFParam = 12, RuleBlock = 13, 
-    RuleStmt = 14, RuleAssign = 15, RuleExpStmt = 16, RuleIfStmt = 17, RuleWhileStmt = 18, 
-    RuleBreak = 19, RuleContinue = 20, RuleReturn = 21, RuleUnaryOP = 22, 
-    RuleOp = 23, RuleBType = 24, RuleFuncType = 25
+    RuleExp = 5, RuleLexp = 6, RuleUnaryExp = 7, RulePrimaryExp = 8, RuleCall = 9, 
+    RuleNumber = 10, RuleLVal = 11, RuleFuncDef = 12, RuleFuncFParam = 13, 
+    RuleBlock = 14, RuleStmt = 15, RuleAssign = 16, RuleExpStmt = 17, RuleIfStmt = 18, 
+    RuleWhileStmt = 19, RuleBreak = 20, RuleContinue = 21, RuleReturn = 22, 
+    RuleUnaryOP = 23, RuleOp = 24, RuleBType = 25, RuleFuncType = 26
   };
 
   explicit SysYParser(antlr4::TokenStream *input);
@@ -54,6 +54,7 @@ public:
   class InitValContext;
   class InitArrayContext;
   class ExpContext;
+  class LexpContext;
   class UnaryExpContext;
   class PrimaryExpContext;
   class CallContext;
@@ -167,10 +168,14 @@ public:
   public:
     ExpContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    std::vector<UnaryExpContext *> unaryExp();
-    UnaryExpContext* unaryExp(size_t i);
-    std::vector<OpContext *> op();
-    OpContext* op(size_t i);
+    UnaryExpContext *unaryExp();
+    std::vector<ExpContext *> exp();
+    ExpContext* exp(size_t i);
+    antlr4::tree::TerminalNode *Mul();
+    antlr4::tree::TerminalNode *Div();
+    antlr4::tree::TerminalNode *Mod();
+    antlr4::tree::TerminalNode *Add();
+    antlr4::tree::TerminalNode *Sub();
 
 
     virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
@@ -178,7 +183,30 @@ public:
   };
 
   ExpContext* exp();
+  ExpContext* exp(int precedence);
+  class  LexpContext : public antlr4::ParserRuleContext {
+  public:
+    LexpContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    ExpContext *exp();
+    std::vector<LexpContext *> lexp();
+    LexpContext* lexp(size_t i);
+    antlr4::tree::TerminalNode *Lt();
+    antlr4::tree::TerminalNode *Gt();
+    antlr4::tree::TerminalNode *Le();
+    antlr4::tree::TerminalNode *Ge();
+    antlr4::tree::TerminalNode *Eq();
+    antlr4::tree::TerminalNode *Ne();
+    antlr4::tree::TerminalNode *LAnd();
+    antlr4::tree::TerminalNode *LOr();
 
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  LexpContext* lexp();
+  LexpContext* lexp(int precedence);
   class  UnaryExpContext : public antlr4::ParserRuleContext {
   public:
     UnaryExpContext(antlr4::ParserRuleContext *parent, size_t invokingState);
@@ -378,7 +406,7 @@ public:
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *If();
     antlr4::tree::TerminalNode *Lparen();
-    ExpContext *exp();
+    LexpContext *lexp();
     antlr4::tree::TerminalNode *Rparen();
     std::vector<StmtContext *> stmt();
     StmtContext* stmt(size_t i);
@@ -397,7 +425,7 @@ public:
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *While();
     antlr4::tree::TerminalNode *Lparen();
-    ExpContext *exp();
+    LexpContext *lexp();
     antlr4::tree::TerminalNode *Rparen();
     StmtContext *stmt();
 
@@ -521,6 +549,11 @@ public:
 
   FuncTypeContext* funcType();
 
+
+  bool sempred(antlr4::RuleContext *_localctx, size_t ruleIndex, size_t predicateIndex) override;
+
+  bool expSempred(ExpContext *_localctx, size_t predicateIndex);
+  bool lexpSempred(LexpContext *_localctx, size_t predicateIndex);
 
   // By default the static state used to implement the parser is lazily initialized during the first
   // call to the constructor. You can call this function if you wish to initialize the static state

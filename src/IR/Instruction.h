@@ -59,7 +59,8 @@ public:
         //not op
         no,
         move,
-        bitcast
+        bitcast,
+        unknown
     };
     static std::string get_op_name(OP _op){
         switch (_op) {
@@ -102,7 +103,61 @@ public:
             default: return "Unknown";
         }
     }
-
+    static OP str_to_op(std::string str){
+        if (str == "+") {
+            return OP::add;
+        } else if (str == "+f") {
+            return OP::fadd;
+        } else if (str == "-") {
+            return OP::sub;
+        } else if (str == "-f") {
+            return OP::fsub;
+        } else if (str == "*") {
+            return OP::mul;
+        } else if (str == "*f") {
+            return OP::fmul;
+        } else if (str == "/") {
+            return OP::div;
+        } else if (str == "/f") {
+            return OP::fdiv;
+        } else if (str == "%") {
+            return OP::mod;
+        } else if (str == "%f") {
+            return OP::fmod;
+        } else if (str == "<=") {
+            return OP::le;
+        } else if (str == "<=f") {
+            return OP::fle;
+        } else if (str == "<") {
+            return OP::lt;
+        } else if (str == "<f") {
+            return OP::flt;
+        } else if (str == ">=") {
+            return OP::ge;
+        } else if (str == ">=f") {
+            return OP::fge;
+        } else if (str == ">") {
+            return OP::gt;
+        } else if (str == ">f") {
+            return OP::fgt;
+        } else if (str == "==") {
+            return OP::eq;
+        } else if (str == "==f") {
+            return OP::feq;
+        } else if (str == "!=") {
+            return OP::ne;
+        } else if (str == "!=f") {
+            return OP::fne;
+        } else if (str == "ftoi") {
+            return OP::ftoi;
+        } else if (str == "itof") {
+            return OP::itof;
+        } else if (str == "bitcast") {
+            return OP::bitcast;
+        } else {
+            return OP::unknown;
+        }
+    }
 private:
     InstNode* node;
 

@@ -15,6 +15,8 @@ BasicBlock* CurBasicBlock;
 
 IRBuildFactory f = IRBuildFactory::getInstance();
 
+
+
 antlrcpp::Any Visitor::visitPrimaryExp(SysYParser::PrimaryExpContext *ctx, bool is_const) {
     if(ctx->number()){
         SysYParser::NumberContext* num = ctx->number();
@@ -57,10 +59,10 @@ antlrcpp::Any Visitor::visitUnaryExp(SysYParser::UnaryExpContext *ctx, bool is_c
     }
     if(count % 2 == 1){
         if(auto* const_int = dynamic_cast<ConstInt*>(CurValue)){
-            CurValue = f.build_number(-const_int->getValue());
+            CurValue = f.build_number(-const_int->get_value());
         }
         else if(auto* const_float = dynamic_cast<ConstFloat*>(CurValue)){
-            CurValue = f.build_number(-const_float->getValue());
+            CurValue = f.build_number(-const_float->get_value());
         }
         else{
             Value* zero;
@@ -77,13 +79,28 @@ antlrcpp::Any Visitor::visitUnaryExp(SysYParser::UnaryExpContext *ctx, bool is_c
 }
 
 antlrcpp::Any Visitor::visitExp(SysYParser::ExpContext *ctx, bool is_const) {
-    std::vector<SysYParser::UnaryExpContext *> unaryExps = ctx->unaryExp();
-    visitUnaryExp(unaryExps[0], is_const);
+    if(ctx->unaryExp()) {
+        visitUnaryExp(ctx->unaryExp(), is_const);
+    }
+    else{
+        std::string op_string;
+        if(ctx->Add()) op_string = "+";
+        else if(ctx->Sub()) op_string = "-";
+        else if(ctx->Mul()) op_string = "*";
+        else if(ctx->Div()) op_string = "/";
+        else if(ctx->Mod()) op_string = "%";
 
-//    for(int i = 0; i < ctx->op().size(); i++){
-//        std::string op_string = ctx->op(i)->getText();
-//
-//    }
+        visitExp(ctx->exp(0), is_const);
+        Value* left_value = CurValue;
+        visitExp(ctx->exp(1), is_const);
+        Value* right_value = CurValue;
+        auto const_left = dynamic_cast<Const*>(left_value);
+        auto const_right = dynamic_cast<Const*>(right_value);
+        if(const_left && const_right){
+            CurValue = f.build_cal_number(const_left, const_right, op_string);
+        }
+        else CurValue = f.build_bin_inst(left_value, right_value, Instruction::str_to_op(op_string), CurBasicBlock);
+    }
 
     return nullptr;
 }

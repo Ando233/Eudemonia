@@ -1,6 +1,36 @@
 [
 {
   "directory": "D:/Clion Projects/Eudemonia/cmake-build-debug",
+  "command": "D:\\PROGRA~2\\MSY2\\clang64\\bin\\CLANG_~1.EXE -I\"D:/Clion Projects/Eudemonia/src\" -I\"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime\" -g -O0 -fcolor-diagnostics --std=c++17 -O2 -o CMakeFiles\\compiler.dir\\src\\Backend\\ObjBlock.cpp.obj -c \"D:\\Clion Projects\\Eudemonia\\src\\Backend\\ObjBlock.cpp\"",
+  "file": "D:\\Clion Projects\\Eudemonia\\src\\Backend\\ObjBlock.cpp",
+  "output": "CMakeFiles\\compiler.dir\\src\\Backend\\ObjBlock.cpp.obj"
+},
+{
+  "directory": "D:/Clion Projects/Eudemonia/cmake-build-debug",
+  "command": "D:\\PROGRA~2\\MSY2\\clang64\\bin\\CLANG_~1.EXE -I\"D:/Clion Projects/Eudemonia/src\" -I\"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime\" -g -O0 -fcolor-diagnostics --std=c++17 -O2 -o CMakeFiles\\compiler.dir\\src\\Backend\\ObjFunction.cpp.obj -c \"D:\\Clion Projects\\Eudemonia\\src\\Backend\\ObjFunction.cpp\"",
+  "file": "D:\\Clion Projects\\Eudemonia\\src\\Backend\\ObjFunction.cpp",
+  "output": "CMakeFiles\\compiler.dir\\src\\Backend\\ObjFunction.cpp.obj"
+},
+{
+  "directory": "D:/Clion Projects/Eudemonia/cmake-build-debug",
+  "command": "D:\\PROGRA~2\\MSY2\\clang64\\bin\\CLANG_~1.EXE -I\"D:/Clion Projects/Eudemonia/src\" -I\"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime\" -g -O0 -fcolor-diagnostics --std=c++17 -O2 -o CMakeFiles\\compiler.dir\\src\\Backend\\ObjInst.cpp.obj -c \"D:\\Clion Projects\\Eudemonia\\src\\Backend\\ObjInst.cpp\"",
+  "file": "D:\\Clion Projects\\Eudemonia\\src\\Backend\\ObjInst.cpp",
+  "output": "CMakeFiles\\compiler.dir\\src\\Backend\\ObjInst.cpp.obj"
+},
+{
+  "directory": "D:/Clion Projects/Eudemonia/cmake-build-debug",
+  "command": "D:\\PROGRA~2\\MSY2\\clang64\\bin\\CLANG_~1.EXE -I\"D:/Clion Projects/Eudemonia/src\" -I\"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime\" -g -O0 -fcolor-diagnostics --std=c++17 -O2 -o CMakeFiles\\compiler.dir\\src\\Backend\\ObjModule.cpp.obj -c \"D:\\Clion Projects\\Eudemonia\\src\\Backend\\ObjModule.cpp\"",
+  "file": "D:\\Clion Projects\\Eudemonia\\src\\Backend\\ObjModule.cpp",
+  "output": "CMakeFiles\\compiler.dir\\src\\Backend\\ObjModule.cpp.obj"
+},
+{
+  "directory": "D:/Clion Projects/Eudemonia/cmake-build-debug",
+  "command": "D:\\PROGRA~2\\MSY2\\clang64\\bin\\CLANG_~1.EXE -I\"D:/Clion Projects/Eudemonia/src\" -I\"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime\" -g -O0 -fcolor-diagnostics --std=c++17 -O2 -o CMakeFiles\\compiler.dir\\src\\Backend\\ObjReg.cpp.obj -c \"D:\\Clion Projects\\Eudemonia\\src\\Backend\\ObjReg.cpp\"",
+  "file": "D:\\Clion Projects\\Eudemonia\\src\\Backend\\ObjReg.cpp",
+  "output": "CMakeFiles\\compiler.dir\\src\\Backend\\ObjReg.cpp.obj"
+},
+{
+  "directory": "D:/Clion Projects/Eudemonia/cmake-build-debug",
   "command": "D:\\PROGRA~2\\MSY2\\clang64\\bin\\CLANG_~1.EXE -I\"D:/Clion Projects/Eudemonia/src\" -I\"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime\" -g -O0 -fcolor-diagnostics --std=c++17 -O2 -o CMakeFiles\\compiler.dir\\src\\Driver\\Driver.cpp.obj -c \"D:\\Clion Projects\\Eudemonia\\src\\Driver\\Driver.cpp\"",
   "file": "D:\\Clion Projects\\Eudemonia\\src\\Driver\\Driver.cpp",
   "output": "CMakeFiles\\compiler.dir\\src\\Driver\\Driver.cpp.obj"

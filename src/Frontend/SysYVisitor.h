@@ -1,5 +1,5 @@
 
-// Generated from SysY.g4 by ANTLR 4.13.0
+// Generated from D:/Clion Projects/Eudemonia/src/Frontend\SysY.g4 by ANTLR 4.12.0
 
 #pragma once
 
@@ -30,6 +30,8 @@ public:
     virtual std::any visitInitArray(SysYParser::InitArrayContext *context) = 0;
 
     virtual std::any visitExp(SysYParser::ExpContext *context) = 0;
+
+    virtual std::any visitLexp(SysYParser::LexpContext *context) = 0;
 
     virtual std::any visitUnaryExp(SysYParser::UnaryExpContext *context) = 0;
 
