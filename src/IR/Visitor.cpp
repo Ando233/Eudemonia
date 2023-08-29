@@ -28,6 +28,9 @@ antlrcpp::Any Visitor::visitPrimaryExp(SysYParser::PrimaryExpContext *ctx, bool 
             CurValue = f.build_number(val);
         }
     }
+    else if(ctx->exp()){
+        visitExp(ctx->exp(), is_const);
+    }
     return nullptr;
 }
 

@@ -53,7 +53,7 @@ rule RERUN_CMAKE
 # Rule for cleaning all built files.
 
 rule CLEAN
-  command = D:\PROGRA~2\CLION2~1.2\bin\ninja\win\x64\ninja.exe $FILE_ARG -t clean $TARGETS
+  command = "D:\Program Files (x86)\CLion 2023.2\bin\ninja\win\x64\ninja.exe" $FILE_ARG -t clean $TARGETS
   description = Cleaning all built files...
 
 
@@ -61,6 +61,6 @@ rule CLEAN
 # Rule for printing all primary targets available.
 
 rule HELP
-  command = D:\PROGRA~2\CLION2~1.2\bin\ninja\win\x64\ninja.exe -t targets
+  command = "D:\Program Files (x86)\CLion 2023.2\bin\ninja\win\x64\ninja.exe" -t targets
   description = All primary targets available:
 

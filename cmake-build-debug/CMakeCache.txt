@@ -121,7 +121,7 @@ CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/Eudemonia
 CMAKE_LINKER:UNINITIALIZED=lld
 
 //make program
-CMAKE_MAKE_PROGRAM:FILEPATH=D:/PROGRA~2/CLION2~1.2/bin/ninja/win/x64/ninja.exe
+CMAKE_MAKE_PROGRAM:FILEPATH=D:/Program Files (x86)/CLion 2023.2/bin/ninja/win/x64/ninja.exe
 
 //Flags used by the linker during the creation of modules during
 // all build types.
