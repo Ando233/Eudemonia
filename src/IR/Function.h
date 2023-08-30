@@ -32,6 +32,7 @@ private:
     using BbList = IList<BasicBlock*, Function*>;
     ArgList args;
     BbList* bbs;
+    bool is_lib_func = false;
 
 public:
     Function(std::string _name, Type* _type) : Value(std::move(_name), _type) {
@@ -43,6 +44,12 @@ public:
     }
     void add_arg(Argument* arg){
         args.push_back(arg);
+    }
+    ArgList get_args(){
+        return args;
+    }
+    void set_as_lib_function(){
+        is_lib_func = true;
     }
     void dump(std::ofstream& out);
 };

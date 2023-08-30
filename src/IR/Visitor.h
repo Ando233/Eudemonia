@@ -25,6 +25,7 @@ private:
     void push_symbol();
     static Value* find(const std::string& ident);
 
+    void register_lib_func();
     antlrcpp::Any visitWhileStmt(SysYParser::WhileStmtContext *ctx);
     antlrcpp::Any visitRelExp(SysYParser::RelExpContext *ctx, bool is_const);
     antlrcpp::Any visitEqExp(SysYParser::EqExpContext *ctx, bool is_const);

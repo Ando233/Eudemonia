@@ -14,6 +14,7 @@
 
 namespace IR {
 class BasicBlock;
+class Function;
 
 using InstNode = INode<Instruction*, BasicBlock*>;
 class Instruction : public Value {
@@ -243,6 +244,24 @@ public:
 
     void dump(std::ofstream& out) override{
         out << name + " = alloc " + get_alloc_type()->to_string() + "\n";
+    }
+};
+
+class CallInst : public Instruction{
+private:
+    Function* function;
+public:
+    CallInst(Function* _function, std::vector<Value*> values);
+    void dump(std::ofstream& out) override;
+    Function* get_function(){
+        return function;
+    }
+    std::vector<Value*> get_values(){
+        std::vector<Value*> values;
+        for(auto use : get_operands()){
+            values.push_back(use->get_value());
+        }
+        return values;
     }
 };
 

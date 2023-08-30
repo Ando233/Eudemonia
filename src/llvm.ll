@@ -15,6 +15,8 @@ block2:
 
 int main() {
 block3:
-	return 
+	call void f()
+	%4 = call int half(int 10)
+	return %4
 }
 

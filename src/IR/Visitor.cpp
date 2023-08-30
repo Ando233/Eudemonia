@@ -19,7 +19,19 @@ std::unordered_map<std::string, Value> argHashMap;
 IRBuildFactory f = IRBuildFactory::getInstance();
 std::vector<std::unordered_map<std::string, Value*>> sym_tables;
 
-
+Function* print_func = new Function("@putint", VoidType::get_instance());
+Function* input_func = new Function("@getint", IntegerType::get_instance());
+Function* print_ch_func = new Function("@putch", VoidType::get_instance());
+Function* input_ch_func = new Function("@getch", IntegerType::get_instance());
+Function* print_arr_func = new Function("@putarray", VoidType::get_instance());
+Function* input_arr_func = new Function("@getarray", IntegerType::get_instance());
+Function* print_float_func = new Function("@putfloat", VoidType::get_instance());
+Function* input_float_func = new Function("@getfloat", FloatType::get_instance());
+Function* print_farr_func = new Function("@putfarray", VoidType::get_instance());
+Function* input_farr_func = new Function("@getfarray", IntegerType::get_instance());
+Function* memset_func = new Function("@memset", VoidType::get_instance());
+Function* start_time_func = new Function("@_sysy_starttime", VoidType::get_instance());
+Function* stop_time_func = new Function("@_sysy_stoptime", VoidType::get_instance());
 
 void Visitor::push_sym_table() {
     sym_tables.emplace_back();
@@ -43,7 +55,34 @@ Value* Visitor::find(const std::string& ident){
             return it->second;
         }
     }
-    return nullptr;
+
+    if (ident == "getint") {
+        return input_func;
+    } else if (ident == "putint") {
+        return print_func;
+    } else if (ident == "getch") {
+        return input_ch_func;
+    } else if (ident == "putch") {
+        return print_ch_func;
+    } else if (ident == "getarray") {
+        return input_arr_func;
+    } else if (ident == "putarray") {
+        return print_arr_func;
+    } else if (ident == "getfloat") {
+        return input_float_func;
+    } else if (ident == "putfloat") {
+        return print_float_func;
+    } else if (ident == "getfarray") {
+        return input_farr_func;
+    } else if (ident == "putfarray") {
+        return print_farr_func;
+    } else if (ident == "starttime") {
+        return start_time_func;
+    } else if (ident == "stoptime") {
+        return stop_time_func;
+    } else {
+        return nullptr;
+    }
 }
 
 antlrcpp::Any Visitor::visitLVal(SysYParser::LValContext *ctx, bool is_fetch) {
@@ -78,6 +117,32 @@ antlrcpp::Any Visitor::visitPrimaryExp(SysYParser::PrimaryExpContext *ctx, bool 
     }
     else if(ctx->lVal()){
         visitLVal(ctx->lVal(), true);
+    }
+    else if(ctx->call()){
+        Function* function = (Function*) find(ctx->call()->Ident()->getText());
+        std::vector<Value*> values;
+
+        for(auto exp : ctx->call()->exp()){
+            visitExp(exp, is_const);
+            values.push_back(CurValue);
+        }
+
+        for(int i = 0; i < function->get_args().size(); i++){
+            Value* value = values[i];
+            Type* arg_type = function->get_args()[i]->get_type();
+            Type* cur_type = value->get_type();
+            if(cur_type == IntegerType::get_instance() && arg_type == FloatType::get_instance()){
+                values[i] = f.build_conversion_inst(value, OP::itof, CurBasicBlock);
+            }
+            else if(cur_type == FloatType::get_instance() && arg_type == IntegerType::get_instance()){
+                values[i] = f.build_conversion_inst(value, OP::ftoi, CurBasicBlock);
+            }
+        }
+
+        if(function == start_time_func || function == stop_time_func){
+            values.push_back(f.build_number(0));
+        }
+        CurValue = f.build_call_inst(function, values, CurBasicBlock);
     }
     return nullptr;
 }
@@ -453,8 +518,45 @@ antlrcpp::Any Visitor::visitGlobalDecl(SysYParser::GlobalDeclContext *ctx) {
     return nullptr;
 }
 
+void Visitor::register_lib_func(){
+    print_func->add_arg(new Argument("x", IntegerType::get_instance(), print_func));
+    print_ch_func->add_arg(new Argument("x", IntegerType::get_instance(), print_ch_func));
+    print_float_func->add_arg(new Argument("x", FloatType::get_instance(), print_float_func));
+    print_arr_func->add_arg(new Argument("x", IntegerType::get_instance(), print_arr_func));
+    print_arr_func->add_arg(new Argument("x2", PointerType::get_i32_ptr_instance(), print_arr_func));
+    print_farr_func->add_arg(new Argument("x", IntegerType::get_instance(), print_farr_func));
+    print_farr_func->add_arg(new Argument("x2", PointerType::get_f32_ptr_instance(), print_farr_func));
+
+    input_arr_func->add_arg(new Argument("x", PointerType::get_i32_ptr_instance(), input_arr_func));
+    input_farr_func->add_arg(new Argument("x", PointerType::get_f32_ptr_instance(), input_farr_func));
+
+    memset_func->add_arg(new Argument("x", PointerType::get_i32_ptr_instance(), memset_func));
+    memset_func->add_arg(new Argument("x2", IntegerType::get_instance(), memset_func));
+    memset_func->add_arg(new Argument("x3", IntegerType::get_instance(), memset_func));
+
+    start_time_func->add_arg(new Argument("x", IntegerType::get_instance(), start_time_func));
+    stop_time_func->add_arg(new Argument("x2", IntegerType::get_instance(), stop_time_func));
+
+    print_func->set_as_lib_function();
+    print_ch_func->set_as_lib_function();
+    print_float_func->set_as_lib_function();
+    print_arr_func->set_as_lib_function();
+    print_farr_func->set_as_lib_function();
+
+    input_func->set_as_lib_function();
+    input_ch_func->set_as_lib_function();
+    input_float_func->set_as_lib_function();
+    input_arr_func->set_as_lib_function();
+    input_farr_func->set_as_lib_function();
+
+    memset_func->set_as_lib_function();
+    start_time_func->set_as_lib_function();
+    stop_time_func->set_as_lib_function();
+}
+
 antlrcpp::Any Visitor::visitCompUnit(SysYParser::CompUnitContext *ctx){
 
+    register_lib_func();
     push_sym_table();
     visitChildren(ctx);
 

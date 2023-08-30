@@ -28,6 +28,7 @@ public:
         return f;
     }
 
+    CallInst* build_call_inst(Function* func, std::vector<Value*> values, BasicBlock* bb);
     Argument* build_arg(std::string name, std::string type, Function* function);
     BrInst* build_br_inst(BasicBlock* jump_bb, BasicBlock* bb);
     BrInst* build_br_inst(Value* cond, BasicBlock* true_bb, BasicBlock* false_bb, BasicBlock* bb);

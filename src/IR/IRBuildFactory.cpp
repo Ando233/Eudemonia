@@ -127,6 +127,13 @@ StoreInst* IRBuildFactory::build_store_inst(Value* value, Value* pointer, BasicB
     return store_inst;
 }
 
+CallInst* IRBuildFactory::build_call_inst(Function* func, std::vector<Value*> values, BasicBlock* bb){
+    auto callInst = new CallInst(func, values);
+    bb->add_inst(callInst);
+
+    return callInst;
+}
+
 BrInst* IRBuildFactory::build_br_inst(BasicBlock* jump_bb, BasicBlock* bb){
     auto br_inst = new BrInst(jump_bb);
     bb->add_inst(br_inst);
