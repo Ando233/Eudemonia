@@ -41,6 +41,10 @@ public:
     bool is_pointer_type() { return get_type_id() == PointerTyID; }
     bool is_vector_type() { return get_type_id() == FixedVectorTyID || get_type_id() == ScalableVectorTyID; }
     bool is_array_type() { return get_type_id() == ArrayTyID; }
+
+    virtual std::string to_string() {
+        return "";
+    }
 };
 
 //  IntegerType
@@ -53,7 +57,7 @@ public:
         return &instance;
     }
 
-    std::string to_string() const{
+    std::string to_string() override {
         return "int";
     }
 };
@@ -65,12 +69,17 @@ public:
         static FloatType instance;
         return &instance;
     }
+    std::string to_string() override {
+        return "float";
+    }
+
 private:
     FloatType() : Type(FloatTyID) {}
 };
 
 class PointerType : public Type{
 public:
+    explicit PointerType(Type* eleType) : Type(PointerTyID), eleType(eleType) {}
     static PointerType* get_i32_ptr_instance(){
         static PointerType int_ptr_instance(IntegerType::get_instance());
         return &int_ptr_instance;
@@ -79,10 +88,15 @@ public:
         static PointerType float_ptr_instance(FloatType::get_instance());
         return &float_ptr_instance;
     }
+    Type* get_ele_type(){
+        return eleType;
+    }
+    std::string to_string() override {
+        return get_ele_type()->to_string() + "*";
+    }
+
 private:
     Type* eleType;
-    explicit PointerType(Type* eleType) : Type(PointerTyID), eleType(eleType) {}
-
 };
 
 //  VoidType
@@ -92,6 +106,10 @@ public:
         static VoidType instance;
         return &instance;
     }
+    std::string to_string() override {
+        return "void";
+    }
+
 private:
     VoidType() : Type(VoidTyID) {}
 };
@@ -102,6 +120,10 @@ public:
     static LabelType* get_instance() {
         static LabelType instance;
         return &instance;
+    }
+
+    std::string to_string() override {
+        return "label";
     }
 private:
     LabelType() : Type(LabelTyID) {}

@@ -28,6 +28,9 @@ public:
         return f;
     }
 
+    LoadInst* build_load_inst(Value* pointer, BasicBlock* bb);
+    StoreInst* build_store_inst(Value* value, Value* pointer, BasicBlock* bb);
+    AllocInst* build_alloc_inst(Type* type, BasicBlock* bb);
     Const* build_cal_number(Const* left, Const* right, std::string op);
     BinaryInst* build_bin_inst(Value* left, Value* right, OP op, BasicBlock* bb);
     RetInst* build_ret_inst(BasicBlock* bb);

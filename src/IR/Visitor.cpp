@@ -19,7 +19,7 @@ std::vector<std::unordered_map<std::string, Value*>> sym_tables;
 
 
 void Visitor::push_sym_table() {
-    sym_tables.push_back({});
+    sym_tables.emplace_back();
 }
 
 void Visitor::pop_sym_table() {
@@ -46,6 +46,13 @@ Value* Visitor::find(const std::string& ident){
 antlrcpp::Any Visitor::visitLVal(SysYParser::LValContext *ctx, bool is_fetch) {
     std::string ident = ctx->Ident()->getText();
     CurValue = find(ident);
+
+    if(CurValue->get_type()->is_pointer_type()){
+        if(is_fetch){
+            Type* ele_type = dynamic_cast<PointerType*>(CurValue->get_type())->get_ele_type();
+            CurValue = f.build_load_inst(CurValue, CurBasicBlock);
+        }
+    }
 
     return nullptr;
 }
@@ -228,6 +235,27 @@ antlrcpp::Any Visitor::visitConstDef(SysYParser::DefContext *ctx, Type* type, bo
     return nullptr;
 }
 
+antlrcpp::Any Visitor::visitVarDef(SysYParser::DefContext* ctx, Type* type, bool is_global){
+    std::string ident = ctx->Ident()->getText();
+    //  普通变量
+    if(ctx->initVal()) {
+        if (is_global) {
+
+        }
+        else {
+            CurValue = f.build_alloc_inst(type, CurBasicBlock);
+            if(ctx->initVal()->exp()){
+                Value* tmp_value = CurValue;
+                visitExp(ctx->initVal()->exp(), false);
+                f.build_store_inst(CurValue, tmp_value, CurBasicBlock);
+                CurValue = tmp_value;
+            }
+        }
+        push_symbol(ident, CurValue);
+    }
+    return nullptr;
+}
+
 antlrcpp::Any Visitor::visitDecl(SysYParser::DeclContext *ctx, bool is_global) {
     bool is_const = false;
     if(ctx->Const()) is_const = true;
@@ -238,6 +266,7 @@ antlrcpp::Any Visitor::visitDecl(SysYParser::DeclContext *ctx, bool is_global) {
 
     for(auto def : ctx->def()){
         if(is_const) visitConstDef(def, type, is_global);
+        else visitVarDef(def, type, is_global);
     }
     return nullptr;
 }

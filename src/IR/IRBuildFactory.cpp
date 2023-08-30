@@ -102,6 +102,45 @@ float IRBuildFactory::calculate(float a, float b, const std::string& op) {
     }
 }
 
+StoreInst* IRBuildFactory::build_store_inst(Value* value, Value* pointer, BasicBlock* bb){
+    Type* value_type = value->get_type();
+    Type* ele_type = dynamic_cast<PointerType*>(pointer->get_type())->get_ele_type();
+    if(value_type == IntegerType::get_instance() && ele_type == FloatType::get_instance()){
+        if(auto const_int = dynamic_cast<ConstInt*>(value)){
+            value = build_number((float) const_int->get_value());
+        }
+        else{
+            value = build_conversion_inst(value, OP::itof, bb);
+        }
+    }
+    else if(value_type == FloatType::get_instance() && ele_type == IntegerType::get_instance()){
+        if(auto const_float = dynamic_cast<ConstFloat*>(value)){
+            value = build_number((int) const_float->get_value());
+        }
+        else{
+            value = build_conversion_inst(value, OP::ftoi, bb);
+        }
+    }
+
+    auto store_inst = new StoreInst(value, pointer);
+    bb->add_inst(store_inst);
+    return store_inst;
+}
+
+LoadInst* IRBuildFactory::build_load_inst(Value* pointer, BasicBlock* bb){
+    Type* type = dynamic_cast<PointerType*>(pointer->get_type())->get_ele_type();
+    auto load_inst = new LoadInst(pointer, type);
+    bb->add_inst(load_inst);
+    return load_inst;
+}
+
+AllocInst* IRBuildFactory::build_alloc_inst(Type* type, BasicBlock* bb){
+    Type* pointer_type = new PointerType(type);
+    auto alloc_inst = new AllocInst(pointer_type);
+    bb->add_inst(alloc_inst);
+    return alloc_inst;
+}
+
 Const* IRBuildFactory::build_cal_number(Const* left, Const* right, std::string op){
     auto left_int = dynamic_cast<ConstInt*>(left);
     auto left_float = dynamic_cast<ConstFloat*>(left);

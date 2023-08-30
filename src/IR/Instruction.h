@@ -198,6 +198,54 @@ public:
     }
 };
 
+class LoadInst : public Instruction{
+public:
+    LoadInst(Value* pointer, Type* type) : Instruction("%" + std::to_string(++Value::val_num), type, OP::load){
+        add_operand(pointer);
+    }
+
+    Value* get_pointer(){
+        return operands[0]->get_value();
+    }
+
+    void dump(std::ofstream &out){
+        out << name + " = load " + get_pointer()->get_name() << "\n";
+    }
+};
+
+class StoreInst : public Instruction{
+public:
+    StoreInst(Value* value, Value* pointer) : Instruction("", VoidType::get_instance(), OP::store){
+        add_operand(value);
+        add_operand(pointer);
+    }
+
+    Value* get_value(){
+        return operands[0]->get_value();
+    }
+
+    Value* get_pointer(){
+        return operands[1]->get_value();
+    }
+
+    void dump(std::ofstream& out) override{
+        out << "store " + get_value()->get_name() + ", " + get_pointer()->get_name() << "\n";
+    }
+};
+
+class AllocInst : public Instruction{
+public:
+    AllocInst(Type* type) : Instruction("%" + std::to_string(++Value::val_num), type, OP::alloca){}
+
+    Type* get_alloc_type(){
+        return dynamic_cast<PointerType*>(type)->get_ele_type();
+    }
+
+    void dump(std::ofstream& out) override{
+        out << name + " = alloc " + get_alloc_type()->to_string() + "\n";
+    }
+};
+
 //  BinaryInst
 class BinaryInst : public Instruction{
 public:

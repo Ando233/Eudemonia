@@ -1,6 +1,6 @@
-const int x = 1 + 3-5*4;
-
 int main() {
     const int y = 5;
-  return x - y;
+    int x = 1;
+    int yy = 3;
+    return x - y + yy;
 }
