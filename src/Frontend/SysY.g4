@@ -38,7 +38,7 @@ lVal: Ident ('[' exp ']')* ;
 
 funcDef: funcType Ident '(' (funcFParam (',' funcFParam)* )? ')' block;
 
-funcFParam: bType Ident ('[' ']' ('[' exp ']')*) ;
+funcFParam: bType Ident ('[' ']' ('[' exp ']')*)? ;
 
 block: '{' blockItem* '}';
 

@@ -28,6 +28,7 @@ public:
         return f;
     }
 
+    Argument* build_arg(std::string name, std::string type, Function* function);
     BrInst* build_br_inst(BasicBlock* jump_bb, BasicBlock* bb);
     BrInst* build_br_inst(Value* cond, BasicBlock* true_bb, BasicBlock* false_bb, BasicBlock* bb);
     LoadInst* build_load_inst(Value* pointer, BasicBlock* bb);

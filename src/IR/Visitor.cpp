@@ -14,6 +14,7 @@ Value* CurValue;
 BasicBlock* CurBasicBlock;
 std::vector<BasicBlock*> whileEntryBlocks;
 std::vector<BasicBlock*> whileOutBlocks;
+std::unordered_map<std::string, Value> argHashMap;
 
 IRBuildFactory f = IRBuildFactory::getInstance();
 std::vector<std::unordered_map<std::string, Value*>> sym_tables;
@@ -368,9 +369,26 @@ antlrcpp::Any Visitor::visitFuncDef(SysYParser::FuncDefContext *ctx) {
     CurFunction = f.build_function(ident, type, ir_module);
 
     push_symbol(ident, CurFunction);
-    push_sym_table();
+    argHashMap.clear();
 
+    push_sym_table();
     CurBasicBlock = f.build_basic_block(CurFunction);
+    if(!ctx->funcFParam().empty()){
+        for(auto func_fparam : ctx->funcFParam()){
+            std::string arg_name = func_fparam->Ident()->getText();
+            std::string arg_type = func_fparam->bType()->getText();
+            Argument* arg;
+
+            arg = f.build_arg(arg_name, arg_type, CurFunction);
+            AllocInst* allocInst = f.build_alloc_inst(arg->get_type(), CurBasicBlock);
+            f.build_store_inst(arg, allocInst, CurBasicBlock);
+            push_symbol(arg_name, allocInst);
+        }
+        BasicBlock* tmp_bb = f.build_basic_block(CurFunction);
+        f.build_br_inst(tmp_bb, CurBasicBlock);
+        CurBasicBlock = tmp_bb;
+    }
+
     visitBlock(ctx->block());
 
     pop_sym_table();

@@ -13,15 +13,22 @@
 
 namespace IR {
 
-class Argument : public Value{
+class Argument : public Value {
+private:
+    Function* parent_func;
 public:
-    Argument(std::string _name, Type* _type) : Value(_name, _type) {}
+    Argument(std::string name, Type* type, Function* _parent_func) : Value(name, type){
+        parent_func = _parent_func;
+    }
 
+    void dump(std::ofstream &out){
+        out << get_type()->to_string() + " " + get_name();
+    }
 };
 
 class Function : public Value {
 private:
-    using ArgList = std::vector<std::unique_ptr<Argument>>;
+    using ArgList = std::vector<Argument*>;
     using BbList = IList<BasicBlock*, Function*>;
     ArgList args;
     BbList* bbs;
@@ -33,6 +40,9 @@ public:
     BbList* get_bbs(){ return bbs; }
     void add_bb(BasicBlock* bb) {
         bbs->add(bb->get_node());
+    }
+    void add_arg(Argument* arg){
+        args.push_back(arg);
     }
     void dump(std::ofstream& out);
 };

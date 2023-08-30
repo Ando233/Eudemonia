@@ -139,6 +139,25 @@ BrInst* IRBuildFactory::build_br_inst(Value* cond, BasicBlock* true_bb, BasicBlo
     return br_inst;
 }
 
+Argument* IRBuildFactory::build_arg(std::string name, std::string type_str, Function* function){
+    Argument* argument;
+
+    if (type_str == "int") {
+        argument = new Argument(name, IntegerType::get_instance(), function);
+    } else if (type_str == "float") {
+        argument = new Argument(name, FloatType::get_instance(), function);
+    } else if (type_str == "int*") {
+        argument = new Argument(name, PointerType::get_i32_ptr_instance(), function);
+    } else if (type_str == "float*") {
+        argument = new Argument(name, PointerType::get_f32_ptr_instance(), function);
+    } else {
+        argument = new Argument(name, VoidType::get_instance(), function);
+    }
+
+    function->add_arg(argument);
+    return argument;
+}
+
 LoadInst* IRBuildFactory::build_load_inst(Value* pointer, BasicBlock* bb){
     Type* type = dynamic_cast<PointerType*>(pointer->get_type())->get_ele_type();
     auto load_inst = new LoadInst(pointer, type);

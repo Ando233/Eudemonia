@@ -1,14 +1,20 @@
-int main() {
+int half(int x) {
 block0:
+	%0 = alloc int
+	store x, %0
 	br block1
 block1:
-	%0 = ne 1 0
-	br %0 block2 block3
+	%1 = load %0
+	%2 = div %1 2
+	return %2
+}
+
+void f() {
 block2:
-	br block3
+}
+
+int main() {
 block3:
-	return 0
-block4:
-	br block1
+	return 
 }
 
