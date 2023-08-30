@@ -276,3 +276,6 @@
 6480	6999	7151093494758877	D:/Clion Projects/Eudemonia/src/compiler.exe	e76f70bf156bd90a
 15	2753	7151097076786534	CMakeFiles/compiler.dir/src/IR/Visitor.cpp.obj	c42cca6769ad953d
 2754	3069	7151097079706541	D:/Clion Projects/Eudemonia/src/compiler.exe	e76f70bf156bd90a
+18	2096	7151102934874203	CMakeFiles/compiler.dir/src/Driver/Driver.cpp.obj	14fe4f3c60d048bf
+23	2599	7151102939884214	CMakeFiles/compiler.dir/src/IR/Visitor.cpp.obj	c42cca6769ad953d
+2599	2922	7151102942864192	D:/Clion Projects/Eudemonia/src/compiler.exe	e76f70bf156bd90a

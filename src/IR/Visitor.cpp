@@ -12,6 +12,8 @@ using namespace IR;
 Function* CurFunction;
 Value* CurValue;
 BasicBlock* CurBasicBlock;
+std::vector<BasicBlock*> whileEntryBlocks;
+std::vector<BasicBlock*> whileOutBlocks;
 
 IRBuildFactory f = IRBuildFactory::getInstance();
 std::vector<std::unordered_map<std::string, Value*>> sym_tables;
@@ -62,7 +64,7 @@ antlrcpp::Any Visitor::visitPrimaryExp(SysYParser::PrimaryExpContext *ctx, bool 
         SysYParser::NumberContext* num = ctx->number();
         std::string num_string = ctx->number()->getText();
         if(num->IntConst()){
-            int val = stoi(num_string, 0, 0);
+            int val = stoi(num_string, nullptr, 0);
             CurValue = f.build_number(val);
         }
         else if(num->FloatConst()){
@@ -277,6 +279,31 @@ antlrcpp::Any Visitor::visitIfStmt(SysYParser::IfStmtContext *ctx) {
     return nullptr;
 }
 
+antlrcpp::Any Visitor::visitWhileStmt(SysYParser::WhileStmtContext *ctx) {
+    //  构建要跳转的CurCondBlock
+    BasicBlock* cond_block = f.build_basic_block(CurFunction);
+    f.build_br_inst(cond_block, CurBasicBlock);
+    CurBasicBlock = cond_block;
+
+    BasicBlock* true_bb = f.build_basic_block(CurFunction);
+    BasicBlock* false_bb = f.build_basic_block(CurFunction);
+    //  入栈，注意这里entry为CurCondBlock，因为continue要重新判断条件
+    whileEntryBlocks.push_back(cond_block);
+    whileOutBlocks.push_back(false_bb);
+
+    visitLorExp(ctx->lorExp(), true_bb, false_bb);
+
+    CurBasicBlock = true_bb;
+    visitStmt(ctx->stmt());
+    f.build_br_inst(cond_block, CurBasicBlock);
+    CurBasicBlock = false_bb;
+
+    //  while内的指令构建完了，出栈
+    whileEntryBlocks.pop_back();
+    whileOutBlocks.pop_back();
+    return nullptr;
+}
+
 antlrcpp::Any Visitor::visitStmt(SysYParser::StmtContext *ctx) {
     if(ctx->return_()){
         visitReturn(ctx->return_());
@@ -297,6 +324,9 @@ antlrcpp::Any Visitor::visitStmt(SysYParser::StmtContext *ctx) {
     }
     else if(ctx->ifStmt()){
         visitIfStmt(ctx->ifStmt());
+    }
+    else if(ctx->whileStmt()){
+        visitWhileStmt(ctx->whileStmt());
     }
     return nullptr;
 }
