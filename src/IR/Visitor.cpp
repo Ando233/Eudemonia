@@ -328,6 +328,18 @@ antlrcpp::Any Visitor::visitStmt(SysYParser::StmtContext *ctx) {
     else if(ctx->whileStmt()){
         visitWhileStmt(ctx->whileStmt());
     }
+    else if(ctx->break_()){
+        if(whileOutBlocks.empty()) return nullptr;
+        BasicBlock* whileOutBlock = whileOutBlocks.back();
+        f.build_br_inst(whileOutBlock, CurBasicBlock);
+        CurBasicBlock = f.build_basic_block(CurFunction);
+    }
+    else if(ctx->continue_()){
+        if(whileEntryBlocks.empty()) return nullptr;
+        BasicBlock* whileEntryBlock = whileEntryBlocks.back();
+        f.build_br_inst(whileEntryBlock, CurBasicBlock);
+        CurBasicBlock = f.build_basic_block(CurFunction);
+    }
     return nullptr;
 }
 
