@@ -184,6 +184,20 @@ antlrcpp::Any Visitor::visitStmt(SysYParser::StmtContext *ctx) {
     if(ctx->return_()){
         visitReturn(ctx->return_());
     }
+    else if(ctx->expStmt()){
+        visitExp(ctx->expStmt()->exp(), false);
+    }
+    else if(ctx->block()){
+        push_sym_table();
+        visitBlock(ctx->block());
+        pop_sym_table();
+    }
+    else if(ctx->assign()){
+        visitLVal(ctx->assign()->lVal(), false);
+        Value* pointer = CurValue;
+        visitExp(ctx->assign()->exp(), false);
+        f.build_store_inst(CurValue, pointer, CurBasicBlock);
+    }
     return nullptr;
 }
 

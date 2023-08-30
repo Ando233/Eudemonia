@@ -19,15 +19,15 @@ public:
     explicit Visitor(IR::Module* ir_module) : ir_module(ir_module) {};
 
 private:
-    void push_symbol(const std::string& ident, Value* value);
-    void push_sym_table();
-    void pop_sym_table();
+    static void push_symbol(const std::string& ident, Value* value);
+    static void push_sym_table();
+    static void pop_sym_table();
     void push_symbol();
-    Value* find(const std::string& ident);
+    static Value* find(const std::string& ident);
 
     antlrcpp::Any visitVarDef(SysYParser::DefContext* ctx, Type* type, bool is_global);
     antlrcpp::Any visitBlockItem(SysYParser::BlockItemContext *ctx);
-    antlrcpp::Any visitLVal(SysYParser::LValContext *ctx, bool is_fetch);
+    static antlrcpp::Any visitLVal(SysYParser::LValContext *ctx, bool is_fetch);
     antlrcpp::Any visitConstDef(SysYParser::DefContext *ctx, Type* type, bool is_global);
     antlrcpp::Any visitDecl(SysYParser::DeclContext *ctx, bool is_global);
     antlrcpp::Any visitGlobalDecl(SysYParser::GlobalDeclContext *ctx) override;

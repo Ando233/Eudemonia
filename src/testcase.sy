@@ -1,6 +1,8 @@
 int main() {
-    const int y = 5;
-    int x = 1;
-    int yy = 3;
-    return x - y + yy;
+  int a = 1;
+  {
+    a = 2;
+    int a = 3;
+  }
+  return a;
 }
