@@ -22,9 +22,9 @@ lorExp: landExp ('||' landExp)* ;
 
 landExp: eqExp ('&&' eqExp)* ;
 
-eqExp: relExp (relOP relExp)* ;
+eqExp: relExp (eqOP relExp)* ;
 
-relExp: mulExp(addOP mulExp)* ;
+relExp: exp(relOP exp)* ;
 
 unaryExp: unaryOP* primaryExp ;
 
@@ -65,6 +65,8 @@ unaryOP: Add | Sub | Not ;
 addOP: Add | Sub;
 
 mulOP: Mul | Div | Mod;
+
+eqOP: Eq | Ne;
 
 relOP: Lt | Gt | Le | Ge;
 

@@ -28,6 +28,8 @@ public:
         return f;
     }
 
+    BrInst* build_br_inst(BasicBlock* jump_bb, BasicBlock* bb);
+    BrInst* build_br_inst(Value* cond, BasicBlock* true_bb, BasicBlock* false_bb, BasicBlock* bb);
     LoadInst* build_load_inst(Value* pointer, BasicBlock* bb);
     StoreInst* build_store_inst(Value* value, Value* pointer, BasicBlock* bb);
     AllocInst* build_alloc_inst(Type* type, BasicBlock* bb);

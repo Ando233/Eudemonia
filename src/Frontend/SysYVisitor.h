@@ -83,6 +83,8 @@ public:
 
     virtual std::any visitMulOP(SysYParser::MulOPContext *context) = 0;
 
+    virtual std::any visitEqOP(SysYParser::EqOPContext *context) = 0;
+
     virtual std::any visitRelOP(SysYParser::RelOPContext *context) = 0;
 
     virtual std::any visitBType(SysYParser::BTypeContext *context) = 0;

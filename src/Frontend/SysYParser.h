@@ -30,7 +30,7 @@ public:
     RuleBlock = 19, RuleBlockItem = 20, RuleStmt = 21, RuleAssign = 22, 
     RuleExpStmt = 23, RuleIfStmt = 24, RuleWhileStmt = 25, RuleBreak = 26, 
     RuleContinue = 27, RuleReturn = 28, RuleUnaryOP = 29, RuleAddOP = 30, 
-    RuleMulOP = 31, RuleRelOP = 32, RuleBType = 33, RuleFuncType = 34
+    RuleMulOP = 31, RuleEqOP = 32, RuleRelOP = 33, RuleBType = 34, RuleFuncType = 35
   };
 
   explicit SysYParser(antlr4::TokenStream *input);
@@ -82,6 +82,7 @@ public:
   class UnaryOPContext;
   class AddOPContext;
   class MulOPContext;
+  class EqOPContext;
   class RelOPContext;
   class BTypeContext;
   class FuncTypeContext; 
@@ -257,8 +258,8 @@ public:
     virtual size_t getRuleIndex() const override;
     std::vector<RelExpContext *> relExp();
     RelExpContext* relExp(size_t i);
-    std::vector<RelOPContext *> relOP();
-    RelOPContext* relOP(size_t i);
+    std::vector<EqOPContext *> eqOP();
+    EqOPContext* eqOP(size_t i);
 
 
     virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
@@ -271,10 +272,10 @@ public:
   public:
     RelExpContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    std::vector<MulExpContext *> mulExp();
-    MulExpContext* mulExp(size_t i);
-    std::vector<AddOPContext *> addOP();
-    AddOPContext* addOP(size_t i);
+    std::vector<ExpContext *> exp();
+    ExpContext* exp(size_t i);
+    std::vector<RelOPContext *> relOP();
+    RelOPContext* relOP(size_t i);
 
 
     virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
@@ -610,6 +611,20 @@ public:
   };
 
   MulOPContext* mulOP();
+
+  class  EqOPContext : public antlr4::ParserRuleContext {
+  public:
+    EqOPContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *Eq();
+    antlr4::tree::TerminalNode *Ne();
+
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  EqOPContext* eqOP();
 
   class  RelOPContext : public antlr4::ParserRuleContext {
   public:

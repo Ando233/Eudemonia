@@ -143,6 +143,10 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual std::any visitEqOP(SysYParser::EqOPContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual std::any visitRelOP(SysYParser::RelOPContext *ctx) override {
     return visitChildren(ctx);
   }

@@ -127,6 +127,18 @@ StoreInst* IRBuildFactory::build_store_inst(Value* value, Value* pointer, BasicB
     return store_inst;
 }
 
+BrInst* IRBuildFactory::build_br_inst(BasicBlock* jump_bb, BasicBlock* bb){
+    auto br_inst = new BrInst(jump_bb);
+    bb->add_inst(br_inst);
+    return br_inst;
+}
+
+BrInst* IRBuildFactory::build_br_inst(Value* cond, BasicBlock* true_bb, BasicBlock* false_bb, BasicBlock* bb){
+    auto br_inst = new BrInst(cond, true_bb, false_bb);
+    bb->add_inst(br_inst);
+    return br_inst;
+}
+
 LoadInst* IRBuildFactory::build_load_inst(Value* pointer, BasicBlock* bb){
     Type* type = dynamic_cast<PointerType*>(pointer->get_type())->get_ele_type();
     auto load_inst = new LoadInst(pointer, type);

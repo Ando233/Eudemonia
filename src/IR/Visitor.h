@@ -25,6 +25,11 @@ private:
     void push_symbol();
     static Value* find(const std::string& ident);
 
+    antlrcpp::Any visitRelExp(SysYParser::RelExpContext *ctx, bool is_const);
+    antlrcpp::Any visitEqExp(SysYParser::EqExpContext *ctx, bool is_const);
+    antlrcpp::Any visitLandExp(SysYParser::LandExpContext *ctx, BasicBlock* true_bb, BasicBlock* false_bb);
+    antlrcpp::Any visitLorExp(SysYParser::LorExpContext *ctx, BasicBlock* true_bb, BasicBlock* false_bb);
+    antlrcpp::Any visitIfStmt(SysYParser::IfStmtContext *ctx);
     antlrcpp::Any visitVarDef(SysYParser::DefContext* ctx, Type* type, bool is_global);
     antlrcpp::Any visitBlockItem(SysYParser::BlockItemContext *ctx);
     static antlrcpp::Any visitLVal(SysYParser::LValContext *ctx, bool is_fetch);

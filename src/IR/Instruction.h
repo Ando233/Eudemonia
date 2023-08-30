@@ -235,7 +235,7 @@ public:
 
 class AllocInst : public Instruction{
 public:
-    AllocInst(Type* type) : Instruction("%" + std::to_string(++Value::val_num), type, OP::alloca){}
+    explicit AllocInst(Type* type) : Instruction("%" + std::to_string(++Value::val_num), type, OP::alloca){}
 
     Type* get_alloc_type(){
         return dynamic_cast<PointerType*>(type)->get_ele_type();
@@ -244,6 +244,32 @@ public:
     void dump(std::ofstream& out) override{
         out << name + " = alloc " + get_alloc_type()->to_string() + "\n";
     }
+};
+
+class BrInst : public Instruction{
+public:
+    BrInst(BasicBlock* _jump_bb) : Instruction("", VoidType::get_instance(), OP::br){
+        is_jump = true;
+        jump_bb = _jump_bb;
+    }
+    BrInst(Value* cond, BasicBlock* _true_bb, BasicBlock* _false_bb) : Instruction("", VoidType::get_instance(), OP::br){
+        is_jump = false;
+        add_operand(cond);
+        true_bb = _true_bb;
+        false_bb = _false_bb;
+    }
+
+    Value* get_cond(){
+        return operands[0]->get_value();
+    }
+
+    void dump(std::ofstream &out) override;
+
+private:
+    bool is_jump;
+    BasicBlock* true_bb;
+    BasicBlock* false_bb;
+    BasicBlock* jump_bb;
 };
 
 //  BinaryInst

@@ -158,6 +158,7 @@ antlrcpp::Any Visitor::visitExp(SysYParser::ExpContext *ctx, bool is_const) {
     return nullptr;
 }
 
+//  finished
 antlrcpp::Any Visitor::visitReturn(SysYParser::ReturnContext *ctx) {
     if(ctx->exp()){
         visitExp(ctx->exp(), false);
@@ -180,6 +181,102 @@ antlrcpp::Any Visitor::visitReturn(SysYParser::ReturnContext *ctx) {
     return nullptr;
 }
 
+antlrcpp::Any Visitor::visitRelExp(SysYParser::RelExpContext *ctx, bool is_const) {
+    visitExp(ctx->exp(0), is_const);
+    for(int i = 0; i < ctx->relOP().size(); i++){
+        std::string op_string = ctx->relOP(i)->getText();
+        Value* tmp_value = CurValue;
+        visitExp(ctx->exp(i + 1), is_const);
+        auto const_left = dynamic_cast<Const*>(tmp_value);
+        auto const_right = dynamic_cast<Const*>(CurValue);
+        if(const_left && const_right){
+            CurValue = f.build_cal_number(const_left, const_right, op_string);
+        }
+        else{
+            CurValue = f.build_bin_inst(tmp_value, CurValue, Instruction::str_to_op(op_string), CurBasicBlock);
+        }
+    }
+    return nullptr;
+}
+
+antlrcpp::Any Visitor::visitEqExp(SysYParser::EqExpContext *ctx, bool is_const) {
+    visitRelExp(ctx->relExp(0), is_const);
+    for(int i = 0; i < ctx->eqOP().size(); i++){
+        std::string op_string = ctx->eqOP(i)->getText();
+        Value* tmp_value = CurValue;
+        visitRelExp(ctx->relExp(i + 1), is_const);
+        auto const_left = dynamic_cast<Const*>(tmp_value);
+        auto const_right = dynamic_cast<Const*>(CurValue);
+        if(const_left && const_right){
+            CurValue = f.build_cal_number(const_left, const_right, op_string);
+        }
+        else{
+            CurValue = f.build_bin_inst(tmp_value, CurValue, Instruction::str_to_op(op_string), CurBasicBlock);
+        }
+    }
+    return nullptr;
+}
+
+antlrcpp::Any Visitor::visitLandExp(SysYParser::LandExpContext *ctx, BasicBlock* true_bb, BasicBlock* false_bb) {
+    BasicBlock* nxt_land_block;
+    auto now = ctx->eqExp(0);
+    for(int i = 0; i < ctx->eqExp().size(); i++){
+        if(i != ctx->eqExp().size() - 1){
+            nxt_land_block = f.build_basic_block(CurFunction);
+        }
+        else nxt_land_block = true_bb;
+        visitEqExp(ctx->eqExp(i), false);
+        CurValue = f.build_bin_inst(CurValue, f.build_number(0), OP::ne, CurBasicBlock);
+        f.build_br_inst(CurValue, nxt_land_block, false_bb, CurBasicBlock);
+        CurBasicBlock = nxt_land_block;
+    }
+    return nullptr;
+}
+
+antlrcpp::Any Visitor::visitLorExp(SysYParser::LorExpContext *ctx, BasicBlock* true_bb, BasicBlock* false_bb) {
+    BasicBlock* nxt_lor_block;
+    auto now = ctx->landExp(0);
+    for(int i = 0; i < ctx->landExp().size(); i++){
+        if(i != ctx->landExp().size() - 1){
+            nxt_lor_block = f.build_basic_block(CurFunction);
+        }
+        else nxt_lor_block = false_bb;
+        visitLandExp(now, true_bb, nxt_lor_block);
+        CurValue = nxt_lor_block;
+    }
+    return nullptr;
+}
+
+//  finished
+antlrcpp::Any Visitor::visitIfStmt(SysYParser::IfStmtContext *ctx) {
+    BasicBlock* true_bb = f.build_basic_block(CurFunction);
+    BasicBlock* nxt_bb = f.build_basic_block(CurFunction);
+    BasicBlock* false_bb = nullptr;
+
+    if(ctx->Else()){
+        false_bb = f.build_basic_block(CurFunction);
+        visitLorExp(ctx->lorExp(), true_bb, false_bb);
+    }
+    else visitLorExp(ctx->lorExp(), true_bb, nxt_bb);
+
+    //  VisitCondAST之后，CurBlock的br已经构建完并指向正确的Block
+    //  接下来我们为TrueBlock填写指令
+    CurBasicBlock = true_bb;
+    visitStmt(ctx->stmt(0));
+    f.build_br_inst(nxt_bb, CurBasicBlock);
+
+    if(ctx->Else()){
+        //  开始构建FalseBlock
+        CurBasicBlock = false_bb;
+        visitStmt(ctx->stmt(1));
+
+        //  原理同上，为CurBLock构建Br指令
+        f.build_br_inst(nxt_bb, CurBasicBlock);
+    }
+    CurBasicBlock = nxt_bb;
+    return nullptr;
+}
+
 antlrcpp::Any Visitor::visitStmt(SysYParser::StmtContext *ctx) {
     if(ctx->return_()){
         visitReturn(ctx->return_());
@@ -198,9 +295,13 @@ antlrcpp::Any Visitor::visitStmt(SysYParser::StmtContext *ctx) {
         visitExp(ctx->assign()->exp(), false);
         f.build_store_inst(CurValue, pointer, CurBasicBlock);
     }
+    else if(ctx->ifStmt()){
+        visitIfStmt(ctx->ifStmt());
+    }
     return nullptr;
 }
 
+//  finished
 antlrcpp::Any Visitor::visitBlockItem(SysYParser::BlockItemContext *ctx) {
     if(ctx->stmt()){
         visitStmt(ctx->stmt());
@@ -211,10 +312,12 @@ antlrcpp::Any Visitor::visitBlockItem(SysYParser::BlockItemContext *ctx) {
     return nullptr;
 }
 
+//  finished
 antlrcpp::Any Visitor::visitBlock(SysYParser::BlockContext *ctx) {
     visitChildren(ctx);
     return nullptr;
 }
+
 
 antlrcpp::Any Visitor::visitFuncDef(SysYParser::FuncDefContext *ctx) {
     std::string ident = ctx->Ident()->getText();
