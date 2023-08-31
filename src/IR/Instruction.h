@@ -61,6 +61,7 @@ public:
         no,
         move,
         bitcast,
+        ptradd,
         unknown
     };
     static std::string get_op_name(OP _op){
@@ -262,6 +263,26 @@ public:
             values.push_back(use->get_value());
         }
         return values;
+    }
+};
+
+class PtrInst : public Instruction{
+public:
+    PtrInst(Value* pointer, Value* add_value) : Instruction("%" + std::to_string(++Value::val_num), pointer->get_type(), OP::ptradd){
+        add_operand(pointer);
+        add_operand(add_value);
+    }
+
+    Value* get_pointer(){
+        return operands[0]->get_value();
+    }
+
+    Value* get_value(){
+        return operands[1]->get_value();
+    }
+
+    void dump(std::ofstream &out) override{
+        out << name + " = ptradd " + get_pointer()->get_name() + ", " + get_value()->get_name() + "\n";
     }
 };
 

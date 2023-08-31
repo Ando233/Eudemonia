@@ -23,7 +23,7 @@ public:
   };
 
   enum {
-    RuleCompUnit = 0, RuleGlobalDecl = 1, RuleDecl = 2, RuleDef = 3, RuleInitVal = 4, 
+    RuleCompUnit = 0, RuleGlobalDecl = 1, RuleDecl = 2, RuleDef = 3, RuleInit = 4, 
     RuleInitArray = 5, RuleMulExp = 6, RuleExp = 7, RuleLorExp = 8, RuleLandExp = 9, 
     RuleEqExp = 10, RuleRelExp = 11, RuleUnaryExp = 12, RulePrimaryExp = 13, 
     RuleCall = 14, RuleNumber = 15, RuleLVal = 16, RuleFuncDef = 17, RuleFuncFParam = 18, 
@@ -54,7 +54,7 @@ public:
   class GlobalDeclContext;
   class DeclContext;
   class DefContext;
-  class InitValContext;
+  class InitContext;
   class InitArrayContext;
   class MulExpContext;
   class ExpContext;
@@ -147,8 +147,7 @@ public:
     ExpContext* exp(size_t i);
     std::vector<antlr4::tree::TerminalNode *> Rbrkt();
     antlr4::tree::TerminalNode* Rbrkt(size_t i);
-    InitValContext *initVal();
-    InitArrayContext *initArray();
+    InitContext *init();
 
 
     virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
@@ -157,18 +156,19 @@ public:
 
   DefContext* def();
 
-  class  InitValContext : public antlr4::ParserRuleContext {
+  class  InitContext : public antlr4::ParserRuleContext {
   public:
-    InitValContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    InitContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     ExpContext *exp();
+    InitArrayContext *initArray();
 
 
     virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  InitValContext* initVal();
+  InitContext* init();
 
   class  InitArrayContext : public antlr4::ParserRuleContext {
   public:
@@ -176,8 +176,8 @@ public:
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *Lbrace();
     antlr4::tree::TerminalNode *Rbrace();
-    std::vector<InitValContext *> initVal();
-    InitValContext* initVal(size_t i);
+    std::vector<InitContext *> init();
+    InitContext* init(size_t i);
     std::vector<antlr4::tree::TerminalNode *> Comma();
     antlr4::tree::TerminalNode* Comma(size_t i);
 

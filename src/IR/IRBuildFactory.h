@@ -29,6 +29,7 @@ public:
         return f;
     }
 
+    PtrInst* build_ptr_inst(Value* pointer, Value* value, BasicBlock* bb);
     static GlobalVar* build_global_var(std::string name, Type* type, Value* value);
     static CallInst* build_call_inst(Function* func, std::vector<Value*> values, BasicBlock* bb);
     Argument* build_arg(std::string name, std::string type, Function* function, std::vector<int> indexs);

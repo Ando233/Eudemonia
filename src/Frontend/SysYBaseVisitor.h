@@ -31,7 +31,7 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual std::any visitInitVal(SysYParser::InitValContext *ctx) override {
+  virtual std::any visitInit(SysYParser::InitContext *ctx) override {
     return visitChildren(ctx);
   }
 

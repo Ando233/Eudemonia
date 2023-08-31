@@ -8,11 +8,11 @@ globalDecl: decl;
 
 decl : 'const'? bType def (',' def)* ';';
 
-def: Ident ('[' exp ']')* ('=' (initVal | initArray))? ;
+def: Ident ('[' exp ']')* ('=' init)? ;
 
-initVal: exp;
+init: exp | initArray;
 
-initArray: '{' (initVal (',' initVal)* )? '}' ;
+initArray: '{' (init (',' init)* )? '}' ;
 
 mulExp: unaryExp (mulOP unaryExp)*;
 

@@ -27,7 +27,7 @@ public:
 
     virtual std::any visitDef(SysYParser::DefContext *context) = 0;
 
-    virtual std::any visitInitVal(SysYParser::InitValContext *context) = 0;
+    virtual std::any visitInit(SysYParser::InitContext *context) = 0;
 
     virtual std::any visitInitArray(SysYParser::InitArrayContext *context) = 0;
 

@@ -142,7 +142,7 @@ antlrcpp::Any Visitor::visitPrimaryExp(SysYParser::PrimaryExpContext *ctx, bool 
         if(function == start_time_func || function == stop_time_func){
             values.push_back(f.build_number(0));
         }
-        CurValue = f.build_call_inst(function, values, CurBasicBlock);
+        CurValue = IRBuildFactory::build_call_inst(function, values, CurBasicBlock);
     }
     return nullptr;
 }
@@ -226,7 +226,6 @@ antlrcpp::Any Visitor::visitExp(SysYParser::ExpContext *ctx, bool is_const) {
     return nullptr;
 }
 
-//  finished
 antlrcpp::Any Visitor::visitReturn(SysYParser::ReturnContext *ctx) {
     if(ctx->exp()){
         visitExp(ctx->exp(), false);
@@ -315,7 +314,6 @@ antlrcpp::Any Visitor::visitLorExp(SysYParser::LorExpContext *ctx, BasicBlock* t
     return nullptr;
 }
 
-//  finished
 antlrcpp::Any Visitor::visitIfStmt(SysYParser::IfStmtContext *ctx) {
     BasicBlock* true_bb = f.build_basic_block(CurFunction);
     BasicBlock* nxt_bb = f.build_basic_block(CurFunction);
@@ -420,12 +418,10 @@ antlrcpp::Any Visitor::visitBlockItem(SysYParser::BlockItemContext *ctx) {
     return nullptr;
 }
 
-//  finished
 antlrcpp::Any Visitor::visitBlock(SysYParser::BlockContext *ctx) {
     visitChildren(ctx);
     return nullptr;
 }
-
 
 antlrcpp::Any Visitor::visitFuncDef(SysYParser::FuncDefContext *ctx) {
     std::string ident = ctx->Ident()->getText();
@@ -445,18 +441,10 @@ antlrcpp::Any Visitor::visitFuncDef(SysYParser::FuncDefContext *ctx) {
             Argument* arg;
 
             if(!func_fparam->exp().empty()){
-                std::vector<int> sizes;
-                for(auto exp : func_fparam->exp()){
-                    visitExp(exp, true);
-                    sizes.push_back(dynamic_cast<ConstInt*>(CurValue)->get_value());
-                }
-                if(!sizes.empty()){
-                    arg = f.build_arg(arg_name, arg_type, CurFunction, sizes);
-                }
-                else arg = f.build_arg(arg_name, arg_type + "*", CurFunction);
+                //  TODO:
             }
             else {
-                arg = f.build_arg(arg_name, arg_type, CurFunction);
+                arg = IRBuildFactory::build_arg(arg_name, arg_type, CurFunction);
             }
             AllocInst* allocInst = f.build_alloc_inst(arg->get_type(), CurBasicBlock);
             f.build_store_inst(arg, allocInst, CurBasicBlock);
@@ -473,28 +461,6 @@ antlrcpp::Any Visitor::visitFuncDef(SysYParser::FuncDefContext *ctx) {
     return nullptr;
 }
 
-antlrcpp::Any Visitor::visitConstDef(SysYParser::DefContext *ctx, Type* type, bool is_global){
-    std::string ident = ctx->Ident()->getText();
-
-    //  数组
-    if(ctx->exp().size() != 0){
-
-    }
-    else{
-        visitExp(ctx->initVal()->exp(), true);
-        if(type == IntegerType::get_instance() && CurValue->get_type() == FloatType::get_instance()){
-            auto const_float = dynamic_cast<ConstFloat*>(CurValue);
-            CurValue = f.build_number((int) const_float->get_value());
-        }
-        else if(type == FloatType::get_instance() && CurValue->get_type() == IntegerType::get_instance()){
-            auto const_int = dynamic_cast<ConstInt*>(CurValue);
-            CurValue = f.build_number((float) const_int->get_value());
-        }
-        push_symbol(ident, CurValue);
-    }
-    return nullptr;
-}
-
 antlrcpp::Any Visitor::visitVarDef(SysYParser::DefContext* ctx, Type* type, bool is_global){
     std::string ident = ctx->Ident()->getText();
     Value* fill_value;
@@ -506,29 +472,51 @@ antlrcpp::Any Visitor::visitVarDef(SysYParser::DefContext* ctx, Type* type, bool
     }
 
     //  数组
-    if(ctx->exp().size() != 0){
-
+    if(!ctx->exp().empty()){
+        //  TODO:
     }
     //  普通变量
     else {
         if (is_global) {
-            if(ctx->initVal()){
-                visitExp(ctx->initVal()->exp(), true);
-                CurValue = f.build_global_var(ident, CurValue->get_type(), CurValue);
+            if(ctx->init()){
+                visitExp(ctx->init()->exp(), true);
+                CurValue = IRBuildFactory::build_global_var(ident, CurValue->get_type(), CurValue);
             }
             else{
-                CurValue = f.build_global_var(ident, type, fill_value);
+                CurValue = IRBuildFactory::build_global_var(ident, type, fill_value);
             }
             ir_module->add_global_var(dynamic_cast<GlobalVar*>(CurValue));
         }
         else {
             CurValue = f.build_alloc_inst(type, CurBasicBlock);
-            if(ctx->initVal()->exp()){
+            if(ctx->init()->exp()){
                 Value* tmp_value = CurValue;
-                visitExp(ctx->initVal()->exp(), false);
+                visitExp(ctx->init()->exp(), false);
                 f.build_store_inst(CurValue, tmp_value, CurBasicBlock);
                 CurValue = tmp_value;
             }
+        }
+        push_symbol(ident, CurValue);
+    }
+    return nullptr;
+}
+
+antlrcpp::Any Visitor::visitConstDef(SysYParser::DefContext *ctx, Type* type, bool is_global){
+    std::string ident = ctx->Ident()->getText();
+
+    //  数组
+    if(ctx->exp().size() != 0){
+        //  TODO:
+    }
+    else{
+        visitExp(ctx->init()->exp(), true);
+        if(type == IntegerType::get_instance() && CurValue->get_type() == FloatType::get_instance()){
+            auto const_float = dynamic_cast<ConstFloat*>(CurValue);
+            CurValue = f.build_number((int) const_float->get_value());
+        }
+        else if(type == FloatType::get_instance() && CurValue->get_type() == IntegerType::get_instance()){
+            auto const_int = dynamic_cast<ConstInt*>(CurValue);
+            CurValue = f.build_number((float) const_int->get_value());
         }
         push_symbol(ident, CurValue);
     }

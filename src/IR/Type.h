@@ -117,7 +117,9 @@ public:
         else return 1;
     }
 
-
+    Type* get_ele_type(){
+        return ele_type;
+    }
 
     std::string to_string() override {
         return "[" + std::to_string(num) + " x " + ele_type->to_string() + "]";

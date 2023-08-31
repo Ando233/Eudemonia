@@ -102,6 +102,19 @@ float IRBuildFactory::calculate(float a, float b, const std::string& op) {
     }
 }
 
+ArrayType* IRBuildFactory::get_array_type(std::vector<int> indexs, Type* eleType){
+    if(indexs.size() == 1){
+        return new ArrayType(indexs[0], eleType);
+    }
+
+    std::vector<int> newIndexs;
+    for(int i = 1; i < indexs.size(); i++){
+        newIndexs.push_back(indexs[i]);
+    }
+    Type* type = get_array_type(newIndexs, eleType);
+    return new ArrayType(indexs[0], type);
+}
+
 StoreInst* IRBuildFactory::build_store_inst(Value* value, Value* pointer, BasicBlock* bb){
     Type* value_type = value->get_type();
     Type* ele_type = dynamic_cast<PointerType*>(pointer->get_type())->get_ele_type();
@@ -127,6 +140,12 @@ StoreInst* IRBuildFactory::build_store_inst(Value* value, Value* pointer, BasicB
     return store_inst;
 }
 
+PtrInst* IRBuildFactory::build_ptr_inst(IR::Value *pointer, IR::Value *value, IR::BasicBlock *bb) {
+    auto ptr_inst = new PtrInst(pointer, value);
+    bb->add_inst(ptr_inst);
+    return ptr_inst;
+}
+
 GlobalVar* IRBuildFactory::build_global_var(std::string name, Type* type, Value* value){
     return new GlobalVar("@" + name, new PointerType(type), value);
 }
@@ -136,19 +155,6 @@ CallInst* IRBuildFactory::build_call_inst(Function* func, std::vector<Value*> va
     bb->add_inst(callInst);
 
     return callInst;
-}
-
-ArrayType* IRBuildFactory::get_array_type(std::vector<int> indexs, Type* eleType){
-    if(indexs.size() == 1){
-        return new ArrayType(indexs[0], eleType);
-    }
-
-    std::vector<int> newIndexs;
-    for(int i = 1; i < indexs.size(); i++){
-        newIndexs.push_back(indexs[i]);
-    }
-    Type* type = get_array_type(newIndexs, eleType);
-    return new ArrayType(indexs[0], type);
 }
 
 Argument* IRBuildFactory::build_arg(std::string name, std::string type_str, Function* function, std::vector<int> indexs){
