@@ -134,8 +134,29 @@ PtrInst* IRBuildFactory::build_ptr_inst(IR::Value *pointer, IR::Value *value, IR
     return ptr_inst;
 }
 
-GlobalVar* IRBuildFactory::build_global_var(std::string name, Type* type, Value* value){
-    return new GlobalVar("@" + name, new PointerType(type), value);
+GlobalVar* IRBuildFactory::get_global_var(std::string name, Type* type, std::vector<Value*> init_values){
+    PointerType* pointerType = nullptr;
+    if(type == IntegerType::get_instance()){
+        pointerType = PointerType::get_i32_ptr_instance();
+    }
+    else if(type == FloatType::get_instance()){
+        pointerType = PointerType::get_f32_ptr_instance();
+    }
+    assert(pointerType != nullptr);
+
+    return new GlobalVar("@" + name, pointerType, init_values);
+}
+
+GlobalVar* IRBuildFactory::get_global_var(std::string name, Type* type, Value* value){
+    PointerType* pointerType = nullptr;
+    if(type == IntegerType::get_instance()){
+        pointerType = PointerType::get_i32_ptr_instance();
+    }
+    else if(type == FloatType::get_instance()){
+        pointerType = PointerType::get_f32_ptr_instance();
+    }
+    assert(pointerType != nullptr);
+    return new GlobalVar("@" + name, pointerType, value);
 }
 
 CallInst* IRBuildFactory::build_call_inst(Function* func, std::vector<Value*> values, BasicBlock* bb){

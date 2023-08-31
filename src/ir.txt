@@ -1,3 +1,4 @@
+@x = global int* [0, 1]
 int main() {
 block0:
 	%0 = alloc [2 x int]

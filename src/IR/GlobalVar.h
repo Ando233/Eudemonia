@@ -12,35 +12,30 @@ using namespace IR;
 class GlobalVar : public Value {
 private:
     Value* value;
-    bool _is_array;
+    int size;
     std::vector<Value*> values;
 public:
     GlobalVar(std::string name, Type* type, Value* _value) : Value(name, type){
         value = _value;
-        _is_array = false;
+        size = 1;
     }
 
-    GlobalVar(std::string name, Type* type, std::vector<Value*> values) : Value(name, type){
-        values = values;
-        _is_array = true;
-        value = nullptr;
+    GlobalVar(std::string name, Type* type, std::vector<Value*> _values) : Value(name, type){
+        values = _values;
+        size = _values.size();
     }
 
     Value* get_value(){
         return value;
     }
 
-    bool is_array(){
-        return _is_array;
-    }
-
     void dump(std::ofstream &out){
         out << name + " = global " + get_type()->to_string() + " ";
-        if(is_array()){
+        if(size != 1){
             out << "[";
             for(int i = 0; i < values.size(); i++){
-                out << value->get_type()->to_string() + " " + value->get_name();
-                if(i != values.size() - 1) out << " ";
+                out << values[i]->get_name();
+                if(i != values.size() - 1) out << ", ";
             }
             out << "]";
         }

@@ -533,7 +533,9 @@ antlrcpp::Any Visitor::visitVarDef(SysYParser::DefContext* ctx, Type* type, bool
 
         //  全局变量数组
         if(is_global){
-            //  TODO:
+            GlobalVar* global_var = IRBuildFactory::get_global_var(ident, type, init_values);
+            ir_module->add_global_var(global_var);
+            push_symbol(ident, global_var);
         }
         //  局部变量数组
         else{
@@ -554,10 +556,10 @@ antlrcpp::Any Visitor::visitVarDef(SysYParser::DefContext* ctx, Type* type, bool
         if (is_global) {
             if(ctx->init()){
                 visitExp(ctx->init()->exp(), true);
-                CurValue = IRBuildFactory::build_global_var(ident, CurValue->get_type(), CurValue);
+                CurValue = IRBuildFactory::get_global_var(ident, CurValue->get_type(), CurValue);
             }
             else{
-                CurValue = IRBuildFactory::build_global_var(ident, type, fill_value);
+                CurValue = IRBuildFactory::get_global_var(ident, type, fill_value);
             }
             ir_module->add_global_var(dynamic_cast<GlobalVar*>(CurValue));
         }

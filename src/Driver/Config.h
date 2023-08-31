@@ -17,7 +17,7 @@ public:
 };
 
 std::string Config::input_file_name = "testcase.sy";
-std::string Config::ir_file_name = "llvm.ll";
+std::string Config::ir_file_name = "ir.txt";
 std::string Config::obj_file_name = "testcase.s";
 std::string Config::log_file_name = "runtime.log";
 

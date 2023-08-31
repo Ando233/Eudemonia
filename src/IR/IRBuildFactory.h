@@ -29,9 +29,9 @@ public:
     }
 
     PtrInst* build_ptr_inst(Value* pointer, Value* value, BasicBlock* bb);
-    static GlobalVar* build_global_var(std::string name, Type* type, Value* value);
+    static GlobalVar* get_global_var(std::string name, Type* type, std::vector<Value*> init_values);
+    static GlobalVar* get_global_var(std::string name, Type* type, Value* value);
     static CallInst* build_call_inst(Function* func, std::vector<Value*> values, BasicBlock* bb);
-    Argument* build_arg(std::string name, std::string type, Function* function, std::vector<int> indexs);
     static Argument* build_arg(std::string name, std::string type, Function* function);
     static BrInst* build_br_inst(BasicBlock* jump_bb, BasicBlock* bb);
     static BrInst* build_br_inst(Value* cond, BasicBlock* true_bb, BasicBlock* false_bb, BasicBlock* bb);
