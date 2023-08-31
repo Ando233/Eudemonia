@@ -462,7 +462,12 @@ antlrcpp::Any Visitor::visitFuncDef(SysYParser::FuncDefContext *ctx) {
 
 antlrcpp::Any Visitor::visitConstDef(SysYParser::DefContext *ctx, Type* type, bool is_global){
     std::string ident = ctx->Ident()->getText();
-    if(ctx->initVal()){
+
+    //  数组
+    if(ctx->exp().size() != 0){
+
+    }
+    else{
         visitExp(ctx->initVal()->exp(), true);
         if(type == IntegerType::get_instance() && CurValue->get_type() == FloatType::get_instance()){
             auto const_float = dynamic_cast<ConstFloat*>(CurValue);
@@ -479,10 +484,29 @@ antlrcpp::Any Visitor::visitConstDef(SysYParser::DefContext *ctx, Type* type, bo
 
 antlrcpp::Any Visitor::visitVarDef(SysYParser::DefContext* ctx, Type* type, bool is_global){
     std::string ident = ctx->Ident()->getText();
-    //  普通变量
-    if(ctx->initVal()) {
-        if (is_global) {
+    Value* fill_value;
+    if(type == IntegerType::get_instance()) {
+        fill_value = f.build_number(0);
+    }
+    else if(type == FloatType::get_instance()){
+        fill_value = f.build_number((float) 0.0);
+    }
 
+    //  数组
+    if(ctx->exp().size() != 0){
+
+    }
+    //  普通变量
+    else {
+        if (is_global) {
+            if(ctx->initVal()){
+                visitExp(ctx->initVal()->exp(), true);
+                CurValue = f.build_global_var(ident, CurValue->get_type(), CurValue);
+            }
+            else{
+                CurValue = f.build_global_var(ident, type, fill_value);
+            }
+            ir_module->add_global_var(dynamic_cast<GlobalVar*>(CurValue));
         }
         else {
             CurValue = f.build_alloc_inst(type, CurBasicBlock);

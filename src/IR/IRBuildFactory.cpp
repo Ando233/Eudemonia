@@ -127,6 +127,10 @@ StoreInst* IRBuildFactory::build_store_inst(Value* value, Value* pointer, BasicB
     return store_inst;
 }
 
+GlobalVar* IRBuildFactory::build_global_var(std::string name, Type* type, Value* value){
+    return new GlobalVar("@" + name, new PointerType(type), value);
+}
+
 CallInst* IRBuildFactory::build_call_inst(Function* func, std::vector<Value*> values, BasicBlock* bb){
     auto callInst = new CallInst(func, values);
     bb->add_inst(callInst);

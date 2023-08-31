@@ -28,6 +28,7 @@ public:
         return f;
     }
 
+    GlobalVar* build_global_var(std::string name, Type* type, Value* value);
     CallInst* build_call_inst(Function* func, std::vector<Value*> values, BasicBlock* bb);
     Argument* build_arg(std::string name, std::string type, Function* function);
     BrInst* build_br_inst(BasicBlock* jump_bb, BasicBlock* bb);

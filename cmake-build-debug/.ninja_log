@@ -2,12 +2,12 @@
 14025	20987	7149425046952234	CMakeFiles/compiler.dir/third_party/antlr4-runtime/Exceptions.cpp.obj	84ba70d641e72801
 4706	10101	7149424942076419	CMakeFiles/compiler.dir/third_party/antlr4-runtime/ANTLRErrorListener.cpp.obj	cf27a26459b41031
 3759	4280	7149424885286963	CMakeFiles/compiler.dir/src/main.cpp.obj	ecd9d188604a6672
-0	714	7151395295509704	build.ninja	84643a332f3d258
+1	368	7151424212312545	build.ninja	84643a332f3d258
 7522	13964	7149424981439899	CMakeFiles/compiler.dir/third_party/antlr4-runtime/BailErrorStrategy.cpp.obj	61c019b0fa987c70
 1190	1411	7146549832034644	compiler.exe	e70ed558452c8a49
-36870	40419	7149425246922596	CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/AmbiguityInfo.cpp.obj	e88e5b28a59e310e
 25426	30642	7149425148901102	CMakeFiles/compiler.dir/third_party/antlr4-runtime/ParserRuleContext.cpp.obj	6863c17869017ac9
-2675	3001	7151105232442864	D:/Clion Projects/Eudemonia/src/compiler.exe	e76f70bf156bd90a
+1495	1780	7151421577442279	D:/Clion Projects/Eudemonia/src/compiler.exe	e76f70bf156bd90a
+36870	40419	7149425246922596	CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/AmbiguityInfo.cpp.obj	e88e5b28a59e310e
 13807	20040	7149425041432215	CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerATNConfig.cpp.obj	a6468c89a91b324a
 21020	28410	7149425126840216	CMakeFiles/compiler.dir/third_party/antlr4-runtime/ParserInterpreter.cpp.obj	6a0404c0cda066a3
 8936	14024	7149424981479897	CMakeFiles/compiler.dir/third_party/antlr4-runtime/BaseErrorListener.cpp.obj	e6c6ff620c7eb5b5
@@ -36,7 +36,7 @@
 36233	39706	7149425240022572	CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ATNStateType.cpp.obj	addb27652552042f
 27032	33588	7149425178852585	CMakeFiles/compiler.dir/third_party/antlr4-runtime/Recognizer.cpp.obj	f78ac9abaf7e9c8a
 4839	12571	7149424968656170	CMakeFiles/compiler.dir/third_party/antlr4-runtime/BufferedTokenStream.cpp.obj	b4e77fdcb3451dac
-36	2530	7151093450474859	CMakeFiles/compiler.dir/src/IR/IRBuildFactory.cpp.obj	3bb0dd209b64d5b1
+39	2894	7151421236409496	CMakeFiles/compiler.dir/src/IR/IRBuildFactory.cpp.obj	3bb0dd209b64d5b1
 20042	25425	7149425096046597	CMakeFiles/compiler.dir/third_party/antlr4-runtime/InputMismatchException.cpp.obj	d1ea118ef2185355
 3544	4023	7149424882926970	CMakeFiles/compiler.dir/src/IR/Use.cpp.obj	4813b673f4e27aeb
 24144	29048	7149425133540260	CMakeFiles/compiler.dir/third_party/antlr4-runtime/NoViableAltException.cpp.obj	ba574be3ba34a53c
@@ -68,7 +68,7 @@
 10277	14833	7149429849381671	CMakeFiles/compiler.dir/third_party/antlr4-runtime/misc/InterpreterDataReader.cpp.obj	2c62890a3f3404e3
 15197	21535	7149425057827793	CMakeFiles/compiler.dir/third_party/antlr4-runtime/CommonTokenFactory.cpp.obj	4bd5c9c9f4b0705b
 9440	15196	7149424994628715	CMakeFiles/compiler.dir/third_party/antlr4-runtime/CommonToken.cpp.obj	7cfaa816be14fe10
-14	2176	7151076706386622	CMakeFiles/compiler.dir/src/Backend/ObjModule.cpp.obj	c2076fe5616376a
+19	2174	7151421229189688	CMakeFiles/compiler.dir/src/Backend/ObjModule.cpp.obj	c2076fe5616376a
 20988	26224	7149425104663312	CMakeFiles/compiler.dir/third_party/antlr4-runtime/IntStream.cpp.obj	daa8453baf768b08
 21	4458	7146682389727011	CMakeFiles/compiler.dir/src/frontend/SysYBaseListener.cpp.obj	7282e603755d9abc
 33546	37584	7149425218772590	CMakeFiles/compiler.dir/third_party/antlr4-runtime/Vocabulary.cpp.obj	d707e24fd8d0ac37
@@ -81,7 +81,7 @@
 37585	42585	7149425268497804	CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ArrayPredictionContext.cpp.obj	6d61115d833a38de
 10744	14254	7149429843385786	CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/SingletonPredictionContext.cpp.obj	430bc4567a7111b
 37730	41330	7149425256392584	CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ContextSensitivityInfo.cpp.obj	c5f2f3ba56988152
-18	6479	7151093489757628	CMakeFiles/compiler.dir/src/Frontend/SysYParser.cpp.obj	68075d496c7db6dd
+19	5445	7151396465168640	CMakeFiles/compiler.dir/src/Frontend/SysYParser.cpp.obj	68075d496c7db6dd
 12572	17821	7149425021099197	CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/ErrorInfo.cpp.obj	db983e2e2534f7ab
 38630	42530	7149425268147807	CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/DecisionState.cpp.obj	d9505d2800a6d01b
 13289	18547	7149425027789187	CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/EpsilonTransition.cpp.obj	bcc882097b3f48c4
@@ -91,7 +91,7 @@
 78	2713	7149429728261823	CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerMoreAction.cpp.obj	5d97805fa0bf5ff3
 11497	21019	7149425050657785	CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerATNSimulator.cpp.obj	5d0ceff13fd2820a
 87	2608	7149429727101818	CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerCustomAction.cpp.obj	e342b735ce491f64
-18	2096	7151102934874203	CMakeFiles/compiler.dir/src/Driver/Driver.cpp.obj	14fe4f3c60d048bf
+16	3069	7151421238143604	CMakeFiles/compiler.dir/src/Driver/Driver.cpp.obj	14fe4f3c60d048bf
 52	2582	7149429726851831	CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerChannelAction.cpp.obj	e02d0fcfb18cc0fe
 71	2671	7149429727801818	CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LexerIndexedCustomAction.cpp.obj	192990b6899f9c08
 2714	5461	7149429755719910	CMakeFiles/compiler.dir/third_party/antlr4-runtime/atn/LookaheadEventInfo.cpp.obj	d90447b52dcfa12c
@@ -152,18 +152,18 @@
 23660	28261	7149429983799542	CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPathLexer.cpp.obj	e5aa6eff19a7cc7e
 26212	28455	7149429985759541	CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPathWildcardAnywhereElement.cpp.obj	f9ce533033ea1dcc
 25180	27986	7149429981039533	CMakeFiles/compiler.dir/third_party/antlr4-runtime/tree/xpath/XPathWildcardElement.cpp.obj	37f47c0a7edb5aaf
-17	1782	7151077361172230	CMakeFiles/compiler.dir/src/IR/Instruction.cpp.obj	ee0978fae038801f
-25	2194	7151076706546629	CMakeFiles/compiler.dir/src/IR/BasicBlock.cpp.obj	931a4eefa8cadd8
-20	2154	7151076706136624	CMakeFiles/compiler.dir/src/IR/Function.cpp.obj	5025153e93201f55
-22	2300	7151093448125055	CMakeFiles/compiler.dir/src/Frontend/SysYBaseVisitor.cpp.obj	d90aa918d87d183a
-31	2391	7151093449054875	CMakeFiles/compiler.dir/src/Frontend/SysYVisitor.cpp.obj	61f6591bfffa423
+14	1494	7151421574847685	CMakeFiles/compiler.dir/src/IR/Instruction.cpp.obj	ee0978fae038801f
+28	2149	7151421228926208	CMakeFiles/compiler.dir/src/IR/BasicBlock.cpp.obj	931a4eefa8cadd8
+24	2254	7151421229989538	CMakeFiles/compiler.dir/src/IR/Function.cpp.obj	5025153e93201f55
+22	2128	7151396432040621	CMakeFiles/compiler.dir/src/Frontend/SysYBaseVisitor.cpp.obj	d90aa918d87d183a
+24	2145	7151396432233450	CMakeFiles/compiler.dir/src/Frontend/SysYVisitor.cpp.obj	61f6591bfffa423
 54	3478	7151050073715314	CMakeFiles/compiler.dir/src/IR/Type.cpp.obj	cdcde632c3999cf9
 15	2807	7147453438620390	CMakeFiles/compiler.dir/src/Frontend/SysYBaseListener.cpp.obj	ed8c453a9e525553
 37	2814	7147453438690376	CMakeFiles/compiler.dir/src/Frontend/SysYListener.cpp.obj	902a1ead488d15b
-26	2996	7151093455121979	CMakeFiles/compiler.dir/src/Frontend/SysYLexer.cpp.obj	1a270379ac89049a
+17	2905	7151396439818754	CMakeFiles/compiler.dir/src/Frontend/SysYLexer.cpp.obj	1a270379ac89049a
 76	3607	7151050075101404	CMakeFiles/compiler.dir/src/IR/Value.cpp.obj	de471ee5d0d328af
-34	2230	7151076706936657	CMakeFiles/compiler.dir/src/IR/Module.cpp.obj	ffb7bf30e08e2286
-15	2674	7151105229418720	CMakeFiles/compiler.dir/src/IR/Visitor.cpp.obj	c42cca6769ad953d
+47	2157	7151421228977050	CMakeFiles/compiler.dir/src/IR/Module.cpp.obj	ffb7bf30e08e2286
+51	4025	7151421247669508	CMakeFiles/compiler.dir/src/IR/Visitor.cpp.obj	c42cca6769ad953d
 26	212	7147539312180223	CMakeFiles/compiler.dir/src/Support/Diagnostics.cpp.obj	c3b88d7b6a5526c2
 74	375	7149424846915935	CMakeFiles/compiler.dir/src/IR/GlobalVar.cpp.obj	3f04b7479a535fb9
 9653	12732	7149429828384251	CMakeFiles/compiler.dir/third_party/antlr4-runtime/internal/Synchronization.cpp.obj	c7d8df9a218d908c
@@ -172,29 +172,25 @@
 29	210	7149982036244986	CMakeFiles/compiler.dir/src/Backend/ObjFunction.cpp.obj	7acdd267182ac11f
 36	218	7149982036336381	CMakeFiles/compiler.dir/src/Backend/ObjBlock.cpp.obj	8992d4fd4add2266
 14	228	7149982036456981	CMakeFiles/compiler.dir/src/Backend/ObjInst.cpp.obj	eb6ae3394c53accf
-1	368	7151395295509704	build.ninja	84643a332f3d258
-14	1863	7151395314302333	CMakeFiles/compiler.dir/src/IR/Module.cpp.obj	ffb7bf30e08e2286
-19	1866	7151395314292353	CMakeFiles/compiler.dir/src/Backend/ObjModule.cpp.obj	c2076fe5616376a
-27	1888	7151395314535637	CMakeFiles/compiler.dir/src/IR/Function.cpp.obj	5025153e93201f55
-17	2335	7151395319042444	CMakeFiles/compiler.dir/src/IR/IRBuildFactory.cpp.obj	3bb0dd209b64d5b1
-23	2611	7151395321771817	CMakeFiles/compiler.dir/src/Driver/Driver.cpp.obj	14fe4f3c60d048bf
-32	3185	7151395327491107	CMakeFiles/compiler.dir/src/IR/Visitor.cpp.obj	c42cca6769ad953d
-3185	4053	7151395335988779	D:/Clion Projects/Eudemonia/src/compiler.exe	e76f70bf156bd90a
-22	2128	7151396432040621	CMakeFiles/compiler.dir/src/Frontend/SysYBaseVisitor.cpp.obj	d90aa918d87d183a
-24	2145	7151396432233450	CMakeFiles/compiler.dir/src/Frontend/SysYVisitor.cpp.obj	61f6591bfffa423
-14	2563	7151396436385123	CMakeFiles/compiler.dir/src/Driver/Driver.cpp.obj	14fe4f3c60d048bf
-17	2905	7151396439818754	CMakeFiles/compiler.dir/src/Frontend/SysYLexer.cpp.obj	1a270379ac89049a
-27	3227	7151396443024632	CMakeFiles/compiler.dir/src/IR/Visitor.cpp.obj	c42cca6769ad953d
-19	5445	7151396465168640	CMakeFiles/compiler.dir/src/Frontend/SysYParser.cpp.obj	68075d496c7db6dd
-5446	5713	7151396467678681	D:/Clion Projects/Eudemonia/src/compiler.exe	e76f70bf156bd90a
-28	2149	7151421228926208	CMakeFiles/compiler.dir/src/IR/BasicBlock.cpp.obj	931a4eefa8cadd8
-47	2157	7151421228977050	CMakeFiles/compiler.dir/src/IR/Module.cpp.obj	ffb7bf30e08e2286
-19	2174	7151421229189688	CMakeFiles/compiler.dir/src/Backend/ObjModule.cpp.obj	c2076fe5616376a
-24	2254	7151421229989538	CMakeFiles/compiler.dir/src/IR/Function.cpp.obj	5025153e93201f55
-32	2466	7151421232120449	CMakeFiles/compiler.dir/src/IR/Instruction.cpp.obj	ee0978fae038801f
-39	2894	7151421236409496	CMakeFiles/compiler.dir/src/IR/IRBuildFactory.cpp.obj	3bb0dd209b64d5b1
-16	3069	7151421238143604	CMakeFiles/compiler.dir/src/Driver/Driver.cpp.obj	14fe4f3c60d048bf
-51	4025	7151421247669508	CMakeFiles/compiler.dir/src/IR/Visitor.cpp.obj	c42cca6769ad953d
-4025	4317	7151421250405693	D:/Clion Projects/Eudemonia/src/compiler.exe	e76f70bf156bd90a
-14	1494	7151421574847685	CMakeFiles/compiler.dir/src/IR/Instruction.cpp.obj	ee0978fae038801f
-1495	1780	7151421577442279	D:/Clion Projects/Eudemonia/src/compiler.exe	e76f70bf156bd90a
+32	1754	7151432419941860	CMakeFiles/compiler.dir/src/IR/GlobalVar.cpp.obj	3f04b7479a535fb9
+17	1970	7151432422124774	CMakeFiles/compiler.dir/src/Backend/ObjModule.cpp.obj	c2076fe5616376a
+37	2010	7151432422510759	CMakeFiles/compiler.dir/src/IR/Module.cpp.obj	ffb7bf30e08e2286
+22	2837	7151432430786364	CMakeFiles/compiler.dir/src/Driver/Driver.cpp.obj	14fe4f3c60d048bf
+51	3783	7151432440239383	CMakeFiles/compiler.dir/src/IR/Visitor.cpp.obj	c42cca6769ad953d
+16	2313	7151432605726904	CMakeFiles/compiler.dir/src/IR/IRBuildFactory.cpp.obj	3bb0dd209b64d5b1
+2315	2697	7151432609255465	D:/Clion Projects/Eudemonia/src/compiler.exe	e76f70bf156bd90a
+15	2788	7151438202422357	CMakeFiles/compiler.dir/src/IR/Visitor.cpp.obj	c42cca6769ad953d
+2789	3070	7151438205021923	D:/Clion Projects/Eudemonia/src/compiler.exe	e76f70bf156bd90a
+25	2693	7151441670991576	CMakeFiles/compiler.dir/src/Backend/ObjModule.cpp.obj	c2076fe5616376a
+35	2763	7151441671673771	CMakeFiles/compiler.dir/src/IR/Module.cpp.obj	ffb7bf30e08e2286
+29	3902	7151441683109253	CMakeFiles/compiler.dir/src/IR/IRBuildFactory.cpp.obj	3bb0dd209b64d5b1
+20	4020	7151441684220802	CMakeFiles/compiler.dir/src/Driver/Driver.cpp.obj	14fe4f3c60d048bf
+38	5991	7151441703692080	CMakeFiles/compiler.dir/src/IR/Visitor.cpp.obj	c42cca6769ad953d
+5992	6596	7151441709655582	D:/Clion Projects/Eudemonia/src/compiler.exe	e76f70bf156bd90a
+23	1888	7151442370936872	CMakeFiles/compiler.dir/src/IR/GlobalVar.cpp.obj	3f04b7479a535fb9
+17	2088	7151442372908168	CMakeFiles/compiler.dir/src/Backend/ObjModule.cpp.obj	c2076fe5616376a
+27	2168	7151442373732768	CMakeFiles/compiler.dir/src/IR/Module.cpp.obj	ffb7bf30e08e2286
+19	2843	7151442380508758	CMakeFiles/compiler.dir/src/IR/IRBuildFactory.cpp.obj	3bb0dd209b64d5b1
+14	2947	7151442381535085	CMakeFiles/compiler.dir/src/Driver/Driver.cpp.obj	14fe4f3c60d048bf
+30	4016	7151442392209454	CMakeFiles/compiler.dir/src/IR/Visitor.cpp.obj	c42cca6769ad953d
+4017	4293	7151442394748010	D:/Clion Projects/Eudemonia/src/compiler.exe	e76f70bf156bd90a

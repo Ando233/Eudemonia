@@ -13,8 +13,8 @@
 namespace IR {
 class Module final {
 private:
-    using FuncList = std::list<Function*>;
-    using GlobalVarList = std::list<GlobalVar*>;
+    using FuncList = std::vector<Function*>;
+    using GlobalVarList = std::vector<GlobalVar*>;
     FuncList functions;
     GlobalVarList global_vars;
 public:
@@ -23,6 +23,9 @@ public:
     }
     void add_function(Function* function){ functions.push_back(function); }
     FuncList get_functions(){ return functions; }
+    void add_global_var(GlobalVar* global_var){
+        global_vars.push_back(global_var);
+    }
     void dump(std::ofstream& out);
 };
 }
