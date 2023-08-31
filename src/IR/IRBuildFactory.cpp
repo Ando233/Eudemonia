@@ -138,6 +138,29 @@ CallInst* IRBuildFactory::build_call_inst(Function* func, std::vector<Value*> va
     return callInst;
 }
 
+ArrayType* IRBuildFactory::get_array_type(std::vector<int> indexs, Type* eleType){
+    if(indexs.size() == 1){
+        return new ArrayType(indexs[0], eleType);
+    }
+
+    std::vector<int> newIndexs;
+    for(int i = 1; i < indexs.size(); i++){
+        newIndexs.push_back(indexs[i]);
+    }
+    Type* type = get_array_type(newIndexs, eleType);
+    return new ArrayType(indexs[0], type);
+}
+
+Argument* IRBuildFactory::build_arg(std::string name, std::string type_str, Function* function, std::vector<int> indexs){
+    Type* ele_type;
+    if(type_str == "int") ele_type = IntegerType::get_instance();
+    else ele_type = FloatType::get_instance();
+    Type* type = new PointerType(get_array_type(indexs, ele_type));
+    auto argument = new Argument(std::move(name), type, function);
+    function->add_arg(argument);
+    return argument;
+}
+
 BrInst* IRBuildFactory::build_br_inst(BasicBlock* jump_bb, BasicBlock* bb){
     auto br_inst = new BrInst(jump_bb);
     bb->add_inst(br_inst);

@@ -444,7 +444,20 @@ antlrcpp::Any Visitor::visitFuncDef(SysYParser::FuncDefContext *ctx) {
             std::string arg_type = func_fparam->bType()->getText();
             Argument* arg;
 
-            arg = f.build_arg(arg_name, arg_type, CurFunction);
+            if(!func_fparam->exp().empty()){
+                std::vector<int> sizes;
+                for(auto exp : func_fparam->exp()){
+                    visitExp(exp, true);
+                    sizes.push_back(dynamic_cast<ConstInt*>(CurValue)->get_value());
+                }
+                if(!sizes.empty()){
+                    arg = f.build_arg(arg_name, arg_type, CurFunction, sizes);
+                }
+                else arg = f.build_arg(arg_name, arg_type + "*", CurFunction);
+            }
+            else {
+                arg = f.build_arg(arg_name, arg_type, CurFunction);
+            }
             AllocInst* allocInst = f.build_alloc_inst(arg->get_type(), CurBasicBlock);
             f.build_store_inst(arg, allocInst, CurBasicBlock);
             push_symbol(arg_name, allocInst);

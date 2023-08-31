@@ -19,8 +19,9 @@ class IRBuildFactory {
 
 private:
     Value *turn_type(Value *value, Type *type, BasicBlock *bb);
-    int calculate(int a, int b, const std::string& op);
-    float calculate(float a, float b, const std::string& op);
+    static int calculate(int a, int b, const std::string& op);
+    static float calculate(float a, float b, const std::string& op);
+    ArrayType* get_array_type(std::vector<int> indexs, Type* eleType);
 
 public:
     static IRBuildFactory getInstance(){
@@ -28,11 +29,12 @@ public:
         return f;
     }
 
-    GlobalVar* build_global_var(std::string name, Type* type, Value* value);
-    CallInst* build_call_inst(Function* func, std::vector<Value*> values, BasicBlock* bb);
-    Argument* build_arg(std::string name, std::string type, Function* function);
-    BrInst* build_br_inst(BasicBlock* jump_bb, BasicBlock* bb);
-    BrInst* build_br_inst(Value* cond, BasicBlock* true_bb, BasicBlock* false_bb, BasicBlock* bb);
+    static GlobalVar* build_global_var(std::string name, Type* type, Value* value);
+    static CallInst* build_call_inst(Function* func, std::vector<Value*> values, BasicBlock* bb);
+    Argument* build_arg(std::string name, std::string type, Function* function, std::vector<int> indexs);
+    static Argument* build_arg(std::string name, std::string type, Function* function);
+    static BrInst* build_br_inst(BasicBlock* jump_bb, BasicBlock* bb);
+    static BrInst* build_br_inst(Value* cond, BasicBlock* true_bb, BasicBlock* false_bb, BasicBlock* bb);
     LoadInst* build_load_inst(Value* pointer, BasicBlock* bb);
     StoreInst* build_store_inst(Value* value, Value* pointer, BasicBlock* bb);
     AllocInst* build_alloc_inst(Type* type, BasicBlock* bb);
@@ -44,7 +46,7 @@ public:
     ConstInt* build_number(int val);
     BasicBlock* build_basic_block(Function* parent_func);
     Function* build_function(std::string name, std::string type, Module* module);
-    ConversionInst* build_conversion_inst(Value* value, OP op, BasicBlock* bb);
+    static ConversionInst* build_conversion_inst(Value* value, OP op, BasicBlock* bb);
 
 };
 

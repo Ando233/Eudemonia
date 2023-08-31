@@ -22,18 +22,17 @@ private:
     static void push_symbol(const std::string& ident, Value* value);
     static void push_sym_table();
     static void pop_sym_table();
-    void push_symbol();
     static Value* find(const std::string& ident);
 
     void register_lib_func();
-    antlrcpp::Any visitWhileStmt(SysYParser::WhileStmtContext *ctx);
+    antlrcpp::Any visitWhileStmt(SysYParser::WhileStmtContext *ctx) override;
     antlrcpp::Any visitRelExp(SysYParser::RelExpContext *ctx, bool is_const);
     antlrcpp::Any visitEqExp(SysYParser::EqExpContext *ctx, bool is_const);
     antlrcpp::Any visitLandExp(SysYParser::LandExpContext *ctx, BasicBlock* true_bb, BasicBlock* false_bb);
     antlrcpp::Any visitLorExp(SysYParser::LorExpContext *ctx, BasicBlock* true_bb, BasicBlock* false_bb);
-    antlrcpp::Any visitIfStmt(SysYParser::IfStmtContext *ctx);
+    antlrcpp::Any visitIfStmt(SysYParser::IfStmtContext *ctx) override;
     antlrcpp::Any visitVarDef(SysYParser::DefContext* ctx, Type* type, bool is_global);
-    antlrcpp::Any visitBlockItem(SysYParser::BlockItemContext *ctx);
+    antlrcpp::Any visitBlockItem(SysYParser::BlockItemContext *ctx) override;
     static antlrcpp::Any visitLVal(SysYParser::LValContext *ctx, bool is_fetch);
     antlrcpp::Any visitConstDef(SysYParser::DefContext *ctx, Type* type, bool is_global);
     antlrcpp::Any visitDecl(SysYParser::DeclContext *ctx, bool is_global);
