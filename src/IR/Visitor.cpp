@@ -451,7 +451,7 @@ antlrcpp::Any Visitor::visitFuncDef(SysYParser::FuncDefContext *ctx) {
             push_symbol(arg_name, allocInst);
         }
         BasicBlock* tmp_bb = f.build_basic_block(CurFunction);
-        f.build_br_inst(tmp_bb, CurBasicBlock);
+        IRBuildFactory::build_br_inst(tmp_bb, CurBasicBlock);
         CurBasicBlock = tmp_bb;
     }
 
@@ -459,6 +459,54 @@ antlrcpp::Any Visitor::visitFuncDef(SysYParser::FuncDefContext *ctx) {
 
     pop_sym_table();
     return nullptr;
+}
+
+std::vector<Value*> Visitor::visitInitArray(std::vector<int> indexs, SysYParser::InitArrayContext *ctx, IR::Value *fillValue, bool isConst) {
+    int curNum = 0;
+    int totSize = 1;
+    std::vector<Value*> values;
+    for (int index : indexs) {
+        totSize *= index;
+    }
+
+    for(auto init : ctx->init()){
+        if(init->exp()){
+            curNum++;
+            visitExp(init->exp(), isConst);
+            values.push_back(CurValue);
+            //  TODO ！！！常量数组的优化！！！
+        }
+        else if(init->initArray()){
+            std::vector<int> newIndexs;
+            int start = 0;
+            if(curNum == 0){
+                start = 1;
+            }
+            else{
+                int tmpMul = 1;
+                for(int i = indexs.size() - 1; i >= 0; i--){
+                    tmpMul *= indexs[i];
+                    if(curNum % tmpMul != 0){
+                        start = i + 1;
+                        break;
+                    }
+                }
+            }
+
+            for(int i = start; i < indexs.size(); i++){
+                newIndexs.push_back(indexs[i]);
+            }
+            std::vector<Value*> newValues = visitInitArray(newIndexs, init->initArray(), fillValue, isConst);
+            values.insert(values.end(), newValues.begin(), newValues.end());
+            curNum += newValues.size();
+        }
+    }
+
+    //  填充元素
+    for(int i = curNum; i < totSize; i++){
+        values.push_back(fillValue);
+    }
+    return values;
 }
 
 antlrcpp::Any Visitor::visitVarDef(SysYParser::DefContext* ctx, Type* type, bool is_global){
@@ -473,7 +521,33 @@ antlrcpp::Any Visitor::visitVarDef(SysYParser::DefContext* ctx, Type* type, bool
 
     //  数组
     if(!ctx->exp().empty()){
-        //  TODO:
+        int size = 1;
+        std::vector<int> dim_indexs;
+        for(auto exp : ctx->exp()){
+            visitExp(exp, true);
+            int x = dynamic_cast<ConstInt*>(CurValue)->get_value();
+            dim_indexs.push_back(x);
+            size *= x;
+        }
+        std::vector<Value*> init_values = visitInitArray(dim_indexs, ctx->init()->initArray(), fill_value, is_global);
+
+        //  全局变量数组
+        if(is_global){
+            //  TODO:
+        }
+        //  局部变量数组
+        else{
+            Value* base_ptr = f.build_alloc_inst(size, type, CurBasicBlock);
+            for(int i = 0; i < init_values.size(); i++){
+                Value* init_value = init_values[i];
+                if(init_value->get_name() == "flag"){
+                    continue;
+                }
+                CurValue = f.build_ptr_inst(base_ptr, f.build_number(i), CurBasicBlock);
+                f.build_store_inst(init_value, CurValue, CurBasicBlock);
+            }
+            push_symbol(ident, base_ptr);
+        }
     }
     //  普通变量
     else {
@@ -488,7 +562,7 @@ antlrcpp::Any Visitor::visitVarDef(SysYParser::DefContext* ctx, Type* type, bool
             ir_module->add_global_var(dynamic_cast<GlobalVar*>(CurValue));
         }
         else {
-            CurValue = f.build_alloc_inst(type, CurBasicBlock);
+            CurValue = IRBuildFactory::build_alloc_inst(type, CurBasicBlock);
             if(ctx->init()->exp()){
                 Value* tmp_value = CurValue;
                 visitExp(ctx->init()->exp(), false);

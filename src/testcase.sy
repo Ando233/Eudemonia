@@ -1,8 +1,4 @@
-int var;
-float varr = 4.1;
-const int one = 1;
-
 int main() {
-    int x = 3;
-  return var + one;
+    int x[2] = {0, 1};
+    return 0;
 }

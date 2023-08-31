@@ -3,6 +3,7 @@
 //
 
 #include "IRBuildFactory.h"
+#include <cassert>
 using OP = Instruction::OP;
 
 ConversionInst* IRBuildFactory::build_conversion_inst(Value* value, OP op, BasicBlock* bb){
@@ -102,19 +103,6 @@ float IRBuildFactory::calculate(float a, float b, const std::string& op) {
     }
 }
 
-ArrayType* IRBuildFactory::get_array_type(std::vector<int> indexs, Type* eleType){
-    if(indexs.size() == 1){
-        return new ArrayType(indexs[0], eleType);
-    }
-
-    std::vector<int> newIndexs;
-    for(int i = 1; i < indexs.size(); i++){
-        newIndexs.push_back(indexs[i]);
-    }
-    Type* type = get_array_type(newIndexs, eleType);
-    return new ArrayType(indexs[0], type);
-}
-
 StoreInst* IRBuildFactory::build_store_inst(Value* value, Value* pointer, BasicBlock* bb){
     Type* value_type = value->get_type();
     Type* ele_type = dynamic_cast<PointerType*>(pointer->get_type())->get_ele_type();
@@ -157,15 +145,6 @@ CallInst* IRBuildFactory::build_call_inst(Function* func, std::vector<Value*> va
     return callInst;
 }
 
-Argument* IRBuildFactory::build_arg(std::string name, std::string type_str, Function* function, std::vector<int> indexs){
-    Type* ele_type;
-    if(type_str == "int") ele_type = IntegerType::get_instance();
-    else ele_type = FloatType::get_instance();
-    Type* type = new PointerType(get_array_type(indexs, ele_type));
-    auto argument = new Argument(std::move(name), type, function);
-    function->add_arg(argument);
-    return argument;
-}
 
 BrInst* IRBuildFactory::build_br_inst(BasicBlock* jump_bb, BasicBlock* bb){
     auto br_inst = new BrInst(jump_bb);
@@ -205,9 +184,31 @@ LoadInst* IRBuildFactory::build_load_inst(Value* pointer, BasicBlock* bb){
     return load_inst;
 }
 
+AllocInst* IRBuildFactory::build_alloc_inst(int size, Type* type, BasicBlock* bb){
+    Type* pointer_type = nullptr;
+    if(type == IntegerType::get_instance()){
+        pointer_type = PointerType::get_i32_ptr_instance();
+    }
+    else if(type == PointerType::get_f32_ptr_instance()){
+        pointer_type = PointerType::get_f32_ptr_instance();
+    }
+    assert(pointer_type != nullptr);
+    auto alloc_inst = new AllocInst(size, pointer_type);
+    bb->add_inst(alloc_inst);
+    return alloc_inst;
+}
+
 AllocInst* IRBuildFactory::build_alloc_inst(Type* type, BasicBlock* bb){
-    Type* pointer_type = new PointerType(type);
-    auto alloc_inst = new AllocInst(pointer_type);
+    Type* pointer_type = nullptr;
+    if(type == IntegerType::get_instance()){
+        pointer_type = PointerType::get_i32_ptr_instance();
+    }
+    else if(type == PointerType::get_f32_ptr_instance()){
+        pointer_type = PointerType::get_f32_ptr_instance();
+    }
+    assert(pointer_type != nullptr);
+
+    auto alloc_inst = new AllocInst(1, pointer_type);
     bb->add_inst(alloc_inst);
     return alloc_inst;
 }

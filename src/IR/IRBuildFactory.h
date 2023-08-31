@@ -21,7 +21,6 @@ private:
     Value *turn_type(Value *value, Type *type, BasicBlock *bb);
     static int calculate(int a, int b, const std::string& op);
     static float calculate(float a, float b, const std::string& op);
-    ArrayType* get_array_type(std::vector<int> indexs, Type* eleType);
 
 public:
     static IRBuildFactory getInstance(){
@@ -38,7 +37,8 @@ public:
     static BrInst* build_br_inst(Value* cond, BasicBlock* true_bb, BasicBlock* false_bb, BasicBlock* bb);
     LoadInst* build_load_inst(Value* pointer, BasicBlock* bb);
     StoreInst* build_store_inst(Value* value, Value* pointer, BasicBlock* bb);
-    AllocInst* build_alloc_inst(Type* type, BasicBlock* bb);
+    AllocInst* build_alloc_inst(int size, Type* type, BasicBlock* bb);
+    static AllocInst* build_alloc_inst(Type* type, BasicBlock* bb);
     Const* build_cal_number(Const* left, Const* right, std::string op);
     BinaryInst* build_bin_inst(Value* left, Value* right, OP op, BasicBlock* bb);
     RetInst* build_ret_inst(BasicBlock* bb);

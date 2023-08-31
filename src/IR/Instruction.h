@@ -236,15 +236,25 @@ public:
 };
 
 class AllocInst : public Instruction{
+private:
+    int size = -1;
 public:
-    explicit AllocInst(Type* type) : Instruction("%" + std::to_string(++Value::val_num), type, OP::alloca){}
+    AllocInst(int _size, Type* type) : Instruction("%" + std::to_string(++Value::val_num), type, OP::alloca){
+        size = _size;
+    }
 
     Type* get_alloc_type(){
         return dynamic_cast<PointerType*>(type)->get_ele_type();
     }
 
     void dump(std::ofstream& out) override{
-        out << name + " = alloc " + get_alloc_type()->to_string() + "\n";
+        out << name + " = alloc ";
+        if(size == 1) {
+            out << get_alloc_type()->to_string() + "\n";
+        }
+        else{
+            out << "[" + std::to_string(size) + " x " + get_alloc_type()->to_string() + "]\n";
+        }
     }
 };
 

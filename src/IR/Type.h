@@ -99,34 +99,6 @@ private:
     Type* eleType;
 };
 
-class ArrayType : public Type{
-private:
-    int num;
-    Type* ele_type;
-
-public:
-    ArrayType(int _num, Type* _ele_type) : Type(ArrayTyID){
-        num = _num;
-        ele_type = _ele_type;
-    }
-
-    int get_dim(){
-        if(ele_type->is_array_type()){
-            return dynamic_cast<ArrayType*>(ele_type)->get_dim() + 1;
-        }
-        else return 1;
-    }
-
-    Type* get_ele_type(){
-        return ele_type;
-    }
-
-    std::string to_string() override {
-        return "[" + std::to_string(num) + " x " + ele_type->to_string() + "]";
-    }
-
-};
-
 //  VoidType
 class VoidType : public Type{
 public:

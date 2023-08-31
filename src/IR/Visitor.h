@@ -24,8 +24,7 @@ private:
     static void pop_sym_table();
     static Value* find(const std::string& ident);
 
-    std::vector<Value*> visitInitArray(std::vector<int> indexs, SysYParser::InitArrayContext* ctx, Value* fillValue, bool isConst);
-    antlrcpp::Any visitArray(std::string ident, SysYParser::InitContext* init_array, std::vector<SysYParser::ExpContext*> idx_exps, Type* type, bool is_global, bool is_const);
+    std::vector<Value*> visitInitArray(std::vector<int> indexs, SysYParser::InitArrayContext *ctx, IR::Value *fillValue, bool isConst);
     static void register_lib_func();
     antlrcpp::Any visitWhileStmt(SysYParser::WhileStmtContext *ctx) override;
     antlrcpp::Any visitRelExp(SysYParser::RelExpContext *ctx, bool is_const);

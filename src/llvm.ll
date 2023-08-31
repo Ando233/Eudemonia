@@ -1,11 +1,10 @@
-@var = global int* 0
-@varr = global float* 4.100000
 int main() {
 block0:
-	%0 = alloc int
-	store 3, %0
-	%1 = load @var
-	%2 = add %1 1
-	return %2
+	%0 = alloc [2 x int]
+	%1 = ptradd %0, 0
+	store 0, %1
+	%2 = ptradd %0, 1
+	store 1, %2
+	return 0
 }
 
