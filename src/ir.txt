@@ -1,4 +1,6 @@
 @x = global int* [0, 1]
+@a = global int* [0, 1]
+@p = global int* [1, 2, 2, 0, 1, 0, 0, 0]
 int main() {
 block0:
 	%0 = alloc [2 x int]

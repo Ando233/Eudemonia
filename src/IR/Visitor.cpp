@@ -521,35 +521,7 @@ antlrcpp::Any Visitor::visitVarDef(SysYParser::DefContext* ctx, Type* type, bool
 
     //  数组
     if(!ctx->exp().empty()){
-        int size = 1;
-        std::vector<int> dim_indexs;
-        for(auto exp : ctx->exp()){
-            visitExp(exp, true);
-            int x = dynamic_cast<ConstInt*>(CurValue)->get_value();
-            dim_indexs.push_back(x);
-            size *= x;
-        }
-        std::vector<Value*> init_values = visitInitArray(dim_indexs, ctx->init()->initArray(), fill_value, is_global);
-
-        //  全局变量数组
-        if(is_global){
-            GlobalVar* global_var = IRBuildFactory::get_global_var(ident, type, init_values);
-            ir_module->add_global_var(global_var);
-            push_symbol(ident, global_var);
-        }
-        //  局部变量数组
-        else{
-            Value* base_ptr = f.build_alloc_inst(size, type, CurBasicBlock);
-            for(int i = 0; i < init_values.size(); i++){
-                Value* init_value = init_values[i];
-                if(init_value->get_name() == "flag"){
-                    continue;
-                }
-                CurValue = f.build_ptr_inst(base_ptr, f.build_number(i), CurBasicBlock);
-                f.build_store_inst(init_value, CurValue, CurBasicBlock);
-            }
-            push_symbol(ident, base_ptr);
-        }
+        visitArray(ident, type, ctx->init()->initArray(), ctx->exp(), is_global, is_global);
     }
     //  普通变量
     else {
@@ -577,12 +549,52 @@ antlrcpp::Any Visitor::visitVarDef(SysYParser::DefContext* ctx, Type* type, bool
     return nullptr;
 }
 
+void Visitor::visitArray(const std::string& ident, Type* type, SysYParser::InitArrayContext* initArray, std::vector<SysYParser::ExpContext*>exps, bool is_global, bool is_const){
+    Value* fill_value;
+    if(type == IntegerType::get_instance()) {
+        fill_value = f.build_number(0);
+    }
+    else if(type == FloatType::get_instance()){
+        fill_value = f.build_number((float) 0.0);
+    }
+
+    int size = 1;
+    std::vector<int> dim_indexs;
+    for(auto exp : exps){
+        visitExp(exp, is_const);
+        int x = dynamic_cast<ConstInt*>(CurValue)->get_value();
+        dim_indexs.push_back(x);
+        size *= x;
+    }
+    std::vector<Value*> init_values = visitInitArray(dim_indexs, initArray, fill_value, is_const);
+
+    //  全局变量数组
+    if(is_global){
+        GlobalVar* global_var = IRBuildFactory::get_global_var(ident, type, init_values);
+        ir_module->add_global_var(global_var);
+        push_symbol(ident, global_var);
+    }
+    //  局部变量数组
+    else{
+        Value* base_ptr = f.build_alloc_inst(size, type, CurBasicBlock);
+        for(int i = 0; i < init_values.size(); i++){
+            Value* init_value = init_values[i];
+            if(init_value->get_name() == "flag"){
+                continue;
+            }
+            CurValue = f.build_ptr_inst(base_ptr, f.build_number(i), CurBasicBlock);
+            f.build_store_inst(init_value, CurValue, CurBasicBlock);
+        }
+        push_symbol(ident, base_ptr);
+    }
+}
+
 antlrcpp::Any Visitor::visitConstDef(SysYParser::DefContext *ctx, Type* type, bool is_global){
     std::string ident = ctx->Ident()->getText();
 
     //  数组
     if(ctx->exp().size() != 0){
-        //  TODO:
+        visitArray(ident, type, ctx->init()->initArray(), ctx->exp(), is_global, true);
     }
     else{
         visitExp(ctx->init()->exp(), true);

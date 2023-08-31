@@ -286,3 +286,6 @@
 42	3507	7152020978897619	CMakeFiles/compiler.dir/src/IR/IRBuildFactory.cpp.obj	3bb0dd209b64d5b1
 66	5304	7152020996840015	CMakeFiles/compiler.dir/src/IR/Visitor.cpp.obj	c42cca6769ad953d
 5304	5785	7152021001369379	D:/Clion Projects/Eudemonia/src/compiler.exe	e76f70bf156bd90a
+21	3726	7152030280675255	CMakeFiles/compiler.dir/src/Driver/Driver.cpp.obj	14fe4f3c60d048bf
+30	5537	7152030298773415	CMakeFiles/compiler.dir/src/IR/Visitor.cpp.obj	c42cca6769ad953d
+5538	6072	7152030303825502	D:/Clion Projects/Eudemonia/src/compiler.exe	e76f70bf156bd90a
