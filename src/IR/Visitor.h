@@ -23,19 +23,24 @@ private:
     static void push_sym_table();
     static void pop_sym_table();
     static Value* find(const std::string& ident);
+    void push_dim_index_table();
+    void pop_dim_index_table();
+    void push_dim_index(const std::string& ident, std::vector<int>* dim_index);
+    std::vector<int>* find_dim_index(const std::string& ident);
+
 
     void visitArray(const std::string& ident, Type* type, SysYParser::InitArrayContext* initArray, std::vector<SysYParser::ExpContext*>exps, bool is_global, bool is_const);
     std::vector<Value*> visitInitArray(std::vector<int> indexs, SysYParser::InitArrayContext *ctx, IR::Value *fillValue, bool isConst);
     static void register_lib_func();
     antlrcpp::Any visitWhileStmt(SysYParser::WhileStmtContext *ctx) override;
-    antlrcpp::Any visitRelExp(SysYParser::RelExpContext *ctx, bool is_const);
-    antlrcpp::Any visitEqExp(SysYParser::EqExpContext *ctx, bool is_const);
+    antlrcpp::Any visitRelExp(SysYParser::RelExpContext *ctx);
+    antlrcpp::Any visitEqExp(SysYParser::EqExpContext *ctx);
     antlrcpp::Any visitLandExp(SysYParser::LandExpContext *ctx, BasicBlock* true_bb, BasicBlock* false_bb);
     antlrcpp::Any visitLorExp(SysYParser::LorExpContext *ctx, BasicBlock* true_bb, BasicBlock* false_bb);
     antlrcpp::Any visitIfStmt(SysYParser::IfStmtContext *ctx) override;
     antlrcpp::Any visitVarDef(SysYParser::DefContext* ctx, Type* type, bool is_global);
     antlrcpp::Any visitBlockItem(SysYParser::BlockItemContext *ctx) override;
-    static antlrcpp::Any visitLVal(SysYParser::LValContext *ctx, bool is_fetch);
+    antlrcpp::Any visitLVal(SysYParser::LValContext *ctx, bool is_fetch);
     antlrcpp::Any visitConstDef(SysYParser::DefContext *ctx, Type* type, bool is_global);
     antlrcpp::Any visitDecl(SysYParser::DeclContext *ctx, bool is_global);
     antlrcpp::Any visitGlobalDecl(SysYParser::GlobalDeclContext *ctx) override;

@@ -18,6 +18,7 @@ std::unordered_map<std::string, Value> argHashMap;
 
 IRBuildFactory f = IRBuildFactory::getInstance();
 std::vector<std::unordered_map<std::string, Value*>> sym_tables;
+std::vector<std::unordered_map<std::string, std::vector<int>*>> dim_indexs_table;
 
 Function* print_func = new Function("@putint", VoidType::get_instance());
 Function* input_func = new Function("@getint", IntegerType::get_instance());
@@ -37,18 +38,40 @@ void Visitor::push_sym_table() {
     sym_tables.emplace_back();
 }
 
+void Visitor::push_dim_index_table(){
+    dim_indexs_table.emplace_back();
+}
+
 void Visitor::pop_sym_table() {
     sym_tables.pop_back();
 }
 
+void Visitor::pop_dim_index_table(){
+    dim_indexs_table.pop_back();
+}
+
 void Visitor::push_symbol(const std::string& ident, Value* value) {
-    int len = sym_tables.size();
-    sym_tables[len - 1][ident] = value;
+    sym_tables.back()[ident] = value;
+}
+
+void Visitor::push_dim_index(const std::string& ident, std::vector<int>* dim_index) {
+    dim_indexs_table.back()[ident] = dim_index;
+}
+
+std::vector<int> * Visitor::find_dim_index(const std::string& ident){
+    int len = dim_indexs_table.size();
+    for (int i = len - 1; i >= 0; i = i - 1) {
+        auto it = dim_indexs_table[i].find(ident);
+        if (it != dim_indexs_table[i].end()) {
+            return it->second;
+        }
+    }
+    return nullptr;
 }
 
 Value* Visitor::find(const std::string& ident){
     int len = sym_tables.size();
-    for (int i = len - 1; i >= 0; i--) {
+    for (int i = len - 1; i >= 0; i = i - 1) {
         std::unordered_map<std::string, Value*>& sym_table = sym_tables[i];
         auto it = sym_table.find(ident);
         if (it != sym_table.end()) {
@@ -89,9 +112,18 @@ antlrcpp::Any Visitor::visitLVal(SysYParser::LValContext *ctx, bool is_fetch) {
     std::string ident = ctx->Ident()->getText();
     CurValue = find(ident);
 
+
     if(CurValue->get_type()->is_pointer_type()){
+        if(!ctx->exp().empty()){
+            std::vector<Value*> indexs;
+            for(auto exp : ctx->exp()){
+                visitExp(exp, false);
+                indexs.push_back(CurValue);
+            }
+
+        }
+
         if(is_fetch){
-            Type* ele_type = dynamic_cast<PointerType*>(CurValue->get_type())->get_ele_type();
             CurValue = f.build_load_inst(CurValue, CurBasicBlock);
         }
     }
@@ -132,10 +164,10 @@ antlrcpp::Any Visitor::visitPrimaryExp(SysYParser::PrimaryExpContext *ctx, bool 
             Type* arg_type = function->get_args()[i]->get_type();
             Type* cur_type = value->get_type();
             if(cur_type == IntegerType::get_instance() && arg_type == FloatType::get_instance()){
-                values[i] = f.build_conversion_inst(value, OP::itof, CurBasicBlock);
+                values[i] = IRBuildFactory::build_conversion_inst(value, OP::itof, CurBasicBlock);
             }
             else if(cur_type == FloatType::get_instance() && arg_type == IntegerType::get_instance()){
-                values[i] = f.build_conversion_inst(value, OP::ftoi, CurBasicBlock);
+                values[i] = IRBuildFactory::build_conversion_inst(value, OP::ftoi, CurBasicBlock);
             }
         }
 
@@ -158,13 +190,14 @@ antlrcpp::Any Visitor::visitUnaryExp(SysYParser::UnaryExpContext *ctx, bool is_c
         }
         else if(unary_op_string == "!"){
             count = 0;
-            Value* zero;
+            Value* zero = nullptr;
             if(CurValue->get_type()->is_integer_type()){
                 zero = f.build_number(0);
             }
             else if(CurValue->get_type()->is_float_type()){
                 zero = f.build_number((float) 0);
             }
+            assert(zero != nullptr);
             CurValue = f.build_bin_inst(CurValue, zero, OP::eq, CurBasicBlock);
         }
     }
@@ -176,13 +209,14 @@ antlrcpp::Any Visitor::visitUnaryExp(SysYParser::UnaryExpContext *ctx, bool is_c
             CurValue = f.build_number(-const_float->get_value());
         }
         else{
-            Value* zero;
+            Value* zero = nullptr;
             if(CurValue->get_type()->is_integer_type()){
                 zero = f.build_number(0);
             }
             else if(CurValue->get_type()->is_float_type()){
                 zero = f.build_number((float) 0);
             }
+            assert(zero != nullptr);
             CurValue = f.build_bin_inst(zero, CurValue, OP::sub, CurBasicBlock);
         }
     }
@@ -233,10 +267,10 @@ antlrcpp::Any Visitor::visitReturn(SysYParser::ReturnContext *ctx) {
         Type* CurType = CurValue->get_type();
         Type* CurFuncType = CurFunction->get_type();
         if(CurType->is_integer_type() && CurFuncType->is_float_type()){
-            CurValue = f.build_conversion_inst(CurValue, OP::itof, CurBasicBlock);
+            CurValue = IRBuildFactory::build_conversion_inst(CurValue, OP::itof, CurBasicBlock);
         }
         else if(CurFuncType->is_integer_type() && CurType->is_float_type()){
-            CurValue = f.build_conversion_inst(CurValue, OP::ftoi, CurBasicBlock);
+            CurValue = IRBuildFactory::build_conversion_inst(CurValue, OP::ftoi, CurBasicBlock);
         }
 
         CurValue = f.build_ret_inst(CurValue, CurBasicBlock);
@@ -248,12 +282,12 @@ antlrcpp::Any Visitor::visitReturn(SysYParser::ReturnContext *ctx) {
     return nullptr;
 }
 
-antlrcpp::Any Visitor::visitRelExp(SysYParser::RelExpContext *ctx, bool is_const) {
-    visitExp(ctx->exp(0), is_const);
+antlrcpp::Any Visitor::visitRelExp(SysYParser::RelExpContext *ctx) {
+    visitExp(ctx->exp(0), false);
     for(int i = 0; i < ctx->relOP().size(); i++){
         std::string op_string = ctx->relOP(i)->getText();
         Value* tmp_value = CurValue;
-        visitExp(ctx->exp(i + 1), is_const);
+        visitExp(ctx->exp(i + 1), false);
         auto const_left = dynamic_cast<Const*>(tmp_value);
         auto const_right = dynamic_cast<Const*>(CurValue);
         if(const_left && const_right){
@@ -266,12 +300,12 @@ antlrcpp::Any Visitor::visitRelExp(SysYParser::RelExpContext *ctx, bool is_const
     return nullptr;
 }
 
-antlrcpp::Any Visitor::visitEqExp(SysYParser::EqExpContext *ctx, bool is_const) {
-    visitRelExp(ctx->relExp(0), is_const);
+antlrcpp::Any Visitor::visitEqExp(SysYParser::EqExpContext *ctx) {
+    visitRelExp(ctx->relExp(0));
     for(int i = 0; i < ctx->eqOP().size(); i++){
         std::string op_string = ctx->eqOP(i)->getText();
         Value* tmp_value = CurValue;
-        visitRelExp(ctx->relExp(i + 1), is_const);
+        visitRelExp(ctx->relExp(i + 1));
         auto const_left = dynamic_cast<Const*>(tmp_value);
         auto const_right = dynamic_cast<Const*>(CurValue);
         if(const_left && const_right){
@@ -286,15 +320,14 @@ antlrcpp::Any Visitor::visitEqExp(SysYParser::EqExpContext *ctx, bool is_const) 
 
 antlrcpp::Any Visitor::visitLandExp(SysYParser::LandExpContext *ctx, BasicBlock* true_bb, BasicBlock* false_bb) {
     BasicBlock* nxt_land_block;
-    auto now = ctx->eqExp(0);
     for(int i = 0; i < ctx->eqExp().size(); i++){
         if(i != ctx->eqExp().size() - 1){
             nxt_land_block = f.build_basic_block(CurFunction);
         }
         else nxt_land_block = true_bb;
-        visitEqExp(ctx->eqExp(i), false);
+        visitEqExp(ctx->eqExp(i));
         CurValue = f.build_bin_inst(CurValue, f.build_number(0), OP::ne, CurBasicBlock);
-        f.build_br_inst(CurValue, nxt_land_block, false_bb, CurBasicBlock);
+        IRBuildFactory::build_br_inst(CurValue, nxt_land_block, false_bb, CurBasicBlock);
         CurBasicBlock = nxt_land_block;
     }
     return nullptr;
@@ -329,7 +362,7 @@ antlrcpp::Any Visitor::visitIfStmt(SysYParser::IfStmtContext *ctx) {
     //  接下来我们为TrueBlock填写指令
     CurBasicBlock = true_bb;
     visitStmt(ctx->stmt(0));
-    f.build_br_inst(nxt_bb, CurBasicBlock);
+    IRBuildFactory::build_br_inst(nxt_bb, CurBasicBlock);
 
     if(ctx->Else()){
         //  开始构建FalseBlock
@@ -337,7 +370,7 @@ antlrcpp::Any Visitor::visitIfStmt(SysYParser::IfStmtContext *ctx) {
         visitStmt(ctx->stmt(1));
 
         //  原理同上，为CurBLock构建Br指令
-        f.build_br_inst(nxt_bb, CurBasicBlock);
+        IRBuildFactory::build_br_inst(nxt_bb, CurBasicBlock);
     }
     CurBasicBlock = nxt_bb;
     return nullptr;
@@ -346,7 +379,7 @@ antlrcpp::Any Visitor::visitIfStmt(SysYParser::IfStmtContext *ctx) {
 antlrcpp::Any Visitor::visitWhileStmt(SysYParser::WhileStmtContext *ctx) {
     //  构建要跳转的CurCondBlock
     BasicBlock* cond_block = f.build_basic_block(CurFunction);
-    f.build_br_inst(cond_block, CurBasicBlock);
+    IRBuildFactory::build_br_inst(cond_block, CurBasicBlock);
     CurBasicBlock = cond_block;
 
     BasicBlock* true_bb = f.build_basic_block(CurFunction);
@@ -359,7 +392,7 @@ antlrcpp::Any Visitor::visitWhileStmt(SysYParser::WhileStmtContext *ctx) {
 
     CurBasicBlock = true_bb;
     visitStmt(ctx->stmt());
-    f.build_br_inst(cond_block, CurBasicBlock);
+    IRBuildFactory::build_br_inst(cond_block, CurBasicBlock);
     CurBasicBlock = false_bb;
 
     //  while内的指令构建完了，出栈
@@ -377,8 +410,10 @@ antlrcpp::Any Visitor::visitStmt(SysYParser::StmtContext *ctx) {
     }
     else if(ctx->block()){
         push_sym_table();
+        push_dim_index_table();
         visitBlock(ctx->block());
         pop_sym_table();
+        pop_dim_index_table();
     }
     else if(ctx->assign()){
         visitLVal(ctx->assign()->lVal(), false);
@@ -395,13 +430,13 @@ antlrcpp::Any Visitor::visitStmt(SysYParser::StmtContext *ctx) {
     else if(ctx->break_()){
         if(whileOutBlocks.empty()) return nullptr;
         BasicBlock* whileOutBlock = whileOutBlocks.back();
-        f.build_br_inst(whileOutBlock, CurBasicBlock);
+        IRBuildFactory::build_br_inst(whileOutBlock, CurBasicBlock);
         CurBasicBlock = f.build_basic_block(CurFunction);
     }
     else if(ctx->continue_()){
         if(whileEntryBlocks.empty()) return nullptr;
         BasicBlock* whileEntryBlock = whileEntryBlocks.back();
-        f.build_br_inst(whileEntryBlock, CurBasicBlock);
+        IRBuildFactory::build_br_inst(whileEntryBlock, CurBasicBlock);
         CurBasicBlock = f.build_basic_block(CurFunction);
     }
     return nullptr;
@@ -433,12 +468,13 @@ antlrcpp::Any Visitor::visitFuncDef(SysYParser::FuncDefContext *ctx) {
     argHashMap.clear();
 
     push_sym_table();
+    push_dim_index_table();
     CurBasicBlock = f.build_basic_block(CurFunction);
     if(!ctx->funcFParam().empty()){
         for(auto func_fparam : ctx->funcFParam()){
             std::string arg_name = func_fparam->Ident()->getText();
             std::string arg_type = func_fparam->bType()->getText();
-            Argument* arg;
+            Argument* arg = nullptr;
 
             if(!func_fparam->exp().empty()){
                 //  TODO:
@@ -446,7 +482,7 @@ antlrcpp::Any Visitor::visitFuncDef(SysYParser::FuncDefContext *ctx) {
             else {
                 arg = IRBuildFactory::build_arg(arg_name, arg_type, CurFunction);
             }
-            AllocInst* allocInst = f.build_alloc_inst(arg->get_type(), CurBasicBlock);
+            AllocInst* allocInst = IRBuildFactory::build_alloc_inst(arg->get_type(), CurBasicBlock);
             f.build_store_inst(arg, allocInst, CurBasicBlock);
             push_symbol(arg_name, allocInst);
         }
@@ -458,6 +494,7 @@ antlrcpp::Any Visitor::visitFuncDef(SysYParser::FuncDefContext *ctx) {
     visitBlock(ctx->block());
 
     pop_sym_table();
+    pop_dim_index_table();
     return nullptr;
 }
 
@@ -559,14 +596,15 @@ void Visitor::visitArray(const std::string& ident, Type* type, SysYParser::InitA
     }
 
     int size = 1;
-    std::vector<int> dim_indexs;
+    auto dim_indexs = new std::vector<int>();
     for(auto exp : exps){
         visitExp(exp, is_const);
         int x = dynamic_cast<ConstInt*>(CurValue)->get_value();
-        dim_indexs.push_back(x);
+        dim_indexs->push_back(x);
         size *= x;
     }
-    std::vector<Value*> init_values = visitInitArray(dim_indexs, initArray, fill_value, is_const);
+    push_dim_index(ident, dim_indexs);
+    std::vector<Value*> init_values = visitInitArray(*dim_indexs, initArray, fill_value, is_const);
 
     //  全局变量数组
     if(is_global){
@@ -671,6 +709,7 @@ antlrcpp::Any Visitor::visitCompUnit(SysYParser::CompUnitContext *ctx){
 
     register_lib_func();
     push_sym_table();
+    push_dim_index_table();
     visitChildren(ctx);
 
     return nullptr;
