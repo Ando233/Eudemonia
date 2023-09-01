@@ -8,6 +8,13 @@ block0:
 	store 0, %1
 	%2 = ptradd %0, 1
 	store 1, %2
+	%3 = mul 1 4
+	%4 = mul 1 2
+	%5 = add %3 %4
+	%6 = mul 0 1
+	%7 = add %5 %6
+	%8 = ptradd @p, %7
+	store 1, %8
 	return 0
 }
 

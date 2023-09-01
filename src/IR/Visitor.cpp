@@ -112,15 +112,29 @@ antlrcpp::Any Visitor::visitLVal(SysYParser::LValContext *ctx, bool is_fetch) {
     std::string ident = ctx->Ident()->getText();
     CurValue = find(ident);
 
-
     if(CurValue->get_type()->is_pointer_type()){
         if(!ctx->exp().empty()){
+            Value* base_ptr = CurValue;
             std::vector<Value*> indexs;
             for(auto exp : ctx->exp()){
                 visitExp(exp, false);
                 indexs.push_back(CurValue);
             }
+            std::vector<int>* dim_index = find_dim_index(ident);
+            assert(dim_index != nullptr);
 
+            std::vector<int> factor(dim_index->size(), 0);
+            factor[factor.size() - 1] = 1;
+            for(int i = factor.size() - 2; i >= 0; i--){
+                factor[i] = factor[i + 1] * dim_index->operator[](i + 1);
+            }
+
+            CurValue = f.build_bin_inst(indexs[0], f.build_number(factor[0]), OP::mul, CurBasicBlock);
+            for(int i = 1; i < indexs.size(); i++){
+                Value* tmp_value = f.build_bin_inst(indexs[i], f.build_number(factor[i]), OP::mul, CurBasicBlock);
+                CurValue = f.build_bin_inst(CurValue, tmp_value, OP::add, CurBasicBlock);
+            }
+            CurValue = f.build_ptr_inst(base_ptr, CurValue, CurBasicBlock);
         }
 
         if(is_fetch){
