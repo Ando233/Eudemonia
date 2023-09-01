@@ -1,20 +1,34 @@
 @x = global int* [0, 1]
 @a = global int* [0, 1]
 @p = global int* [1, 2, 2, 0, 1, 0, 0, 0]
-int main() {
+int func(int* a int x) {
 block0:
-	%0 = alloc [2 x int]
+	%0 = alloc int
+	store x, %0
+	br block1
+block1:
+	%1 = mul 1 1
+	%2 = ptradd a, %1
+	%3 = mul 0 1
+	%4 = ptradd a, %3
+	%5 = load %4
+	%6 = add %5 1
+	store %6, %2
+	return 0
+}
+
+int main() {
+block2:
+	%0 = alloc [4 x int]
 	%1 = ptradd %0, 0
 	store 0, %1
 	%2 = ptradd %0, 1
 	store 1, %2
-	%3 = mul 1 4
-	%4 = mul 1 2
-	%5 = add %3 %4
-	%6 = mul 0 1
-	%7 = add %5 %6
-	%8 = ptradd @p, %7
-	store 1, %8
+	%3 = ptradd %0, 2
+	store 0, %3
+	%4 = ptradd %0, 3
+	store 0, %4
+	%5 = call int func(int* %0 int 1)
 	return 0
 }
 

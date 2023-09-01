@@ -11,7 +11,7 @@
 using namespace IR;
 class GlobalVar : public Value {
 private:
-    Value* value;
+    Value* value{};
     int size;
     std::vector<Value*> values;
 public:
@@ -27,6 +27,10 @@ public:
 
     Value* get_value(){
         return value;
+    }
+
+    bool is_array(){
+        return size > 1;
     }
 
     void dump(std::ofstream &out){

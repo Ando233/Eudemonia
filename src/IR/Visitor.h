@@ -33,8 +33,8 @@ private:
     std::vector<Value*> visitInitArray(std::vector<int> indexs, SysYParser::InitArrayContext *ctx, IR::Value *fillValue, bool isConst);
     static void register_lib_func();
     antlrcpp::Any visitWhileStmt(SysYParser::WhileStmtContext *ctx) override;
-    antlrcpp::Any visitRelExp(SysYParser::RelExpContext *ctx);
-    antlrcpp::Any visitEqExp(SysYParser::EqExpContext *ctx);
+    antlrcpp::Any visitRelExp(SysYParser::RelExpContext *ctx) override;
+    antlrcpp::Any visitEqExp(SysYParser::EqExpContext *ctx) override;
     antlrcpp::Any visitLandExp(SysYParser::LandExpContext *ctx, BasicBlock* true_bb, BasicBlock* false_bb);
     antlrcpp::Any visitLorExp(SysYParser::LorExpContext *ctx, BasicBlock* true_bb, BasicBlock* false_bb);
     antlrcpp::Any visitIfStmt(SysYParser::IfStmtContext *ctx) override;

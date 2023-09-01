@@ -112,8 +112,16 @@ antlrcpp::Any Visitor::visitLVal(SysYParser::LValContext *ctx, bool is_fetch) {
     std::string ident = ctx->Ident()->getText();
     CurValue = find(ident);
 
+    /*
+     * 1. 普通/全局变量的指针i32*: a
+     * 2. 普通数组的值的指针: a[2][2]
+     * 3. 传入参数的数组指针: a, a[0]
+     *
+     * */
+
     if(CurValue->get_type()->is_pointer_type()){
         if(!ctx->exp().empty()){
+            bool is_arr_val = true;
             Value* base_ptr = CurValue;
             std::vector<Value*> indexs;
             for(auto exp : ctx->exp()){
@@ -122,6 +130,9 @@ antlrcpp::Any Visitor::visitLVal(SysYParser::LValContext *ctx, bool is_fetch) {
             }
             std::vector<int>* dim_index = find_dim_index(ident);
             assert(dim_index != nullptr);
+            if(indexs.size() != dim_index->size()){
+                is_arr_val = false;
+            }
 
             std::vector<int> factor(dim_index->size(), 0);
             factor[factor.size() - 1] = 1;
@@ -135,6 +146,20 @@ antlrcpp::Any Visitor::visitLVal(SysYParser::LValContext *ctx, bool is_fetch) {
                 CurValue = f.build_bin_inst(CurValue, tmp_value, OP::add, CurBasicBlock);
             }
             CurValue = f.build_ptr_inst(base_ptr, CurValue, CurBasicBlock);
+
+            if(!is_arr_val) return nullptr;
+        }
+        //  没有index的数组指针不应该被load
+        else{
+            if(auto alloc = dynamic_cast<AllocInst*>(CurValue)){
+               if(alloc->is_array()) return nullptr;
+            }
+            if(auto gv = dynamic_cast<GlobalVar*>(CurValue)){
+                if(gv->is_array()) return nullptr;
+            }
+            if(auto arg = dynamic_cast<Argument*>(CurValue)){
+                return nullptr;
+            }
         }
 
         if(is_fetch){
@@ -477,6 +502,7 @@ antlrcpp::Any Visitor::visitFuncDef(SysYParser::FuncDefContext *ctx) {
     std::string type = ctx->funcType()->getText();
 
     CurFunction = f.build_function(ident, type, ir_module);
+    Value::val_num = -1;
 
     push_symbol(ident, CurFunction);
     argHashMap.clear();
@@ -490,15 +516,24 @@ antlrcpp::Any Visitor::visitFuncDef(SysYParser::FuncDefContext *ctx) {
             std::string arg_type = func_fparam->bType()->getText();
             Argument* arg = nullptr;
 
-            if(!func_fparam->exp().empty()){
-                //  TODO:
+            if(!func_fparam->Lbrkt().empty()){
+                auto dim_indexs = new std::vector<int>();
+                dim_indexs->push_back(1);
+                for(auto exp : func_fparam->exp()){
+                    visitExp(exp, true);
+                    dim_indexs->push_back(dynamic_cast<ConstInt*>(CurValue)->get_value());
+                }
+
+                arg = IRBuildFactory::build_arg(arg_name, arg_type + "*", CurFunction);
+                push_dim_index(arg_name, dim_indexs);
+                push_symbol(arg_name, arg);
             }
             else {
                 arg = IRBuildFactory::build_arg(arg_name, arg_type, CurFunction);
+                AllocInst* allocInst = IRBuildFactory::build_alloc_inst(arg->get_type(), CurBasicBlock);
+                f.build_store_inst(arg, allocInst, CurBasicBlock);
+                push_symbol(arg_name, allocInst);
             }
-            AllocInst* allocInst = IRBuildFactory::build_alloc_inst(arg->get_type(), CurBasicBlock);
-            f.build_store_inst(arg, allocInst, CurBasicBlock);
-            push_symbol(arg_name, allocInst);
         }
         BasicBlock* tmp_bb = f.build_basic_block(CurFunction);
         IRBuildFactory::build_br_inst(tmp_bb, CurBasicBlock);
@@ -667,9 +702,10 @@ antlrcpp::Any Visitor::visitDecl(SysYParser::DeclContext *ctx, bool is_global) {
     bool is_const = false;
     if(ctx->Const()) is_const = true;
     std::string type_string = ctx->bType()->getText();
-    Type* type;
+    Type* type = nullptr;
     if(type_string == "int") type = IntegerType::get_instance();
     else if(type_string == "float") type = FloatType::get_instance();
+    assert(type != nullptr);
 
     for(auto def : ctx->def()){
         if(is_const) visitConstDef(def, type, is_global);

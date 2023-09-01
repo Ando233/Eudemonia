@@ -247,6 +247,10 @@ public:
         return dynamic_cast<PointerType*>(type)->get_ele_type();
     }
 
+    bool is_array(){
+        return size > 1;
+    }
+
     void dump(std::ofstream& out) override{
         out << name + " = alloc ";
         if(size == 1) {
