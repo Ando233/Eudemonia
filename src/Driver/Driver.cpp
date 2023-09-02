@@ -19,7 +19,7 @@ void parse_args(int argc, char** argv);
 void Driver::run(){
     parse_args(argc, argv);
 
-    std::ifstream source(Config::input_file_name);
+    std::ifstream source(Config::src_file_name);
     std::ofstream ir_out(Config::ir_file_name);
     std::ofstream obj_out(Config::obj_file_name);
     std::ofstream log(Config::log_file_name);

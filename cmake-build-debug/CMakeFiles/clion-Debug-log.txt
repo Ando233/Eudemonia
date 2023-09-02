@@ -1,4 +1,4 @@
 "D:\Program Files (x86)\CLion 2023.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=D:/Program Files (x86)/CLion 2023.2/bin/ninja/win/x64/ninja.exe" "-DCMAKE_C_COMPILER=D:/Program Files (x86)/MSY2/clang64/bin/clang.exe" "-DCMAKE_CXX_COMPILER=D:/Program Files (x86)/MSY2/clang64/bin/clang++.exe" -G Ninja -DLLVM_ENABLE_PROJECTS=clang;clang-tools-extra;compiler-rt;lld -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DLLVM_USE_LINKER=lld -DCMAKE_LINKER=lld -DHAVE_CXX_ATOMICS64_WITHOUT_LIB=1 -DHAVE_CXX_ATOMICS_WITHOUT_LIB=1 -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON -S "D:\Clion Projects\Eudemonia" -B "D:\Clion Projects\Eudemonia\cmake-build-debug"
--- Configuring done (1.9s)
--- Generating done (0.2s)
+-- Configuring done (0.4s)
+-- Generating done (0.0s)
 -- Build files have been written to: D:/Clion Projects/Eudemonia/cmake-build-debug

@@ -127,6 +127,12 @@
 },
 {
   "directory": "D:/Clion Projects/Eudemonia/cmake-build-debug",
+  "command": "D:\\PROGRA~2\\MSY2\\clang64\\bin\\CLANG_~1.EXE -I\"D:/Clion Projects/Eudemonia/src\" -I\"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime\" -g -O0 -fcolor-diagnostics --std=c++17 -O2 -o CMakeFiles\\compiler.dir\\src\\Interpreter\\Interpreter.cpp.obj -c \"D:\\Clion Projects\\Eudemonia\\src\\Interpreter\\Interpreter.cpp\"",
+  "file": "D:\\Clion Projects\\Eudemonia\\src\\Interpreter\\Interpreter.cpp",
+  "output": "CMakeFiles\\compiler.dir\\src\\Interpreter\\Interpreter.cpp.obj"
+},
+{
+  "directory": "D:/Clion Projects/Eudemonia/cmake-build-debug",
   "command": "D:\\PROGRA~2\\MSY2\\clang64\\bin\\CLANG_~1.EXE -I\"D:/Clion Projects/Eudemonia/src\" -I\"D:/Clion Projects/Eudemonia/third_party/antlr4-runtime\" -g -O0 -fcolor-diagnostics --std=c++17 -O2 -o CMakeFiles\\compiler.dir\\src\\main.cpp.obj -c \"D:\\Clion Projects\\Eudemonia\\src\\main.cpp\"",
   "file": "D:\\Clion Projects\\Eudemonia\\src\\main.cpp",
   "output": "CMakeFiles\\compiler.dir\\src\\main.cpp.obj"

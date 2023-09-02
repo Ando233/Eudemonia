@@ -2,9 +2,13 @@ int x[2] = {0, 1};
 const int a[2] = {0, 1};
 int p[2][2][2] = {1, 2, {2}, {1}};
 
+int func2(int a[]){
+    return 0;
+}
+
 int func(int a[], int x){
     a[1] = a[0] + 1;
-    return 0;
+    return func2(a);
 }
 
 int main() {
